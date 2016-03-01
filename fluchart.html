@@ -152,8 +152,28 @@ text {
     </head>
 
     <body>
+        
+        <div class="title">Епідсезон 2015/16. Атака вірусів</div>
+        
         <script>
-            //отступы http://bl.ocks.org/mbostock/3019563
+            
+//украинская локализация
+var ua_locale = d3.locale({
+    "decimal": ",",
+    "thousands": "\u00A0",
+    "grouping": [3],
+    "currency": ["", " грн"],
+    "dateTime": "%A, %e %B %Y р. %X",
+    "date": "%d.%m.%Y",
+    "time": "%H:%M:%S",
+    "periods": ["AM", "PM"],
+    "days": ["неділя", "понеділок", "вівторок", "середа", "четвер", "п'ятниця", "субота"],
+    "shortDays": ["нд", "пн", "вт", "ср", "чт", "пт", "сб"],
+    "months": ["січень", "лютий", "березень", "квітень", "травень", "червень", "липень", "серпень", "вересень", "жовтень", "листопад", "грудень"],
+    "shortMonths": ["січ", "лют", "бер", "кві", "тра", "чер", "лип", "сер", "вер", "жов", "лис", "гру"]
+});          
+            
+//отступы http://bl.ocks.org/mbostock/3019563
 var margin = {
     top: 20,
     right: 20,
@@ -217,7 +237,8 @@ var xAxis = d3.svg.axis()
   .orient("bottom")
   .innerTickSize(-height) //задание параметров линий сетки
   .outerTickSize(0)
-  .tickPadding(10);
+  .tickPadding(10)
+  .tickFormat(ua_locale.timeFormat("%d %b")); //название месяцев на украинском
 
 //шкала у
 var yAxis = d3.svg.axis()
@@ -229,7 +250,7 @@ var yAxis = d3.svg.axis()
   .tickPadding(10);
 
 //формат даты https://github.com/mbostock/d3/wiki/Time-Formatting
-var formatDate = d3.time.format("%Y-%m-%d"); //преобразование значений из датасет в дату
+var formatDate = ua_locale.timeFormat("%Y-%m-%d"); //преобразование значений из датасет в дату
 
 //свг контейнер
 var svg = d3.select("body")
