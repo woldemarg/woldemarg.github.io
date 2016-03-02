@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+        
+    <head>
+    
+        <meta charset = "utf-8">
+                
+        <title> FluTrendsOfUkraine </title>      
+             
+        <script src = "http://d3js.org/d3.v3.min.js"></script>
+
+        <style type = "text/css">
+/*заголовок*/
+
+div.title {
+  font-family: "arial";
+  font-size: 20px;
+  font-weight: bold;
+  color: #3A3F4A;
+  margin-bottom: 20px;
+}
+
+
+/*єлементы осей*/
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+  stroke-width: px;
+}
+
+.axis text {
+  font-size: 12px;
+  font-family: "arial";
+  fill: #5D646F;
+}
+
+
+/*линии сетки*/
+
+.tick line {
+  opacity: 0.2;
+}
+
+
+/*элементы графика*/
+
+.line {
+  fill: none;
+  stroke-width: 2px;
+}
+
+.line.infected {
+  stroke: #F7946A;
+}
+
+.line.died {
+  stroke: #F04E23;
+}
+
+.line.gtrend {
+  stroke: #3A3F4A;
+}
+
+.focus circle {
+  r: 4.5;
+}
+
+.focus circle.died {
+  fill: #F04E23;
+}
+
+.focus circle.infected {
+  fill: #F7946A;
+}
+
+.focus circle.gtrend {
+  fill: #3A3F4A;
+}
+
+text {
+  font-family: "arial";
+  fill: #5D646F;
+}
+
+
+/*дата на легенде*/
+
+.tooltip text.legendDate {
+  font-size: 12px;
+}
+
+.tooltip text.legendLegend {
+  font-size: 12px;
+}
+
+.tooltip text.legend {
+  font-size: 10px;
+}
+
+.tooltip text.infected {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.tooltip text.died {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.tooltip text.gtrend {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+
+/*поле для отслеживания движений мыши*/
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+
+/*легенда*/
+
+.tooltip rect.window {
+  fill: #EFF2F4;
+  opacity: 0.75;
+  stroke: #3A3F4A;
+  pointer-events: all;
+}
+
+
+/*ключи легенды*/
+
+.tooltip rect.legendInfected {
+  fill: #F7946A;
+}
+
+.tooltip rect.legendDied {
+  fill: #F04E23;
+}
+
+.tooltip rect.legendGtrend {
+  fill: #3A3F4A;
+}
+
+        </style>
+
+    </head>
+
+    <body>              
+        
+        <div class="title">Епідсезон 2015/16. Атака вірусів</div>
+                
+            <script>
+            
+//украинская локализация
+var ua_locale = d3.locale({
+    "decimal": ",",
+    "thousands": "\u00A0",
+    "grouping": [3],
+    "currency": ["", " грн"],
+    "dateTime": "%A, %e %B %Y р. %X",
+    "date": "%d.%m.%Y",
+    "time": "%H:%M:%S",
+    "periods": ["AM", "PM"],
+    "days": ["неділя", "понеділок", "вівторок", "середа", "четвер", "п'ятниця", "субота"],
+    "shortDays": ["нд", "пн", "вт", "ср", "чт", "пт", "сб"],
+    "months": ["січень", "лютий", "березень", "квітень", "травень", "червень", "липень", "серпень", "вересень", "жовтень", "листопад", "грудень"],
+    "shortMonths": ["січ", "лют", "бер", "кві", "тра", "чер", "лип", "сер", "вер", "жов", "лис", "гру"]
+});          
+            
+//отступы http://bl.ocks.org/mbostock/3019563
+var margin = {
+    top: 20,
+    right: 20,
+    bottom: 30,
+    left: 50
+  },
+  width = 650 - margin.left - margin.right,
+  height = 350 - margin.top - margin.bottom,
+  //параметры тултипа
+  tooltipPadding = 25,
+  tooltipWidth = 120,
+  tooltipRange = width - tooltipWidth;
+
+//параметр для определения положения курсора
+//объяснение здесь - http://www.d3noob.org/2014/07/my-favourite-tooltip-method-for-line.html
+var bisectDate = d3.bisector(function(d) {
+  return d.date;
+}).left;
+
+//графический диапазон вывода для х
+var x = d3.time.scale()
+  .range([0, width]);
+
+//графический диапазон для тултипа
+var xTooltip = d3.time.scale()
+  .range([tooltipPadding, tooltipRange - tooltipPadding]);
+
+//графический диапазон вывода для у
+var y = d3.scale.linear()
+  .range([height, 0])
+  .nice(); //округление
+
+//расчет линий на графике
+var lineInfected = d3.svg.line()
+  .x(function(d) {
+    return x(d.date);
+  })
+  .y(function(d) {
+    return y(d.infected);
+  });
+
+var lineDied = d3.svg.line()
+  .x(function(d) {
+    return x(d.date);
+  })
+  .y(function(d) {
+    return y(d.died);
+  });
+
+var lineGtrend = d3.svg.line()
+  .x(function(d) {
+    return x(d.date);
+  })
+  .y(function(d) {
+    return y(d.gtrend);
+  });
+
+//шкала х
+var xAxis = d3.svg.axis()
+  .scale(x)
+  .orient("bottom")
+  .innerTickSize(-height) //задание параметров линий сетки
+  .outerTickSize(0)
+  .tickPadding(10)
+  .tickFormat(ua_locale.timeFormat("%d %b")); //название месяцев на украинском
+
+//шкала у
+var yAxis = d3.svg.axis()
+  .scale(y)
+  .orient("left")
+  .ticks(5) //количество тиков
+  .innerTickSize(-width) //задание параметров линий сетки
+  .outerTickSize(0)
+  .tickPadding(10);
+
+//формат даты https://github.com/mbostock/d3/wiki/Time-Formatting
+var formatDate = ua_locale.timeFormat("%Y-%m-%d"); //преобразование значений из датасет в дату
+
+//свг контейнер
+var svg = d3.select("body")
+  .append("svg")
+  .attr("viewBox", "0 0 650 350") // контейнер с функцией
+  .attr("width", "100%") // автомасштабирования свг
+  .attr("height", "100%") // сохраняет соотношение сторон
+  .attr("preserveAspectRatio", "xMidYMid") // http://css-live.ru/articles/karmannoe-rukovodstvo-po-napisaniyu-svg-glava-3.html         
+  .append("g") //группа для осей со смещением
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+//основная функция 
+//http://chimera.labs.oreilly.com/books/1230000000345/ch05.html#_data
+d3.csv("flu.csv", type, function(error, data) { //type - функция обработки входящих данных
+  if (error) throw error;
+  console.log(data);
+
+  //диапазоны для шкал и тултипа
+  xTooltip.domain(d3.extent(data, function(d) {
+    return d.date;
+  }));
+
+  x.domain(d3.extent(data, function(d) {
+    return d.date;
+  }));
+
+  y.domain([0, d3.max(data, function(d) {
+    return Math.max(d.infected, d.died, d.gtrend);
+  })]); // шкала у от 0 до макс по всем трем линиям
+
+  //рисуем шкалу х
+  svg.append("g")
+    .attr("class", "x axis")
+    .attr("transform", "translate(0," + height + ")")
+    .call(xAxis);
+
+  //рисуем шкалу у
+  svg.append("g")
+    .attr("class", "y axis")
+    .call(yAxis)
+    .append("text") //подпись оси у
+    .attr("transform", "rotate(-90)")
+    .attr("y", 5)
+    .attr("dy", ".71em")
+    .attr("text-anchor", "end")
+    .text("% до максимума");
+
+
+  //рисуем линии
+  svg.append("path")
+    .datum(data) //почему datum, а не data?
+    .attr("class", "line infected")
+    .attr("d", lineInfected);
+
+  svg.append("path")
+    .datum(data)
+    .attr("class", "line died")
+    .attr("d", lineDied);
+
+  svg.append("path")
+    .datum(data)
+    .attr("class", "line gtrend")
+    .attr("d", lineGtrend);
+
+  //рисуем точки для каждой линии
+  var focus = svg.append("g")
+    .attr("class", "focus")
+    .style("display", "none"); //точка не отображается пока нет движений мыши 
+
+  focus.append("circle")
+    .attr("class", "infected");
+
+  focus.append("circle")
+    .attr("class", "died");
+
+  focus.append("circle")
+    .attr("class", "gtrend");
+
+  //рисуем тултип и все элементы на нем
+  var tooltip = svg.append("g")
+    .attr("class", "tooltip");
+
+  tooltip.append("rect")
+    .attr("class", "window")
+    .attr("width", tooltipWidth)
+    .attr("height", 80)
+    .attr("x", tooltipPadding)
+    .attr("y", 10);
+
+  tooltip.append("rect")
+    .attr("class", "legendInfected")
+    .attr("x", 30)
+    .attr("y", 40)
+    .attr("width", 10)
+    .attr("height", 10);
+
+  tooltip.append("rect")
+    .attr("class", "legendDied")
+    .attr("x", 30)
+    .attr("y", 55)
+    .attr("width", 10)
+    .attr("height", 10);
+
+  tooltip.append("rect")
+    .attr("class", "legendGtrend")
+    .attr("x", 30)
+    .attr("y", 70)
+    .attr("width", 10)
+    .attr("height", 10);
+
+  tooltip.append("text")
+    .attr("class", "legend")
+    .attr("y", 48)
+    .attr("x", 45)
+    .text("захворюваність");
+
+  tooltip.append("text")
+    .attr("class", "legend")
+    .attr("y", 63)
+    .attr("x", 45)
+    .text("смертність");
+
+  tooltip.append("text")
+    .attr("class", "legend")
+    .attr("y", 78)
+    .attr("x", 45)
+    .text("суспільна увага");
+
+  //динамический текст - подстановка значений из датасет
+  tooltip.append("text")
+    .attr("class", "infected")
+    .attr("y", 48)
+    .attr("x", 125);
+
+  tooltip.append("text")
+    .attr("class", "died")
+    .attr("y", 63)
+    .attr("x", 125);
+
+  tooltip.append("text")
+    .attr("class", "gtrend")
+    .attr("y", 78)
+    .attr("x", 125);
+
+  //текст, который динамчески заменяется на дату
+  tooltip.append("text")
+    .attr("class", "legendLegend")
+    .attr("y", 30)
+    .attr("x", 30)
+    .text("Легенда");
+
+  //динамическая дата
+  tooltip.append("text")
+    .attr("class", "legendDate")
+    .attr("y", 30)
+    .attr("x", 30);
+
+  //оверлей всегда ставить поверх остальных объектов
+  //пример функций - здесь https://bl.ocks.org/micahstubbs/d9f3cd0d926af7a5a1a8  
+  svg.append("rect")
+    .attr("class", "overlay")
+    .attr("width", width)
+    .attr("height", height)
+    .on("mouseover", function() {
+      focus.style("display", null);
+    })
+    .on("mouseout", mouseout)
+    .on("mousemove", mousemove);
+
+  //пояснение принципа работы - здесь http://www.d3noob.org/2014/07/my-favourite-tooltip-method-for-line.html 
+  function mousemove() {
+    var x0 = x.invert(d3.mouse(this)[0]),
+      i = bisectDate(data, x0, 1),
+      d0 = data[i - 1],
+      d1 = data[i],
+      d = x0 - d0.date > d1.date - x0 ? d1 : d0;
+
+    //перемещение элементов графика в новую позицию по движению курсора
+    focus.select("circle.infected").attr("transform", "translate(" + x(d.date) + "," + y(d.infected) + ")");
+    focus.select("circle.died").attr("transform", "translate(" + x(d.date) + "," + y(d.died) + ")");
+    focus.select("circle.gtrend").attr("transform", "translate(" + x(d.date) + "," + y(d.gtrend) + ")");
+
+    tooltip.attr("transform", "translate(" + xTooltip(d.date) + ")");
+
+    //дата на тултипе отображается при перемещении курсора 
+    tooltip.select("text.legendDate").attr("display", null).text(dateToString(d.date)); //преобразование даты в формат для вывода
+    tooltip.select("text.legendLegend").attr("display", "none");
+
+    tooltip.select("text.infected").attr("display", null).text(d.infected);
+    tooltip.select("text.died").attr("display", null).text(d.died);
+    tooltip.select("text.gtrend").attr("display", null).text(d.gtrend);
+  }
+
+  //преобразование даты ф формат для выводы
+  function dateToString(date) {
+    var dateToDisplay = d3.time.format("%d.%m.%Y"); //формат даты для отображения
+    return dateToDisplay(date);
+  }
+
+  //перемещение элементов графики в исходные позиции
+  //при исчезновении курсора с оверлея
+  function mouseout() {
+
+    focus.style("display", "none"); //исчезают точки на линиях
+    tooltip.select("text.legendLegend").attr("display", null); //появляется статический текст на тултипе
+    //исчезает динамический текст на тултипе
+    tooltip.select("text.legendDate").attr("display", "none");
+    tooltip.select("text.infected").attr("display", "none");
+    tooltip.select("text.died").attr("display", "none");
+    tooltip.select("text.gtrend").attr("display", "none");
+
+    //перемещение тултипа
+    tooltip.attr("transform", "translate(" + tooltipPadding + ")");
+  }
+
+}); // конец основной функции
+
+// обработка входящих данных
+function type(d) {
+  d.date = formatDate.parse(d.date); // преобразование текста в дату
+  d.infected = Number(d.infected); // преобразование текста в цифры
+  d.died = Number(d.died);
+  d.gtrend = Number(d.gtrend)
+  return d;
+};
+
+        </script>
+                
+    </body>
+    
+</html>
