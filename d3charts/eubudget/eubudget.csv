@@ -1,0 +1,1405 @@
+﻿year,country,item,option,val
+1995,Czech Republic,Безпека і оборона,def,3.6
+1995,Czech Republic,Відсотки за борг,deb,1
+1995,Czech Republic,Державна служба,cle,3.4
+1995,Czech Republic,Дороги і ЖКГ,hou,8.7
+1995,Czech Republic,Медицина,med,1.5
+1995,Czech Republic,Освіта,edu,7.7
+1995,Czech Republic,Пенсії,old,6
+1995,Czech Republic,Соціальний захист,soc,5.3
+1995,Estonia,Безпека і оборона,def,4.5
+1995,Estonia,Відсотки за борг,deb,0.7
+1995,Estonia,Державна служба,cle,3.9
+1995,Estonia,Дороги і ЖКГ,hou,3.6
+1995,Estonia,Медицина,med,4.5
+1995,Estonia,Освіта,edu,8
+1995,Estonia,Пенсії,old,5.9
+1995,Estonia,Соціальний захист,soc,4.5
+1995,Hungary,Безпека і оборона,def,2.7
+1995,Hungary,Відсотки за борг,deb,9
+1995,Hungary,Державна служба,cle,4.9
+1995,Hungary,Дороги і ЖКГ,hou,3.6
+1995,Hungary,Медицина,med,4.3
+1995,Hungary,Освіта,edu,7.2
+1995,Hungary,Пенсії,old,1.2
+1995,Hungary,Соціальний захист,soc,8.3
+1995,Latvia,Безпека і оборона,def,3.7
+1995,Latvia,Дороги і ЖКГ,hou,0.8
+1995,Latvia,Медицина,med,3.2
+1995,Latvia,Освіта,edu,7.2
+1995,Lithuania,Безпека і оборона,def,3.1
+1995,Lithuania,Дороги і ЖКГ,hou,0.6
+1995,Lithuania,Медицина,med,4.6
+1995,Lithuania,Освіта,edu,5.3
+1995,Malta,Безпека і оборона,def,2.4
+1995,Malta,Дороги і ЖКГ,hou,1.4
+1995,Malta,Медицина,med,3.8
+1995,Malta,Освіта,edu,5
+1995,Slovakia,Безпека і оборона,def,5.1
+1995,Slovakia,Дороги і ЖКГ,hou,1.3
+1995,Slovakia,Медицина,med,2.9
+1995,Slovakia,Освіта,edu,3.5
+1996,Czech Republic,Безпека і оборона,def,3.5
+1996,Czech Republic,Відсотки за борг,deb,1.1
+1996,Czech Republic,Державна служба,cle,3.8
+1996,Czech Republic,Дороги і ЖКГ,hou,6.6
+1996,Czech Republic,Медицина,med,1.9
+1996,Czech Republic,Освіта,edu,8.1
+1996,Czech Republic,Пенсії,old,6
+1996,Czech Republic,Соціальний захист,soc,5.8
+1996,Estonia,Безпека і оборона,def,4
+1996,Estonia,Відсотки за борг,deb,0.7
+1996,Estonia,Державна служба,cle,3.6
+1996,Estonia,Дороги і ЖКГ,hou,3.1
+1996,Estonia,Медицина,med,4.5
+1996,Estonia,Освіта,edu,7.3
+1996,Estonia,Пенсії,old,6.2
+1996,Estonia,Соціальний захист,soc,4.1
+1996,Hungary,Безпека і оборона,def,2.9
+1996,Hungary,Відсотки за борг,deb,9.1
+1996,Hungary,Державна служба,cle,4.8
+1996,Hungary,Дороги і ЖКГ,hou,3.5
+1996,Hungary,Медицина,med,4.7
+1996,Hungary,Освіта,edu,7.3
+1996,Hungary,Пенсії,old,1.5
+1996,Hungary,Соціальний захист,soc,6.7
+1996,Latvia,Безпека і оборона,def,3.6
+1996,Latvia,Дороги і ЖКГ,hou,0.8
+1996,Latvia,Медицина,med,3
+1996,Latvia,Освіта,edu,5.9
+1996,Lithuania,Безпека і оборона,def,3.3
+1996,Lithuania,Дороги і ЖКГ,hou,0.6
+1996,Lithuania,Медицина,med,4.6
+1996,Lithuania,Освіта,edu,5.3
+1996,Malta,Безпека і оборона,def,2.5
+1996,Malta,Дороги і ЖКГ,hou,1.6
+1996,Malta,Медицина,med,4.1
+1996,Malta,Освіта,edu,5.4
+1996,Slovakia,Безпека і оборона,def,5.3
+1996,Slovakia,Дороги і ЖКГ,hou,1.5
+1996,Slovakia,Медицина,med,3.1
+1996,Slovakia,Освіта,edu,3.5
+1997,Czech Republic,Безпека і оборона,def,3.7
+1997,Czech Republic,Відсотки за борг,deb,1.1
+1997,Czech Republic,Державна служба,cle,3.2
+1997,Czech Republic,Дороги і ЖКГ,hou,5.4
+1997,Czech Republic,Медицина,med,1.4
+1997,Czech Republic,Освіта,edu,6.2
+1997,Czech Republic,Пенсії,old,6.1
+1997,Czech Republic,Соціальний захист,soc,6
+1997,Estonia,Безпека і оборона,def,3.9
+1997,Estonia,Відсотки за борг,deb,0.6
+1997,Estonia,Державна служба,cle,3.5
+1997,Estonia,Дороги і ЖКГ,hou,3.2
+1997,Estonia,Медицина,med,3.5
+1997,Estonia,Освіта,edu,7
+1997,Estonia,Пенсії,old,5.8
+1997,Estonia,Соціальний захист,soc,4
+1997,Hungary,Безпека і оборона,def,3.2
+1997,Hungary,Відсотки за борг,deb,8.6
+1997,Hungary,Державна служба,cle,4.4
+1997,Hungary,Дороги і ЖКГ,hou,3.2
+1997,Hungary,Медицина,med,3.6
+1997,Hungary,Освіта,edu,7.2
+1997,Hungary,Пенсії,old,1.3
+1997,Hungary,Соціальний захист,soc,6.7
+1997,Latvia,Безпека і оборона,def,3.1
+1997,Latvia,Дороги і ЖКГ,hou,0.7
+1997,Latvia,Медицина,med,3.9
+1997,Latvia,Освіта,edu,7.6
+1997,Lithuania,Безпека і оборона,def,3.8
+1997,Lithuania,Дороги і ЖКГ,hou,0.7
+1997,Lithuania,Медицина,med,6.2
+1997,Lithuania,Освіта,edu,5.2
+1997,Malta,Безпека і оборона,def,2.7
+1997,Malta,Дороги і ЖКГ,hou,1.6
+1997,Malta,Медицина,med,4.4
+1997,Malta,Освіта,edu,5.6
+1997,Slovakia,Безпека і оборона,def,4.8
+1997,Slovakia,Дороги і ЖКГ,hou,0.7
+1997,Slovakia,Медицина,med,2.8
+1997,Slovakia,Освіта,edu,3.6
+1998,Czech Republic,Безпека і оборона,def,3.2
+1998,Czech Republic,Відсотки за борг,deb,1
+1998,Czech Republic,Державна служба,cle,3.2
+1998,Czech Republic,Дороги і ЖКГ,hou,5.9
+1998,Czech Republic,Медицина,med,1.6
+1998,Czech Republic,Освіта,edu,6.6
+1998,Czech Republic,Пенсії,old,6
+1998,Czech Republic,Соціальний захист,soc,5.9
+1998,Estonia,Безпека і оборона,def,4.1
+1998,Estonia,Відсотки за борг,deb,0.7
+1998,Estonia,Державна служба,cle,3.9
+1998,Estonia,Дороги і ЖКГ,hou,3.2
+1998,Estonia,Медицина,med,3.2
+1998,Estonia,Освіта,edu,7.2
+1998,Estonia,Пенсії,old,5.8
+1998,Estonia,Соціальний захист,soc,4.1
+1998,Hungary,Безпека і оборона,def,3.2
+1998,Hungary,Відсотки за борг,deb,7.2
+1998,Hungary,Державна служба,cle,5.2
+1998,Hungary,Дороги і ЖКГ,hou,3.3
+1998,Hungary,Медицина,med,3.8
+1998,Hungary,Освіта,edu,7
+1998,Hungary,Пенсії,old,0.5
+1998,Hungary,Соціальний захист,soc,6.7
+1998,Latvia,Безпека і оборона,def,3.1
+1998,Latvia,Дороги і ЖКГ,hou,1
+1998,Latvia,Медицина,med,3.8
+1998,Latvia,Освіта,edu,8.2
+1998,Lithuania,Безпека і оборона,def,4.2
+1998,Lithuania,Дороги і ЖКГ,hou,0.8
+1998,Lithuania,Медицина,med,6.5
+1998,Lithuania,Освіта,edu,5.7
+1998,Malta,Безпека і оборона,def,2.6
+1998,Malta,Дороги і ЖКГ,hou,1.8
+1998,Malta,Медицина,med,4.4
+1998,Malta,Освіта,edu,5.3
+1998,Slovakia,Безпека і оборона,def,4.8
+1998,Slovakia,Дороги і ЖКГ,hou,0.6
+1998,Slovakia,Медицина,med,2.7
+1998,Slovakia,Освіта,edu,3.3
+1999,Czech Republic,Безпека і оборона,def,3.6
+1999,Czech Republic,Відсотки за борг,deb,0.9
+1999,Czech Republic,Державна служба,cle,3.5
+1999,Czech Republic,Дороги і ЖКГ,hou,5.3
+1999,Czech Republic,Медицина,med,1.6
+1999,Czech Republic,Освіта,edu,6.2
+1999,Czech Republic,Пенсії,old,6.1
+1999,Czech Republic,Соціальний захист,soc,6.1
+1999,Estonia,Безпека і оборона,def,4.1
+1999,Estonia,Відсотки за борг,deb,0.5
+1999,Estonia,Державна служба,cle,3.5
+1999,Estonia,Дороги і ЖКГ,hou,3.3
+1999,Estonia,Медицина,med,3.4
+1999,Estonia,Освіта,edu,7.5
+1999,Estonia,Пенсії,old,6.6
+1999,Estonia,Соціальний захист,soc,4.6
+1999,Hungary,Безпека і оборона,def,3.2
+1999,Hungary,Відсотки за борг,deb,6.9
+1999,Hungary,Державна служба,cle,5.2
+1999,Hungary,Дороги і ЖКГ,hou,3.7
+1999,Hungary,Медицина,med,3.8
+1999,Hungary,Освіта,edu,7
+1999,Hungary,Пенсії,old,1.2
+1999,Hungary,Соціальний захист,soc,6.5
+1999,Latvia,Безпека і оборона,def,3.4
+1999,Latvia,Дороги і ЖКГ,hou,1.3
+1999,Latvia,Медицина,med,3.9
+1999,Latvia,Освіта,edu,8
+1999,Lithuania,Безпека і оборона,def,3.3
+1999,Lithuania,Дороги і ЖКГ,hou,0.4
+1999,Lithuania,Медицина,med,7.1
+1999,Lithuania,Освіта,edu,6.7
+1999,Malta,Безпека і оборона,def,2.2
+1999,Malta,Дороги і ЖКГ,hou,1.2
+1999,Malta,Медицина,med,4.4
+1999,Malta,Освіта,edu,5.4
+1999,Slovakia,Безпека і оборона,def,4.4
+1999,Slovakia,Дороги і ЖКГ,hou,0.8
+1999,Slovakia,Медицина,med,2.4
+1999,Slovakia,Освіта,edu,3.8
+1999,Slovenia,Безпека і оборона,def,2.8
+1999,Slovenia,Відсотки за борг,deb,2.5
+1999,Slovenia,Державна служба,cle,3.4
+1999,Slovenia,Дороги і ЖКГ,hou,3.5
+1999,Slovenia,Медицина,med,4.6
+1999,Slovenia,Освіта,edu,8.5
+1999,Slovenia,Пенсії,old,3.3
+1999,Slovenia,Соціальний захист,soc,4.8
+2000,Czech Republic,Безпека і оборона,def,3.6
+2000,Czech Republic,Відсотки за борг,deb,0.8
+2000,Czech Republic,Державна служба,cle,3.6
+2000,Czech Republic,Дороги і ЖКГ,hou,5.3
+2000,Czech Republic,Медицина,med,1.5
+2000,Czech Republic,Освіта,edu,6.4
+2000,Czech Republic,Пенсії,old,6.3
+2000,Czech Republic,Соціальний захист,soc,6.2
+2000,Estonia,Безпека і оборона,def,4
+2000,Estonia,Відсотки за борг,deb,0.4
+2000,Estonia,Державна служба,cle,3.3
+2000,Estonia,Дороги і ЖКГ,hou,2.9
+2000,Estonia,Медицина,med,2.9
+2000,Estonia,Освіта,edu,6.9
+2000,Estonia,Пенсії,old,6
+2000,Estonia,Соціальний захист,soc,4
+2000,Hungary,Безпека і оборона,def,3.3
+2000,Hungary,Відсотки за борг,deb,5.4
+2000,Hungary,Державна служба,cle,4.8
+2000,Hungary,Дороги і ЖКГ,hou,3.7
+2000,Hungary,Медицина,med,4.1
+2000,Hungary,Освіта,edu,7.1
+2000,Hungary,Пенсії,old,0.8
+2000,Hungary,Соціальний захист,soc,5.7
+2000,Latvia,Безпека і оборона,def,3.3
+2000,Latvia,Дороги і ЖКГ,hou,1.4
+2000,Latvia,Медицина,med,4
+2000,Latvia,Освіта,edu,7.5
+2000,Lithuania,Безпека і оборона,def,3.4
+2000,Lithuania,Відсотки за борг,deb,1.9
+2000,Lithuania,Державна служба,cle,3.4
+2000,Lithuania,Дороги і ЖКГ,hou,3.6
+2000,Lithuania,Медицина,med,6.2
+2000,Lithuania,Освіта,edu,6
+2000,Lithuania,Пенсії,old,1.9
+2000,Lithuania,Соціальний захист,soc,1.5
+2000,Malta,Безпека і оборона,def,2.2
+2000,Malta,Дороги і ЖКГ,hou,1.2
+2000,Malta,Медицина,med,4.7
+2000,Malta,Освіта,edu,5.1
+2000,Slovakia,Безпека і оборона,def,4.4
+2000,Slovakia,Дороги і ЖКГ,hou,1.1
+2000,Slovakia,Медицина,med,2.6
+2000,Slovakia,Освіта,edu,3.7
+2000,Slovenia,Безпека і оборона,def,2.9
+2000,Slovenia,Відсотки за борг,deb,2.4
+2000,Slovenia,Державна служба,cle,3.8
+2000,Slovenia,Дороги і ЖКГ,hou,3.5
+2000,Slovenia,Медицина,med,4.6
+2000,Slovenia,Освіта,edu,8
+2000,Slovenia,Пенсії,old,3
+2000,Slovenia,Соціальний захист,soc,4.9
+2001,Cyprus,Безпека і оборона,def,3.6
+2001,Cyprus,Відсотки за борг,deb,5.1
+2001,Cyprus,Державна служба,cle,5.8
+2001,Cyprus,Дороги і ЖКГ,hou,3.6
+2001,Cyprus,Медицина,med,2.7
+2001,Cyprus,Освіта,edu,5.2
+2001,Cyprus,Пенсії,old,0.4
+2001,Cyprus,Соціальний захист,soc,2
+2001,Czech Republic,Безпека і оборона,def,3.6
+2001,Czech Republic,Відсотки за борг,deb,1
+2001,Czech Republic,Державна служба,cle,3.7
+2001,Czech Republic,Дороги і ЖКГ,hou,5.7
+2001,Czech Republic,Медицина,med,1.7
+2001,Czech Republic,Освіта,edu,6.6
+2001,Czech Republic,Пенсії,old,6.2
+2001,Czech Republic,Соціальний захист,soc,6.2
+2001,Estonia,Безпека і оборона,def,3.8
+2001,Estonia,Відсотки за борг,deb,0.3
+2001,Estonia,Державна служба,cle,3
+2001,Estonia,Дороги і ЖКГ,hou,2.9
+2001,Estonia,Медицина,med,2.7
+2001,Estonia,Освіта,edu,6.9
+2001,Estonia,Пенсії,old,5.6
+2001,Estonia,Соціальний захист,soc,3.8
+2001,Hungary,Безпека і оборона,def,3.4
+2001,Hungary,Відсотки за борг,deb,4.7
+2001,Hungary,Державна служба,cle,6.5
+2001,Hungary,Дороги і ЖКГ,hou,3.1
+2001,Hungary,Медицина,med,3.9
+2001,Hungary,Освіта,edu,7.2
+2001,Hungary,Пенсії,old,1.3
+2001,Hungary,Соціальний захист,soc,5.5
+2001,Latvia,Безпека і оборона,def,3.2
+2001,Latvia,Дороги і ЖКГ,hou,1.5
+2001,Latvia,Медицина,med,3.3
+2001,Latvia,Освіта,edu,7.5
+2001,Lithuania,Безпека і оборона,def,3.3
+2001,Lithuania,Відсотки за борг,deb,1.7
+2001,Lithuania,Державна служба,cle,3.6
+2001,Lithuania,Дороги і ЖКГ,hou,2.9
+2001,Lithuania,Медицина,med,6.6
+2001,Lithuania,Освіта,edu,5.9
+2001,Lithuania,Пенсії,old,1.7
+2001,Lithuania,Соціальний захист,soc,1.2
+2001,Malta,Безпека і оборона,def,2.3
+2001,Malta,Відсотки за борг,deb,3.8
+2001,Malta,Державна служба,cle,3.3
+2001,Malta,Дороги і ЖКГ,hou,3.1
+2001,Malta,Медицина,med,4.8
+2001,Malta,Освіта,edu,5.7
+2001,Malta,Пенсії,old,7
+2001,Malta,Соціальний захист,soc,6
+2001,Slovakia,Безпека і оборона,def,4.4
+2001,Slovakia,Дороги і ЖКГ,hou,0.6
+2001,Slovakia,Медицина,med,2.5
+2001,Slovakia,Освіта,edu,3.5
+2001,Slovenia,Безпека і оборона,def,3.1
+2001,Slovenia,Відсотки за борг,deb,2.4
+2001,Slovenia,Державна служба,cle,4.6
+2001,Slovenia,Дороги і ЖКГ,hou,3.1
+2001,Slovenia,Медицина,med,4.6
+2001,Slovenia,Освіта,edu,8.4
+2001,Slovenia,Пенсії,old,3.2
+2001,Slovenia,Соціальний захист,soc,4.8
+2002,Cyprus,Безпека і оборона,def,3.8
+2002,Cyprus,Відсотки за борг,deb,4.5
+2002,Cyprus,Державна служба,cle,6.3
+2002,Cyprus,Дороги і ЖКГ,hou,3.9
+2002,Cyprus,Медицина,med,2.9
+2002,Cyprus,Освіта,edu,5.5
+2002,Cyprus,Пенсії,old,0.5
+2002,Cyprus,Соціальний захист,soc,2.2
+2002,Czech Republic,Безпека і оборона,def,3.8
+2002,Czech Republic,Відсотки за борг,deb,1.1
+2002,Czech Republic,Державна служба,cle,4
+2002,Czech Republic,Дороги і ЖКГ,hou,4.8
+2002,Czech Republic,Медицина,med,1.5
+2002,Czech Republic,Освіта,edu,7.1
+2002,Czech Republic,Пенсії,old,6.4
+2002,Czech Republic,Соціальний захист,soc,7
+2002,Estonia,Безпека і оборона,def,4
+2002,Estonia,Відсотки за борг,deb,0.4
+2002,Estonia,Державна служба,cle,3.4
+2002,Estonia,Дороги і ЖКГ,hou,2.9
+2002,Estonia,Медицина,med,3
+2002,Estonia,Освіта,edu,7.1
+2002,Estonia,Пенсії,old,5.6
+2002,Estonia,Соціальний захист,soc,3.7
+2002,Hungary,Безпека і оборона,def,3.8
+2002,Hungary,Відсотки за борг,deb,4
+2002,Hungary,Державна служба,cle,6
+2002,Hungary,Дороги і ЖКГ,hou,3.8
+2002,Hungary,Медицина,med,4.3
+2002,Hungary,Освіта,edu,7.4
+2002,Hungary,Пенсії,old,2
+2002,Hungary,Соціальний захист,soc,5.7
+2002,Latvia,Безпека і оборона,def,3.4
+2002,Latvia,Дороги і ЖКГ,hou,1.4
+2002,Latvia,Медицина,med,3.6
+2002,Latvia,Освіта,edu,7.7
+2002,Lithuania,Безпека і оборона,def,3.4
+2002,Lithuania,Відсотки за борг,deb,1.5
+2002,Lithuania,Державна служба,cle,2.9
+2002,Lithuania,Дороги і ЖКГ,hou,2.8
+2002,Lithuania,Медицина,med,6
+2002,Lithuania,Освіта,edu,6
+2002,Lithuania,Пенсії,old,1.5
+2002,Lithuania,Соціальний захист,soc,1.4
+2002,Malta,Безпека і оборона,def,2.2
+2002,Malta,Відсотки за борг,deb,3.9
+2002,Malta,Державна служба,cle,3.1
+2002,Malta,Дороги і ЖКГ,hou,2.8
+2002,Malta,Медицина,med,5.4
+2002,Malta,Освіта,edu,5.8
+2002,Malta,Пенсії,old,6.8
+2002,Malta,Соціальний захист,soc,6.3
+2002,Poland,Безпека і оборона,def,3.7
+2002,Poland,Відсотки за борг,deb,2.8
+2002,Poland,Державна служба,cle,3.7
+2002,Poland,Дороги і ЖКГ,hou,3.7
+2002,Poland,Медицина,med,3
+2002,Poland,Освіта,edu,9.8
+2002,Poland,Пенсії,old,4.4
+2002,Poland,Соціальний захист,soc,4.9
+2002,Slovakia,Безпека і оборона,def,4.4
+2002,Slovakia,Дороги і ЖКГ,hou,0.8
+2002,Slovakia,Медицина,med,2.5
+2002,Slovakia,Освіта,edu,3.7
+2002,Slovenia,Безпека і оборона,def,3
+2002,Slovenia,Відсотки за борг,deb,2.3
+2002,Slovenia,Державна служба,cle,3.8
+2002,Slovenia,Дороги і ЖКГ,hou,2.6
+2002,Slovenia,Медицина,med,4.5
+2002,Slovenia,Освіта,edu,8.4
+2002,Slovenia,Пенсії,old,3.4
+2002,Slovenia,Соціальний захист,soc,4.8
+2003,Cyprus,Безпека і оборона,def,4.1
+2003,Cyprus,Відсотки за борг,deb,4.5
+2003,Cyprus,Державна служба,cle,7
+2003,Cyprus,Дороги і ЖКГ,hou,4.2
+2003,Cyprus,Медицина,med,3.1
+2003,Cyprus,Освіта,edu,6.2
+2003,Cyprus,Пенсії,old,0.6
+2003,Cyprus,Соціальний захист,soc,2.6
+2003,Czech Republic,Безпека і оборона,def,3.9
+2003,Czech Republic,Відсотки за борг,deb,1
+2003,Czech Republic,Державна служба,cle,5.1
+2003,Czech Republic,Дороги і ЖКГ,hou,9
+2003,Czech Republic,Медицина,med,1.9
+2003,Czech Republic,Освіта,edu,7.8
+2003,Czech Republic,Пенсії,old,6.4
+2003,Czech Republic,Соціальний захист,soc,6.8
+2003,Estonia,Безпека і оборона,def,4.2
+2003,Estonia,Відсотки за борг,deb,0.4
+2003,Estonia,Державна служба,cle,2.8
+2003,Estonia,Дороги і ЖКГ,hou,2.6
+2003,Estonia,Медицина,med,3
+2003,Estonia,Освіта,edu,6.8
+2003,Estonia,Пенсії,old,5.7
+2003,Estonia,Соціальний захист,soc,3.4
+2003,Hungary,Безпека і оборона,def,3.5
+2003,Hungary,Відсотки за борг,deb,4
+2003,Hungary,Державна служба,cle,5.3
+2003,Hungary,Дороги і ЖКГ,hou,2.6
+2003,Hungary,Медицина,med,4.4
+2003,Hungary,Освіта,edu,8.8
+2003,Hungary,Пенсії,old,1.8
+2003,Hungary,Соціальний захист,soc,6.3
+2003,Latvia,Безпека і оборона,def,3.3
+2003,Latvia,Дороги і ЖКГ,hou,1.2
+2003,Latvia,Медицина,med,3.2
+2003,Latvia,Освіта,edu,7.3
+2003,Lithuania,Безпека і оборона,def,3.3
+2003,Lithuania,Відсотки за борг,deb,1.3
+2003,Lithuania,Державна служба,cle,2.8
+2003,Lithuania,Дороги і ЖКГ,hou,2.6
+2003,Lithuania,Медицина,med,5.9
+2003,Lithuania,Освіта,edu,5.7
+2003,Lithuania,Пенсії,old,1.6
+2003,Lithuania,Соціальний захист,soc,1.1
+2003,Malta,Безпека і оборона,def,2.4
+2003,Malta,Відсотки за борг,deb,3.6
+2003,Malta,Державна служба,cle,2.9
+2003,Malta,Дороги і ЖКГ,hou,6.5
+2003,Malta,Медицина,med,5.5
+2003,Malta,Освіта,edu,5.9
+2003,Malta,Пенсії,old,6.7
+2003,Malta,Соціальний захист,soc,6.4
+2003,Poland,Безпека і оборона,def,3.9
+2003,Poland,Відсотки за борг,deb,3.1
+2003,Poland,Державна служба,cle,4
+2003,Poland,Дороги і ЖКГ,hou,3.9
+2003,Poland,Медицина,med,2.9
+2003,Poland,Освіта,edu,9.8
+2003,Poland,Пенсії,old,4.4
+2003,Poland,Соціальний захист,soc,4.8
+2003,Slovakia,Безпека і оборона,def,3.1
+2003,Slovakia,Дороги і ЖКГ,hou,0.7
+2003,Slovakia,Медицина,med,1.9
+2003,Slovakia,Освіта,edu,5.6
+2003,Slovenia,Безпека і оборона,def,3.1
+2003,Slovenia,Відсотки за борг,deb,2
+2003,Slovenia,Державна служба,cle,3.9
+2003,Slovenia,Дороги і ЖКГ,hou,3
+2003,Slovenia,Медицина,med,4.5
+2003,Slovenia,Освіта,edu,8.4
+2003,Slovenia,Пенсії,old,3.3
+2003,Slovenia,Соціальний захист,soc,4.8
+2004,Cyprus,Безпека і оборона,def,3.7
+2004,Cyprus,Відсотки за борг,deb,4.6
+2004,Cyprus,Державна служба,cle,6.6
+2004,Cyprus,Дороги і ЖКГ,hou,4
+2004,Cyprus,Медицина,med,2.8
+2004,Cyprus,Освіта,edu,5.9
+2004,Cyprus,Пенсії,old,0.6
+2004,Cyprus,Соціальний захист,soc,2.7
+2004,Czech Republic,Безпека і оборона,def,3.3
+2004,Czech Republic,Відсотки за борг,deb,1.1
+2004,Czech Republic,Державна служба,cle,5
+2004,Czech Republic,Дороги і ЖКГ,hou,6.5
+2004,Czech Republic,Медицина,med,1.7
+2004,Czech Republic,Освіта,edu,7
+2004,Czech Republic,Пенсії,old,6.1
+2004,Czech Republic,Соціальний захист,soc,5.9
+2004,Estonia,Безпека і оборона,def,3.6
+2004,Estonia,Відсотки за борг,deb,0.3
+2004,Estonia,Державна служба,cle,2.9
+2004,Estonia,Дороги і ЖКГ,hou,2.6
+2004,Estonia,Медицина,med,3
+2004,Estonia,Освіта,edu,6.6
+2004,Estonia,Пенсії,old,5.6
+2004,Estonia,Соціальний захист,soc,3.8
+2004,Hungary,Безпека і оборона,def,3.3
+2004,Hungary,Відсотки за борг,deb,4.3
+2004,Hungary,Державна служба,cle,5.8
+2004,Hungary,Дороги і ЖКГ,hou,3
+2004,Hungary,Медицина,med,4.9
+2004,Hungary,Освіта,edu,7.9
+2004,Hungary,Пенсії,old,2.2
+2004,Hungary,Соціальний захист,soc,6.4
+2004,Latvia,Безпека і оборона,def,3.5
+2004,Latvia,Дороги і ЖКГ,hou,1.2
+2004,Latvia,Медицина,med,3.3
+2004,Latvia,Освіта,edu,7.9
+2004,Lithuania,Безпека і оборона,def,3.3
+2004,Lithuania,Відсотки за борг,deb,1
+2004,Lithuania,Державна служба,cle,4
+2004,Lithuania,Дороги і ЖКГ,hou,2.6
+2004,Lithuania,Медицина,med,3.2
+2004,Lithuania,Освіта,edu,5.8
+2004,Lithuania,Пенсії,old,0.9
+2004,Lithuania,Соціальний захист,soc,1.8
+2004,Malta,Безпека і оборона,def,2.4
+2004,Malta,Відсотки за борг,deb,3.8
+2004,Malta,Державна служба,cle,3.8
+2004,Malta,Дороги і ЖКГ,hou,2.2
+2004,Malta,Медицина,med,5.7
+2004,Malta,Освіта,edu,5.5
+2004,Malta,Пенсії,old,6.9
+2004,Malta,Соціальний захист,soc,6.3
+2004,Poland,Безпека і оборона,def,3.8
+2004,Poland,Відсотки за борг,deb,2.8
+2004,Poland,Державна служба,cle,3.9
+2004,Poland,Дороги і ЖКГ,hou,3.5
+2004,Poland,Медицина,med,2.9
+2004,Poland,Освіта,edu,9.2
+2004,Poland,Пенсії,old,4.4
+2004,Poland,Соціальний захист,soc,4.2
+2004,Slovakia,Безпека і оборона,def,2.9
+2004,Slovakia,Дороги і ЖКГ,hou,0.6
+2004,Slovakia,Медицина,med,1.7
+2004,Slovakia,Освіта,edu,5.1
+2004,Slovenia,Безпека і оборона,def,3.1
+2004,Slovenia,Відсотки за борг,deb,1.8
+2004,Slovenia,Державна служба,cle,4.1
+2004,Slovenia,Дороги і ЖКГ,hou,2.8
+2004,Slovenia,Медицина,med,4.4
+2004,Slovenia,Освіта,edu,8.9
+2004,Slovenia,Пенсії,old,3.2
+2004,Slovenia,Соціальний захист,soc,4.9
+2005,Cyprus,Безпека і оборона,def,3.6
+2005,Cyprus,Відсотки за борг,deb,4.6
+2005,Cyprus,Державна служба,cle,7
+2005,Cyprus,Дороги і ЖКГ,hou,4.2
+2005,Cyprus,Медицина,med,2.8
+2005,Cyprus,Освіта,edu,5.8
+2005,Cyprus,Пенсії,old,0.6
+2005,Cyprus,Соціальний захист,soc,2.8
+2005,Czech Republic,Безпека і оборона,def,3.6
+2005,Czech Republic,Відсотки за борг,deb,1.2
+2005,Czech Republic,Державна служба,cle,5
+2005,Czech Republic,Дороги і ЖКГ,hou,6
+2005,Czech Republic,Медицина,med,1.5
+2005,Czech Republic,Освіта,edu,6.9
+2005,Czech Republic,Пенсії,old,5.9
+2005,Czech Republic,Соціальний захист,soc,5.9
+2005,Estonia,Безпека і оборона,def,3.5
+2005,Estonia,Відсотки за борг,deb,0.3
+2005,Estonia,Державна служба,cle,2.8
+2005,Estonia,Дороги і ЖКГ,hou,2.8
+2005,Estonia,Медицина,med,2.9
+2005,Estonia,Освіта,edu,6.2
+2005,Estonia,Пенсії,old,5.5
+2005,Estonia,Соціальний захист,soc,3.5
+2005,Hungary,Безпека і оборона,def,3.4
+2005,Hungary,Відсотки за борг,deb,4
+2005,Hungary,Державна служба,cle,5.9
+2005,Hungary,Дороги і ЖКГ,hou,3.6
+2005,Hungary,Медицина,med,4.9
+2005,Hungary,Освіта,edu,8
+2005,Hungary,Пенсії,old,2.6
+2005,Hungary,Соціальний захист,soc,6.9
+2005,Latvia,Безпека і оборона,def,3.4
+2005,Latvia,Дороги і ЖКГ,hou,1.6
+2005,Latvia,Медицина,med,4.1
+2005,Latvia,Освіта,edu,7.2
+2005,Lithuania,Безпека і оборона,def,3.1
+2005,Lithuania,Відсотки за борг,deb,0.8
+2005,Lithuania,Державна служба,cle,4.3
+2005,Lithuania,Дороги і ЖКГ,hou,2.4
+2005,Lithuania,Медицина,med,3.6
+2005,Lithuania,Освіта,edu,5.4
+2005,Lithuania,Пенсії,old,0.9
+2005,Lithuania,Соціальний захист,soc,1.6
+2005,Malta,Безпека і оборона,def,2.2
+2005,Malta,Відсотки за борг,deb,3.8
+2005,Malta,Державна служба,cle,3.2
+2005,Malta,Дороги і ЖКГ,hou,2.7
+2005,Malta,Медицина,med,6
+2005,Malta,Освіта,edu,5.4
+2005,Malta,Пенсії,old,7
+2005,Malta,Соціальний захист,soc,6.2
+2005,Poland,Безпека і оборона,def,3.9
+2005,Poland,Відсотки за борг,deb,2.5
+2005,Poland,Державна служба,cle,3.5
+2005,Poland,Дороги і ЖКГ,hou,3.9
+2005,Poland,Медицина,med,3.1
+2005,Poland,Освіта,edu,9.1
+2005,Poland,Пенсії,old,4.4
+2005,Poland,Соціальний захист,soc,4.3
+2005,Slovakia,Безпека і оборона,def,2.7
+2005,Slovakia,Дороги і ЖКГ,hou,0.8
+2005,Slovakia,Медицина,med,1.6
+2005,Slovakia,Освіта,edu,5.3
+2005,Slovenia,Безпека і оборона,def,3
+2005,Slovenia,Відсотки за борг,deb,1.6
+2005,Slovenia,Державна служба,cle,4.4
+2005,Slovenia,Дороги і ЖКГ,hou,2.6
+2005,Slovenia,Медицина,med,4.9
+2005,Slovenia,Освіта,edu,9.1
+2005,Slovenia,Пенсії,old,3.2
+2005,Slovenia,Соціальний захист,soc,5
+2006,Cyprus,Безпека і оборона,def,3.7
+2006,Cyprus,Відсотки за борг,deb,4.1
+2006,Cyprus,Державна служба,cle,6.9
+2006,Cyprus,Дороги і ЖКГ,hou,4.1
+2006,Cyprus,Медицина,med,2.8
+2006,Cyprus,Освіта,edu,5.8
+2006,Cyprus,Пенсії,old,0.6
+2006,Cyprus,Соціальний захист,soc,2.7
+2006,Czech Republic,Безпека і оборона,def,3.2
+2006,Czech Republic,Відсотки за борг,deb,1.1
+2006,Czech Republic,Державна служба,cle,4.3
+2006,Czech Republic,Дороги і ЖКГ,hou,5.9
+2006,Czech Republic,Медицина,med,1.7
+2006,Czech Republic,Освіта,edu,7.1
+2006,Czech Republic,Пенсії,old,6
+2006,Czech Republic,Соціальний захист,soc,5.8
+2006,Estonia,Безпека і оборона,def,3.3
+2006,Estonia,Відсотки за борг,deb,0.2
+2006,Estonia,Державна служба,cle,3.3
+2006,Estonia,Дороги і ЖКГ,hou,2.8
+2006,Estonia,Медицина,med,3.2
+2006,Estonia,Освіта,edu,6.2
+2006,Estonia,Пенсії,old,5.4
+2006,Estonia,Соціальний захист,soc,3.2
+2006,Hungary,Безпека і оборона,def,3.6
+2006,Hungary,Відсотки за борг,deb,3.8
+2006,Hungary,Державна служба,cle,6
+2006,Hungary,Дороги і ЖКГ,hou,4.8
+2006,Hungary,Медицина,med,6.1
+2006,Hungary,Освіта,edu,7.7
+2006,Hungary,Пенсії,old,3.1
+2006,Hungary,Соціальний захист,soc,7.3
+2006,Latvia,Безпека і оборона,def,3.9
+2006,Latvia,Дороги і ЖКГ,hou,1.7
+2006,Latvia,Медицина,med,4.6
+2006,Latvia,Освіта,edu,7.4
+2006,Lithuania,Безпека і оборона,def,3.5
+2006,Lithuania,Відсотки за борг,deb,0.7
+2006,Lithuania,Державна служба,cle,3.5
+2006,Lithuania,Дороги і ЖКГ,hou,2.4
+2006,Lithuania,Медицина,med,4.3
+2006,Lithuania,Освіта,edu,5.4
+2006,Lithuania,Пенсії,old,0.6
+2006,Lithuania,Соціальний захист,soc,1.9
+2006,Malta,Безпека і оборона,def,2.1
+2006,Malta,Відсотки за борг,deb,3.8
+2006,Malta,Державна служба,cle,3.5
+2006,Malta,Дороги і ЖКГ,hou,2.1
+2006,Malta,Медицина,med,6
+2006,Malta,Освіта,edu,5.5
+2006,Malta,Пенсії,old,7
+2006,Malta,Соціальний захист,soc,6.3
+2006,Poland,Безпека і оборона,def,4.2
+2006,Poland,Відсотки за борг,deb,2.4
+2006,Poland,Державна служба,cle,3.5
+2006,Poland,Дороги і ЖКГ,hou,4
+2006,Poland,Медицина,med,3.3
+2006,Poland,Освіта,edu,9.1
+2006,Poland,Пенсії,old,4.2
+2006,Poland,Соціальний захист,soc,4.5
+2006,Slovakia,Безпека і оборона,def,3
+2006,Slovakia,Дороги і ЖКГ,hou,0.7
+2006,Slovakia,Медицина,med,1.8
+2006,Slovakia,Освіта,edu,5.4
+2006,Slovenia,Безпека і оборона,def,3.1
+2006,Slovenia,Відсотки за борг,deb,1.5
+2006,Slovenia,Державна служба,cle,4.2
+2006,Slovenia,Дороги і ЖКГ,hou,2.6
+2006,Slovenia,Медицина,med,4.2
+2006,Slovenia,Освіта,edu,8.9
+2006,Slovenia,Пенсії,old,3
+2006,Slovenia,Соціальний захист,soc,4.8
+2006,Ukraine,Безпека і оборона,def,3.5
+2006,Ukraine,Відсотки за борг,deb,0.6
+2006,Ukraine,Державна служба,cle,3
+2006,Ukraine,Дороги і ЖКГ,hou,3.1
+2006,Ukraine,Медицина,med,3.6
+2006,Ukraine,Освіта,edu,6.2
+2006,Ukraine,Пенсії,old,4.9
+2006,Ukraine,Соціальний захист,soc,2.7
+2007,Cyprus,Безпека і оборона,def,3.5
+2007,Cyprus,Відсотки за борг,deb,3.9
+2007,Cyprus,Державна служба,cle,7.4
+2007,Cyprus,Дороги і ЖКГ,hou,3.9
+2007,Cyprus,Медицина,med,2.6
+2007,Cyprus,Освіта,edu,5.8
+2007,Cyprus,Пенсії,old,0.6
+2007,Cyprus,Соціальний захист,soc,2.7
+2007,Czech Republic,Безпека і оборона,def,3
+2007,Czech Republic,Відсотки за борг,deb,1.2
+2007,Czech Republic,Державна служба,cle,3.6
+2007,Czech Republic,Дороги і ЖКГ,hou,5.5
+2007,Czech Republic,Медицина,med,1.7
+2007,Czech Republic,Освіта,edu,6.7
+2007,Czech Republic,Пенсії,old,6
+2007,Czech Republic,Соціальний захист,soc,6.5
+2007,Estonia,Безпека і оборона,def,3.4
+2007,Estonia,Відсотки за борг,deb,0.2
+2007,Estonia,Державна служба,cle,3.2
+2007,Estonia,Дороги і ЖКГ,hou,3.2
+2007,Estonia,Медицина,med,3.3
+2007,Estonia,Освіта,edu,6
+2007,Estonia,Пенсії,old,5.3
+2007,Estonia,Соціальний захист,soc,3.2
+2007,Hungary,Безпека і оборона,def,3.2
+2007,Hungary,Відсотки за борг,deb,4
+2007,Hungary,Державна служба,cle,5.8
+2007,Hungary,Дороги і ЖКГ,hou,5.3
+2007,Hungary,Медицина,med,4.5
+2007,Hungary,Освіта,edu,7.3
+2007,Hungary,Пенсії,old,2.1
+2007,Hungary,Соціальний захист,soc,6.7
+2007,Latvia,Безпека і оборона,def,4
+2007,Latvia,Відсотки за борг,deb,0.6
+2007,Latvia,Державна служба,cle,3.5
+2007,Latvia,Дороги і ЖКГ,hou,4.7
+2007,Latvia,Медицина,med,4.3
+2007,Latvia,Освіта,edu,7.4
+2007,Latvia,Пенсії,old,0.3
+2007,Latvia,Соціальний захист,soc,1.8
+2007,Lithuania,Безпека і оборона,def,3.5
+2007,Lithuania,Відсотки за борг,deb,0.7
+2007,Lithuania,Державна служба,cle,3.3
+2007,Lithuania,Дороги і ЖКГ,hou,2.1
+2007,Lithuania,Медицина,med,4.2
+2007,Lithuania,Освіта,edu,5.3
+2007,Lithuania,Пенсії,old,0.6
+2007,Lithuania,Соціальний захист,soc,1.9
+2007,Malta,Безпека і оборона,def,2
+2007,Malta,Відсотки за борг,deb,3.5
+2007,Malta,Державна служба,cle,3.5
+2007,Malta,Дороги і ЖКГ,hou,1.9
+2007,Malta,Медицина,med,5.5
+2007,Malta,Освіта,edu,5.2
+2007,Malta,Пенсії,old,7.3
+2007,Malta,Соціальний захист,soc,6.1
+2007,Poland,Безпека і оборона,def,4.4
+2007,Poland,Відсотки за борг,deb,2.2
+2007,Poland,Державна служба,cle,3.3
+2007,Poland,Дороги і ЖКГ,hou,4.2
+2007,Poland,Медицина,med,3.2
+2007,Poland,Освіта,edu,8.7
+2007,Poland,Пенсії,old,4
+2007,Poland,Соціальний захист,soc,4.4
+2007,Slovakia,Безпека і оборона,def,2.7
+2007,Slovakia,Відсотки за борг,deb,1.5
+2007,Slovakia,Державна служба,cle,5.4
+2007,Slovakia,Дороги і ЖКГ,hou,4.6
+2007,Slovakia,Медицина,med,1.5
+2007,Slovakia,Освіта,edu,4.8
+2007,Slovakia,Пенсії,old,1.9
+2007,Slovakia,Соціальний захист,soc,4.3
+2007,Slovenia,Безпека і оборона,def,3.1
+2007,Slovenia,Відсотки за борг,deb,1.2
+2007,Slovenia,Державна служба,cle,4.5
+2007,Slovenia,Дороги і ЖКГ,hou,2.7
+2007,Slovenia,Медицина,med,3.9
+2007,Slovenia,Освіта,edu,7.9
+2007,Slovenia,Пенсії,old,2.7
+2007,Slovenia,Соціальний захист,soc,4.3
+2007,Ukraine,Безпека і оборона,def,3.9
+2007,Ukraine,Відсотки за борг,deb,0.5
+2007,Ukraine,Державна служба,cle,2.9
+2007,Ukraine,Дороги і ЖКГ,hou,2.8
+2007,Ukraine,Медицина,med,3.7
+2007,Ukraine,Освіта,edu,6.2
+2007,Ukraine,Пенсії,old,3.6
+2007,Ukraine,Соціальний захист,soc,3.1
+2008,Cyprus,Безпека і оборона,def,3.5
+2008,Cyprus,Відсотки за борг,deb,4.1
+2008,Cyprus,Державна служба,cle,7.3
+2008,Cyprus,Дороги і ЖКГ,hou,4.1
+2008,Cyprus,Медицина,med,2.7
+2008,Cyprus,Освіта,edu,6.2
+2008,Cyprus,Пенсії,old,0.7
+2008,Cyprus,Соціальний захист,soc,2.8
+2008,Czech Republic,Безпека і оборона,def,2.9
+2008,Czech Republic,Відсотки за борг,deb,1.1
+2008,Czech Republic,Державна служба,cle,3.6
+2008,Czech Republic,Дороги і ЖКГ,hou,6
+2008,Czech Republic,Медицина,med,1.6
+2008,Czech Republic,Освіта,edu,6.8
+2008,Czech Republic,Пенсії,old,6.2
+2008,Czech Republic,Соціальний захист,soc,6.4
+2008,Estonia,Безпека і оборона,def,4.3
+2008,Estonia,Відсотки за борг,deb,0.2
+2008,Estonia,Державна служба,cle,3
+2008,Estonia,Дороги і ЖКГ,hou,3.7
+2008,Estonia,Медицина,med,3.8
+2008,Estonia,Освіта,edu,6.8
+2008,Estonia,Пенсії,old,6.4
+2008,Estonia,Соціальний захист,soc,4
+2008,Hungary,Безпека і оборона,def,3.2
+2008,Hungary,Відсотки за борг,deb,4.1
+2008,Hungary,Державна служба,cle,6.9
+2008,Hungary,Дороги і ЖКГ,hou,4.5
+2008,Hungary,Медицина,med,4
+2008,Hungary,Освіта,edu,7
+2008,Hungary,Пенсії,old,2
+2008,Hungary,Соціальний захист,soc,6.8
+2008,Latvia,Безпека і оборона,def,3.7
+2008,Latvia,Відсотки за борг,deb,0.9
+2008,Latvia,Державна служба,cle,3.4
+2008,Latvia,Дороги і ЖКГ,hou,5.5
+2008,Latvia,Медицина,med,4.8
+2008,Latvia,Освіта,edu,8.4
+2008,Latvia,Пенсії,old,0.3
+2008,Latvia,Соціальний захист,soc,1.7
+2008,Lithuania,Безпека і оборона,def,3.3
+2008,Lithuania,Відсотки за борг,deb,0.8
+2008,Lithuania,Державна служба,cle,3.1
+2008,Lithuania,Дороги і ЖКГ,hou,2.6
+2008,Lithuania,Медицина,med,4.5
+2008,Lithuania,Освіта,edu,6.1
+2008,Lithuania,Пенсії,old,0.6
+2008,Lithuania,Соціальний захист,soc,2.5
+2008,Malta,Безпека і оборона,def,2
+2008,Malta,Відсотки за борг,deb,3.4
+2008,Malta,Державна служба,cle,3.9
+2008,Malta,Дороги і ЖКГ,hou,3.3
+2008,Malta,Медицина,med,5.3
+2008,Malta,Освіта,edu,5.2
+2008,Malta,Пенсії,old,7.2
+2008,Malta,Соціальний захист,soc,6.1
+2008,Poland,Безпека і оборона,def,4.4
+2008,Poland,Відсотки за борг,deb,2.2
+2008,Poland,Державна служба,cle,3.1
+2008,Poland,Дороги і ЖКГ,hou,4.5
+2008,Poland,Медицина,med,3.5
+2008,Poland,Освіта,edu,8.7
+2008,Poland,Пенсії,old,4.4
+2008,Poland,Соціальний захист,soc,4.5
+2008,Slovakia,Безпека і оборона,def,2.7
+2008,Slovakia,Відсотки за борг,deb,1.4
+2008,Slovakia,Державна служба,cle,5.3
+2008,Slovakia,Дороги і ЖКГ,hou,4.8
+2008,Slovakia,Медицина,med,1.5
+2008,Slovakia,Освіта,edu,4.9
+2008,Slovakia,Пенсії,old,1.8
+2008,Slovakia,Соціальний захист,soc,4.2
+2008,Slovenia,Безпека і оборона,def,3.1
+2008,Slovenia,Відсотки за борг,deb,1.1
+2008,Slovenia,Державна служба,cle,4.3
+2008,Slovenia,Дороги і ЖКГ,hou,3.2
+2008,Slovenia,Медицина,med,4.1
+2008,Slovenia,Освіта,edu,8.1
+2008,Slovenia,Пенсії,old,2.6
+2008,Slovenia,Соціальний захист,soc,4.5
+2008,Ukraine,Безпека і оборона,def,4.1
+2008,Ukraine,Відсотки за борг,deb,0.4
+2008,Ukraine,Державна служба,cle,2.8
+2008,Ukraine,Дороги і ЖКГ,hou,2.4
+2008,Ukraine,Медицина,med,3.5
+2008,Ukraine,Освіта,edu,6.4
+2008,Ukraine,Пенсії,old,4.5
+2008,Ukraine,Соціальний захист,soc,3.3
+2009,Cyprus,Безпека і оборона,def,3.8
+2009,Cyprus,Відсотки за борг,deb,3
+2009,Cyprus,Державна служба,cle,8.6
+2009,Cyprus,Дороги і ЖКГ,hou,4.7
+2009,Cyprus,Медицина,med,3
+2009,Cyprus,Освіта,edu,6.6
+2009,Cyprus,Пенсії,old,0.7
+2009,Cyprus,Соціальний захист,soc,3.2
+2009,Czech Republic,Безпека і оборона,def,3
+2009,Czech Republic,Відсотки за борг,deb,1.3
+2009,Czech Republic,Державна служба,cle,3.8
+2009,Czech Republic,Дороги і ЖКГ,hou,6.5
+2009,Czech Republic,Медицина,med,1.8
+2009,Czech Republic,Освіта,edu,7.2
+2009,Czech Republic,Пенсії,old,7
+2009,Czech Republic,Соціальний захист,soc,6.9
+2009,Estonia,Безпека і оборона,def,4.5
+2009,Estonia,Відсотки за борг,deb,0.2
+2009,Estonia,Державна служба,cle,3.7
+2009,Estonia,Дороги і ЖКГ,hou,2.9
+2009,Estonia,Медицина,med,4.1
+2009,Estonia,Освіта,edu,7.3
+2009,Estonia,Пенсії,old,8
+2009,Estonia,Соціальний захист,soc,5.2
+2009,Hungary,Безпека і оборона,def,3
+2009,Hungary,Відсотки за борг,deb,4.5
+2009,Hungary,Державна служба,cle,6.9
+2009,Hungary,Дороги і ЖКГ,hou,4.7
+2009,Hungary,Медицина,med,4.2
+2009,Hungary,Освіта,edu,7.2
+2009,Hungary,Пенсії,old,2.8
+2009,Hungary,Соціальний захист,soc,7.2
+2009,Latvia,Безпека і оборона,def,3.3
+2009,Latvia,Відсотки за борг,deb,2.1
+2009,Latvia,Державна служба,cle,3.4
+2009,Latvia,Дороги і ЖКГ,hou,5.6
+2009,Latvia,Медицина,med,5.2
+2009,Latvia,Освіта,edu,9.1
+2009,Latvia,Пенсії,old,0.3
+2009,Latvia,Соціальний захист,soc,2.2
+2009,Lithuania,Безпека і оборона,def,3.3
+2009,Lithuania,Відсотки за борг,deb,1.3
+2009,Lithuania,Державна служба,cle,3.1
+2009,Lithuania,Дороги і ЖКГ,hou,2.5
+2009,Lithuania,Медицина,med,5.6
+2009,Lithuania,Освіта,edu,7.2
+2009,Lithuania,Пенсії,old,0.7
+2009,Lithuania,Соціальний захист,soc,3.5
+2009,Malta,Безпека і оборона,def,2.3
+2009,Malta,Відсотки за борг,deb,3.3
+2009,Malta,Державна служба,cle,4.5
+2009,Malta,Дороги і ЖКГ,hou,1.6
+2009,Malta,Медицина,med,5.1
+2009,Malta,Освіта,edu,5.4
+2009,Malta,Пенсії,old,8
+2009,Malta,Соціальний захист,soc,6.2
+2009,Poland,Безпека і оборона,def,4.1
+2009,Poland,Відсотки за борг,deb,2.5
+2009,Poland,Державна служба,cle,3.2
+2009,Poland,Дороги і ЖКГ,hou,5.2
+2009,Poland,Медицина,med,3.5
+2009,Poland,Освіта,edu,7.8
+2009,Poland,Пенсії,old,4.8
+2009,Poland,Соціальний захист,soc,4.7
+2009,Slovakia,Безпека і оборона,def,3.2
+2009,Slovakia,Відсотки за борг,deb,1.6
+2009,Slovakia,Державна служба,cle,7.1
+2009,Slovakia,Дороги і ЖКГ,hou,5.9
+2009,Slovakia,Медицина,med,1.9
+2009,Slovakia,Освіта,edu,5.9
+2009,Slovakia,Пенсії,old,2.3
+2009,Slovakia,Соціальний захист,soc,5
+2009,Slovenia,Безпека і оборона,def,3.3
+2009,Slovenia,Відсотки за борг,deb,1.4
+2009,Slovenia,Державна служба,cle,4.5
+2009,Slovenia,Дороги і ЖКГ,hou,3.2
+2009,Slovenia,Медицина,med,4.6
+2009,Slovenia,Освіта,edu,9.1
+2009,Slovenia,Пенсії,old,3
+2009,Slovenia,Соціальний захист,soc,5.6
+2009,Ukraine,Безпека і оборона,def,3.8
+2009,Ukraine,Відсотки за борг,deb,1.1
+2009,Ukraine,Державна служба,cle,2.6
+2009,Ukraine,Дороги і ЖКГ,hou,2.3
+2009,Ukraine,Медицина,med,4
+2009,Ukraine,Освіта,edu,7.3
+2009,Ukraine,Пенсії,old,5.5
+2009,Ukraine,Соціальний захист,soc,3.1
+2010,Cyprus,Безпека і оборона,def,4.3
+2010,Cyprus,Відсотки за борг,deb,2.6
+2010,Cyprus,Державна служба,cle,7.7
+2010,Cyprus,Дороги і ЖКГ,hou,4.8
+2010,Cyprus,Медицина,med,3
+2010,Cyprus,Освіта,edu,6.8
+2010,Cyprus,Пенсії,old,0.9
+2010,Cyprus,Соціальний захист,soc,3.3
+2010,Czech Republic,Безпека і оборона,def,3
+2010,Czech Republic,Відсотки за борг,deb,1.4
+2010,Czech Republic,Державна служба,cle,3.6
+2010,Czech Republic,Дороги і ЖКГ,hou,6
+2010,Czech Republic,Медицина,med,1.8
+2010,Czech Republic,Освіта,edu,7.2
+2010,Czech Republic,Пенсії,old,7.3
+2010,Czech Republic,Соціальний захист,soc,6.4
+2010,Estonia,Безпека і оборона,def,3.8
+2010,Estonia,Відсотки за борг,deb,0.2
+2010,Estonia,Державна служба,cle,3.2
+2010,Estonia,Дороги і ЖКГ,hou,3.4
+2010,Estonia,Медицина,med,3.9
+2010,Estonia,Освіта,edu,6.7
+2010,Estonia,Пенсії,old,7.8
+2010,Estonia,Соціальний захист,soc,5.2
+2010,Hungary,Безпека і оборона,def,3.2
+2010,Hungary,Відсотки за борг,deb,4.2
+2010,Hungary,Державна служба,cle,5.6
+2010,Hungary,Дороги і ЖКГ,hou,4.3
+2010,Hungary,Медицина,med,5.3
+2010,Hungary,Освіта,edu,7.3
+2010,Hungary,Пенсії,old,0.4
+2010,Hungary,Соціальний захист,soc,8.8
+2010,Latvia,Безпека і оборона,def,3
+2010,Latvia,Відсотки за борг,deb,2.1
+2010,Latvia,Державна служба,cle,3.5
+2010,Latvia,Дороги і ЖКГ,hou,5.9
+2010,Latvia,Медицина,med,4.8
+2010,Latvia,Освіта,edu,8.3
+2010,Latvia,Пенсії,old,0.5
+2010,Latvia,Соціальний захист,soc,2.5
+2010,Lithuania,Безпека і оборона,def,3.2
+2010,Lithuania,Відсотки за борг,deb,2
+2010,Lithuania,Державна служба,cle,2.6
+2010,Lithuania,Дороги і ЖКГ,hou,2.2
+2010,Lithuania,Медицина,med,5.9
+2010,Lithuania,Освіта,edu,6.4
+2010,Lithuania,Пенсії,old,0.6
+2010,Lithuania,Соціальний захист,soc,3
+2010,Malta,Безпека і оборона,def,2.2
+2010,Malta,Відсотки за борг,deb,3.1
+2010,Malta,Державна служба,cle,3.7
+2010,Malta,Дороги і ЖКГ,hou,1.3
+2010,Malta,Медицина,med,5.3
+2010,Malta,Освіта,edu,5.6
+2010,Malta,Пенсії,old,7.9
+2010,Malta,Соціальний захист,soc,5.8
+2010,Poland,Безпека і оборона,def,4.1
+2010,Poland,Відсотки за борг,deb,2.5
+2010,Poland,Державна служба,cle,3.3
+2010,Poland,Дороги і ЖКГ,hou,5.4
+2010,Poland,Медицина,med,3.5
+2010,Poland,Освіта,edu,8
+2010,Poland,Пенсії,old,5.5
+2010,Poland,Соціальний захист,soc,5
+2010,Slovakia,Безпека і оборона,def,3.1
+2010,Slovakia,Відсотки за борг,deb,1.5
+2010,Slovakia,Державна служба,cle,6
+2010,Slovakia,Дороги і ЖКГ,hou,5.2
+2010,Slovakia,Медицина,med,1.9
+2010,Slovakia,Освіта,edu,5.6
+2010,Slovakia,Пенсії,old,3.2
+2010,Slovakia,Соціальний захист,soc,5.2
+2010,Slovenia,Безпека і оборона,def,3.4
+2010,Slovenia,Відсотки за борг,deb,1.7
+2010,Slovenia,Державна служба,cle,4.1
+2010,Slovenia,Дороги і ЖКГ,hou,3
+2010,Slovenia,Медицина,med,4.8
+2010,Slovenia,Освіта,edu,8.6
+2010,Slovenia,Пенсії,old,3.2
+2010,Slovenia,Соціальний захист,soc,5.9
+2010,Ukraine,Безпека і оборона,def,3.7
+2010,Ukraine,Відсотки за борг,deb,1.5
+2010,Ukraine,Державна служба,cle,2.6
+2010,Ukraine,Дороги і ЖКГ,hou,1.9
+2010,Ukraine,Медицина,med,4.1
+2010,Ukraine,Освіта,edu,7.4
+2010,Ukraine,Пенсії,old,6.2
+2010,Ukraine,Соціальний захист,soc,3.5
+2011,Cyprus,Безпека і оборона,def,3.9
+2011,Cyprus,Відсотки за борг,deb,2.8
+2011,Cyprus,Державна служба,cle,8.1
+2011,Cyprus,Дороги і ЖКГ,hou,4.8
+2011,Cyprus,Медицина,med,3.1
+2011,Cyprus,Освіта,edu,6.6
+2011,Cyprus,Пенсії,old,0.9
+2011,Cyprus,Соціальний захист,soc,3.4
+2011,Czech Republic,Безпека і оборона,def,2.7
+2011,Czech Republic,Відсотки за борг,deb,1.4
+2011,Czech Republic,Державна служба,cle,3.4
+2011,Czech Republic,Дороги і ЖКГ,hou,5
+2011,Czech Republic,Медицина,med,4.6
+2011,Czech Republic,Освіта,edu,7.1
+2011,Czech Republic,Пенсії,old,7.9
+2011,Czech Republic,Соціальний захист,soc,6
+2011,Estonia,Безпека і оборона,def,3.5
+2011,Estonia,Відсотки за борг,deb,0.2
+2011,Estonia,Державна служба,cle,3.3
+2011,Estonia,Дороги і ЖКГ,hou,3.4
+2011,Estonia,Медицина,med,3.7
+2011,Estonia,Освіта,edu,6.3
+2011,Estonia,Пенсії,old,6.9
+2011,Estonia,Соціальний захист,soc,4.9
+2011,Hungary,Безпека і оборона,def,3.2
+2011,Hungary,Відсотки за борг,deb,4.2
+2011,Hungary,Державна служба,cle,5.2
+2011,Hungary,Дороги і ЖКГ,hou,4.7
+2011,Hungary,Медицина,med,5.3
+2011,Hungary,Освіта,edu,6.6
+2011,Hungary,Пенсії,old,0.5
+2011,Hungary,Соціальний захист,soc,7.1
+2011,Latvia,Безпека і оборона,def,2.9
+2011,Latvia,Відсотки за борг,deb,2
+2011,Latvia,Державна служба,cle,3.2
+2011,Latvia,Дороги і ЖКГ,hou,5.7
+2011,Latvia,Медицина,med,4.7
+2011,Latvia,Освіта,edu,7.7
+2011,Latvia,Пенсії,old,0.5
+2011,Latvia,Соціальний захист,soc,2.3
+2011,Lithuania,Безпека і оборона,def,2.9
+2011,Lithuania,Відсотки за борг,deb,1.9
+2011,Lithuania,Державна служба,cle,6.5
+2011,Lithuania,Дороги і ЖКГ,hou,1.9
+2011,Lithuania,Медицина,med,5.3
+2011,Lithuania,Освіта,edu,6.1
+2011,Lithuania,Пенсії,old,0.6
+2011,Lithuania,Соціальний захист,soc,2.9
+2011,Malta,Безпека і оборона,def,2.1
+2011,Malta,Відсотки за борг,deb,3.2
+2011,Malta,Державна служба,cle,3.9
+2011,Malta,Дороги і ЖКГ,hou,1.5
+2011,Malta,Медицина,med,5.4
+2011,Malta,Освіта,edu,5.7
+2011,Malta,Пенсії,old,8
+2011,Malta,Соціальний захист,soc,5.7
+2011,Poland,Безпека і оборона,def,4
+2011,Poland,Відсотки за борг,deb,2.6
+2011,Poland,Державна служба,cle,3.1
+2011,Poland,Дороги і ЖКГ,hou,5.3
+2011,Poland,Медицина,med,3.3
+2011,Poland,Освіта,edu,7.9
+2011,Poland,Пенсії,old,4.6
+2011,Poland,Соціальний захист,soc,4.5
+2011,Slovakia,Безпека і оборона,def,3.1
+2011,Slovakia,Відсотки за борг,deb,1.7
+2011,Slovakia,Державна служба,cle,6
+2011,Slovakia,Дороги і ЖКГ,hou,4.8
+2011,Slovakia,Медицина,med,1.9
+2011,Slovakia,Освіта,edu,5.6
+2011,Slovakia,Пенсії,old,3
+2011,Slovakia,Соціальний захист,soc,4.9
+2011,Slovenia,Безпека і оборона,def,3
+2011,Slovenia,Відсотки за борг,deb,2.1
+2011,Slovenia,Державна служба,cle,4
+2011,Slovenia,Дороги і ЖКГ,hou,3.2
+2011,Slovenia,Медицина,med,4.9
+2011,Slovenia,Освіта,edu,8.4
+2011,Slovenia,Пенсії,old,3.5
+2011,Slovenia,Соціальний захист,soc,6.5
+2011,Ukraine,Безпека і оборона,def,3.5
+2011,Ukraine,Відсотки за борг,deb,1.8
+2011,Ukraine,Державна служба,cle,2
+2011,Ukraine,Дороги і ЖКГ,hou,2.1
+2011,Ukraine,Медицина,med,3.8
+2011,Ukraine,Освіта,edu,6.6
+2011,Ukraine,Пенсії,old,4.7
+2011,Ukraine,Соціальний захист,soc,3.4
+2012,Cyprus,Безпека і оборона,def,3.8
+2012,Cyprus,Відсотки за борг,deb,3.4
+2012,Cyprus,Державна служба,cle,8.6
+2012,Cyprus,Дороги і ЖКГ,hou,4
+2012,Cyprus,Медицина,med,3
+2012,Cyprus,Освіта,edu,6.1
+2012,Cyprus,Пенсії,old,0.9
+2012,Cyprus,Соціальний захист,soc,2.8
+2012,Czech Republic,Безпека і оборона,def,2.5
+2012,Czech Republic,Відсотки за борг,deb,1.4
+2012,Czech Republic,Державна служба,cle,5.3
+2012,Czech Republic,Дороги і ЖКГ,hou,4.5
+2012,Czech Republic,Медицина,med,4.6
+2012,Czech Republic,Освіта,edu,7.1
+2012,Czech Republic,Пенсії,old,8.1
+2012,Czech Republic,Соціальний захист,soc,5.3
+2012,Estonia,Безпека і оборона,def,3.8
+2012,Estonia,Відсотки за борг,deb,0.3
+2012,Estonia,Державна служба,cle,3.9
+2012,Estonia,Дороги і ЖКГ,hou,3.5
+2012,Estonia,Медицина,med,3.7
+2012,Estonia,Освіта,edu,6.4
+2012,Estonia,Пенсії,old,6.8
+2012,Estonia,Соціальний захист,soc,4.6
+2012,Hungary,Безпека і оборона,def,2.6
+2012,Hungary,Відсотки за борг,deb,4.3
+2012,Hungary,Державна служба,cle,5.4
+2012,Hungary,Дороги і ЖКГ,hou,4.4
+2012,Hungary,Медицина,med,5.3
+2012,Hungary,Освіта,edu,5.9
+2012,Hungary,Пенсії,old,1.4
+2012,Hungary,Соціальний захист,soc,5.3
+2012,Latvia,Безпека і оборона,def,2.7
+2012,Latvia,Відсотки за борг,deb,1.9
+2012,Latvia,Державна служба,cle,3.2
+2012,Latvia,Дороги і ЖКГ,hou,4.7
+2012,Latvia,Медицина,med,4.5
+2012,Latvia,Освіта,edu,7.3
+2012,Latvia,Пенсії,old,0.4
+2012,Latvia,Соціальний захист,soc,2.1
+2012,Lithuania,Безпека і оборона,def,2.8
+2012,Lithuania,Відсотки за борг,deb,2.1
+2012,Lithuania,Державна служба,cle,2.3
+2012,Lithuania,Дороги і ЖКГ,hou,1.6
+2012,Lithuania,Медицина,med,4.6
+2012,Lithuania,Освіта,edu,5.8
+2012,Lithuania,Пенсії,old,0.6
+2012,Lithuania,Соціальний захист,soc,2.6
+2012,Malta,Безпека і оборона,def,2.1
+2012,Malta,Відсотки за борг,deb,3
+2012,Malta,Державна служба,cle,4.3
+2012,Malta,Дороги і ЖКГ,hou,1.7
+2012,Malta,Медицина,med,5.5
+2012,Malta,Освіта,edu,5.7
+2012,Malta,Пенсії,old,8.2
+2012,Malta,Соціальний захист,soc,5.7
+2012,Poland,Безпека і оборона,def,3.9
+2012,Poland,Відсотки за борг,deb,2.7
+2012,Poland,Державна служба,cle,3.1
+2012,Poland,Дороги і ЖКГ,hou,4.4
+2012,Poland,Медицина,med,3.2
+2012,Poland,Освіта,edu,7.8
+2012,Poland,Пенсії,old,4.3
+2012,Poland,Соціальний захист,soc,4.3
+2012,Slovakia,Безпека і оборона,def,3
+2012,Slovakia,Відсотки за борг,deb,1.9
+2012,Slovakia,Державна служба,cle,5.6
+2012,Slovakia,Дороги і ЖКГ,hou,4.5
+2012,Slovakia,Медицина,med,1.7
+2012,Slovakia,Освіта,edu,5.5
+2012,Slovakia,Пенсії,old,3
+2012,Slovakia,Соціальний захист,soc,4.9
+2012,Slovenia,Безпека і оборона,def,2.8
+2012,Slovenia,Відсотки за борг,deb,2.2
+2012,Slovenia,Державна служба,cle,3.8
+2012,Slovenia,Дороги і ЖКГ,hou,2.8
+2012,Slovenia,Медицина,med,5
+2012,Slovenia,Освіта,edu,8.4
+2012,Slovenia,Пенсії,old,3.4
+2012,Slovenia,Соціальний захист,soc,6
+2012,Ukraine,Безпека і оборона,def,3.6
+2012,Ukraine,Відсотки за борг,deb,1.8
+2012,Ukraine,Державна служба,cle,2.1
+2012,Ukraine,Дороги і ЖКГ,hou,2.6
+2012,Ukraine,Медицина,med,4.1
+2012,Ukraine,Освіта,edu,7.2
+2012,Ukraine,Пенсії,old,4.8
+2012,Ukraine,Соціальний захист,soc,4
+2013,Cyprus,Безпека і оборона,def,3.7
+2013,Cyprus,Відсотки за борг,deb,3.7
+2013,Cyprus,Державна служба,cle,6.8
+2013,Cyprus,Дороги і ЖКГ,hou,3.4
+2013,Cyprus,Медицина,med,3.1
+2013,Cyprus,Освіта,edu,6.5
+2013,Cyprus,Пенсії,old,0.6
+2013,Cyprus,Соціальний захист,soc,2.7
+2013,Czech Republic,Безпека і оборона,def,2.5
+2013,Czech Republic,Відсотки за борг,deb,1.4
+2013,Czech Republic,Державна служба,cle,3.7
+2013,Czech Republic,Дороги і ЖКГ,hou,4.2
+2013,Czech Republic,Медицина,med,4.6
+2013,Czech Republic,Освіта,edu,7.3
+2013,Czech Republic,Пенсії,old,8.2
+2013,Czech Republic,Соціальний захист,soc,5.4
+2013,Estonia,Безпека і оборона,def,3.6
+2013,Estonia,Відсотки за борг,deb,0.3
+2013,Estonia,Державна служба,cle,3.8
+2013,Estonia,Дороги і ЖКГ,hou,3.7
+2013,Estonia,Медицина,med,3.7
+2013,Estonia,Освіта,edu,6
+2013,Estonia,Пенсії,old,6.7
+2013,Estonia,Соціальний захист,soc,4.2
+2013,Hungary,Безпека і оборона,def,2.5
+2013,Hungary,Відсотки за борг,deb,4.6
+2013,Hungary,Державна служба,cle,5.5
+2013,Hungary,Дороги і ЖКГ,hou,4.6
+2013,Hungary,Медицина,med,6.4
+2013,Hungary,Освіта,edu,5.4
+2013,Hungary,Пенсії,old,1.1
+2013,Hungary,Соціальний захист,soc,4.8
+2013,Latvia,Безпека і оборона,def,2.9
+2013,Latvia,Відсотки за борг,deb,1.7
+2013,Latvia,Державна служба,cle,3.4
+2013,Latvia,Дороги і ЖКГ,hou,4.7
+2013,Latvia,Медицина,med,4.2
+2013,Latvia,Освіта,edu,7.2
+2013,Latvia,Пенсії,old,0.4
+2013,Latvia,Соціальний захист,soc,2.1
+2013,Lithuania,Безпека і оборона,def,2.7
+2013,Lithuania,Відсотки за борг,deb,1.9
+2013,Lithuania,Державна служба,cle,3.4
+2013,Lithuania,Дороги і ЖКГ,hou,1.5
+2013,Lithuania,Медицина,med,4.3
+2013,Lithuania,Освіта,edu,5.6
+2013,Lithuania,Пенсії,old,0.6
+2013,Lithuania,Соціальний захист,soc,2.5
+2013,Malta,Безпека і оборона,def,2
+2013,Malta,Відсотки за борг,deb,2.9
+2013,Malta,Державна служба,cle,4.1
+2013,Malta,Дороги і ЖКГ,hou,1.2
+2013,Malta,Медицина,med,5.7
+2013,Malta,Освіта,edu,5.8
+2013,Malta,Пенсії,old,8.2
+2013,Malta,Соціальний захист,soc,5.6
+2013,Poland,Безпека і оборона,def,4.1
+2013,Poland,Відсотки за борг,deb,2.6
+2013,Poland,Державна служба,cle,3.3
+2013,Poland,Дороги і ЖКГ,hou,3.8
+2013,Poland,Медицина,med,3.3
+2013,Poland,Освіта,edu,7.7
+2013,Poland,Пенсії,old,4.2
+2013,Poland,Соціальний захист,soc,4.3
+2013,Slovakia,Безпека і оборона,def,3.1
+2013,Slovakia,Відсотки за борг,deb,2
+2013,Slovakia,Державна служба,cle,5.9
+2013,Slovakia,Дороги і ЖКГ,hou,4.5
+2013,Slovakia,Медицина,med,1.9
+2013,Slovakia,Освіта,edu,5.4
+2013,Slovakia,Пенсії,old,2.1
+2013,Slovakia,Соціальний захист,soc,4.8
+2013,Slovenia,Безпека і оборона,def,2.9
+2013,Slovenia,Відсотки за борг,deb,2.7
+2013,Slovenia,Державна служба,cle,4.2
+2013,Slovenia,Дороги і ЖКГ,hou,3.3
+2013,Slovenia,Медицина,med,5
+2013,Slovenia,Освіта,edu,8.5
+2013,Slovenia,Пенсії,old,3.9
+2013,Slovenia,Соціальний захист,soc,6
+2013,Ukraine,Безпека і оборона,def,3.7
+2013,Ukraine,Відсотки за борг,deb,2.3
+2013,Ukraine,Державна служба,cle,2
+2013,Ukraine,Дороги і ЖКГ,hou,1.7
+2013,Ukraine,Медицина,med,4.2
+2013,Ukraine,Освіта,edu,7.3
+2013,Ukraine,Пенсії,old,6
+2013,Ukraine,Соціальний захист,soc,4
+2014,Cyprus,Безпека і оборона,def,3.1
+2014,Cyprus,Відсотки за борг,deb,3.1
+2014,Cyprus,Державна служба,cle,15.9
+2014,Cyprus,Дороги і ЖКГ,hou,3.4
+2014,Cyprus,Медицина,med,2.7
+2014,Cyprus,Освіта,edu,5.8
+2014,Cyprus,Пенсії,old,0.6
+2014,Cyprus,Соціальний захист,soc,2.8
+2014,Czech Republic,Безпека і оборона,def,2.4
+2014,Czech Republic,Відсотки за борг,deb,1.4
+2014,Czech Republic,Державна служба,cle,3.7
+2014,Czech Republic,Дороги і ЖКГ,hou,4.5
+2014,Czech Republic,Медицина,med,4.6
+2014,Czech Republic,Освіта,edu,7.2
+2014,Czech Republic,Пенсії,old,8
+2014,Czech Republic,Соціальний захист,soc,5.4
+2014,Estonia,Безпека і оборона,def,3.7
+2014,Estonia,Відсотки за борг,deb,0.3
+2014,Estonia,Державна служба,cle,3.7
+2014,Estonia,Дороги і ЖКГ,hou,3.6
+2014,Estonia,Медицина,med,3.8
+2014,Estonia,Освіта,edu,5.7
+2014,Estonia,Пенсії,old,6.7
+2014,Estonia,Соціальний захист,soc,4.2
+2014,Latvia,Безпека і оборона,def,2.9
+2014,Latvia,Відсотки за борг,deb,1.7
+2014,Latvia,Державна служба,cle,3.4
+2014,Latvia,Дороги і ЖКГ,hou,4.3
+2014,Latvia,Медицина,med,4.4
+2014,Latvia,Освіта,edu,7.5
+2014,Latvia,Пенсії,old,1.1
+2014,Latvia,Соціальний захист,soc,2.2
+2014,Lithuania,Безпека і оборона,def,2.8
+2014,Lithuania,Відсотки за борг,deb,1.8
+2014,Lithuania,Державна служба,cle,2.8
+2014,Lithuania,Дороги і ЖКГ,hou,1.5
+2014,Lithuania,Медицина,med,4.3
+2014,Lithuania,Освіта,edu,5.4
+2014,Lithuania,Пенсії,old,0.7
+2014,Lithuania,Соціальний захист,soc,2.3
+2014,Malta,Безпека і оборона,def,2.1
+2014,Malta,Відсотки за борг,deb,2.9
+2014,Malta,Державна служба,cle,4.2
+2014,Malta,Дороги і ЖКГ,hou,1.9
+2014,Malta,Медицина,med,6
+2014,Malta,Освіта,edu,5.8
+2014,Malta,Пенсії,old,8
+2014,Malta,Соціальний захист,soc,5.7
+2014,Poland,Безпека і оборона,def,3.9
+2014,Poland,Відсотки за борг,deb,2
+2014,Poland,Державна служба,cle,3.3
+2014,Poland,Дороги і ЖКГ,hou,4.3
+2014,Poland,Медицина,med,3.2
+2014,Poland,Освіта,edu,7.7
+2014,Poland,Пенсії,old,3.6
+2014,Poland,Соціальний захист,soc,3.9
+2014,Slovakia,Безпека і оборона,def,3.2
+2014,Slovakia,Відсотки за борг,deb,2.1
+2014,Slovakia,Державна служба,cle,6.1
+2014,Slovakia,Дороги і ЖКГ,hou,4.6
+2014,Slovakia,Медицина,med,1.9
+2014,Slovakia,Освіта,edu,5.7
+2014,Slovakia,Пенсії,old,2.2
+2014,Slovakia,Соціальний захист,soc,4.5
+2014,Slovenia,Безпека і оборона,def,2.5
+2014,Slovenia,Відсотки за борг,deb,3.4
+2014,Slovenia,Державна служба,cle,4.2
+2014,Slovenia,Дороги і ЖКГ,hou,3.5
+2014,Slovenia,Медицина,med,4.6
+2014,Slovenia,Освіта,edu,7.7
+2014,Slovenia,Пенсії,old,3.8
+2014,Slovenia,Соціальний захист,soc,5.7
+2014,Ukraine,Безпека і оборона,def,4.6
+2014,Ukraine,Відсотки за борг,deb,3.2
+2014,Ukraine,Державна служба,cle,1.7
+2014,Ukraine,Дороги і ЖКГ,hou,2.3
+2014,Ukraine,Медицина,med,3.6
+2014,Ukraine,Освіта,edu,6.4
+2014,Ukraine,Пенсії,old,5.1
+2014,Ukraine,Соціальний захист,soc,3.7
+2015,Ukraine,Безпека і оборона,def,5.7
+2015,Ukraine,Відсотки за борг,deb,4.9
+2015,Ukraine,Державна служба,cle,1.8
+2015,Ukraine,Дороги і ЖКГ,hou,2.6
+2015,Ukraine,Медицина,med,3.8
+2015,Ukraine,Освіта,edu,6.2
+2015,Ukraine,Пенсії,old,4.5
+2015,Ukraine,Соціальний захист,soc,4.3
+2016,Ukraine,Безпека і оборона,def,5.2
+2016,Ukraine,Відсотки за борг,deb,4.4
+2016,Ukraine,Державна служба,cle,1.7
+2016,Ukraine,Дороги і ЖКГ,hou,1.4
+2016,Ukraine,Медицина,med,2.2
+2016,Ukraine,Освіта,edu,4.4
+2016,Ukraine,Пенсії,old,6.6
+2016,Ukraine,Соціальний захист,soc,3.3
