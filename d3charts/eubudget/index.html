@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <!--захват размера экрана-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> EU Budgets Ukraine</title>
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <!--bootstrap-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <!--мои стили-->
+        <link rel="stylesheet" href="myfullpage.css">
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=PT+Sans' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+        <!--jquery для работы bootstrap-->
+        <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="jquery.fullPage.js"></script>
+        <script type="text/javascript">
+$(document)
+    .ready(function() {
+        $('#fullpage')
+            .fullpage();
+    });
+
+        </script>
+        <!--для сортировки графиков http://tinysort.sjeiti.com-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tinysort/2.2.4/tinysort.js"></script>
+    </head>
+
+    <body>
+        <div id="fullpage">
+            <div class="section">
+                <header class="jumbotron">
+                    <div class="container">
+                        <div class="row rowTexty">
+                            <div class="col-sm-12">
+                                <h1>Заголовок</h1> </div>
+                        </div>
+                    </div>
+                </header>
+                <div class="container">
+                    <div class="row rowTexty">
+                        <div class="col-sm-12 content">
+                            <p>Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст </p>
+                            <p>Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="slide">
+                    <div class="container">
+                        <div class="row rowTexty">
+                            <div class="col-sm-12 chartTitle">
+                                <h1>Видатки бюджету* на 1 особу (тис. EUR)</h1> </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row rowTexty">
+                            <div class="col-sm-12 chartSubTitle">
+                                <p>На забезпечення державними послугами кожного окремого громадянина в України незмінно витрачається в 10 разів менше коштів, ніж в середньому по Европі</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row rowTexty">
+                            <div class="col-sm-12 toolBar">
+                                <p>Додати країни:</p> <label class="checkbox-inline"><input type="checkbox" id="Bulgaria" onclick="addBulgaria()"><b><u>Б</u></b>олгарія</label> <label class="checkbox-inline"><input type="checkbox" id="Lithuania" onclick="addLithuania()"><b><u>Л</u></b>итва</label> <label class="checkbox-inline"><input type="checkbox" id="Romania" onclick="addRomania()"><b><u>Р</u></b>умунія</label> <label class="checkbox-inline"><input type="checkbox" id="Finland" onclick="addFinland()"><b><u>Фі</u></b>нляндія</label> <label class="checkbox-inline"><input type="checkbox" id="France" onclick="addFrance()"><b><u>Ф</u></b>ранція</label> <label class="checkbox-inline"><input type="checkbox" id="Sweden" onclick="addSweden()"><b><u>Ш</u></b>веція</label> </div>
+                        </div>
+                    </div>
+                    <!--тут создаются и сортируются графики-->
+                    <div class="container">
+                        <div class="row rowTexty">
+                            <div class="col-sm-12 chartArea" id="vizdivFirstPart"></div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row rowTexty">
+                            <div class="col-sm-12 chartFooter">
+                                <p>Дані: Держстат, Євростат, НБУ</p>
+                                <p class="footnote">* тут і далі для всіх країн: видатки державного і місцевих<br/>бюджетів без урахування видатків соціальних фондів</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="container">
+                        <div class="row rowTexty">
+                            <div class="col-sm-12 content">
+                                <p>Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст </p>
+                                <p>Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="slide">
+                    <div class="container">
+                        <div class="row rowTexty">
+                            <div class="col-sm-12 chartTitle">
+                                <h1>Видатки бюджету України (млрд EUR в цінах 2015 р.)</h1> </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row rowTexty">
+                            <div class="col-sm-12 chartSubTitle">
+                                <p>Останні 10 років держава збирала кошти із громадян і бізнесу переважно для обслуговування студентів і пенсіонерів* та виплати відсотків за борги</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row rowTexty">
+                            <div class="col-sm-12 toolBar">
+                                <p>Порівняти з країнами:</p>
+                                <ul id="menuSecondPart">
+                                    <li id="2" country="Болгарія" onmouseover="getCountryName(this)" onmouseout="redrawSecondPart()">Болгарія</li>
+                                    <li id="3" country="Греція" onmouseover="getCountryName(this)" onmouseout="redrawSecondPart()">Греція</li>
+                                    <li id="9" country="Литва" onmouseover="getCountryName(this)" onmouseout="redrawSecondPart()">Литва</li>
+                                    <li id="13" country="Румунія" onmouseover="getCountryName(this)" onmouseout="redrawSecondPart()">Румунія</li>
+                                    <li id="17" country="Фінляндія" onmouseover="getCountryName(this)" onmouseout="redrawSecondPart()">Фінляндія</li>
+                                    <li id="19" country="Чехія" onmouseover="getCountryName(this)" onmouseout="redrawSecondPart()">Чехія</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row rowTexty">
+                            <!--тут создаются и сортируются графики-->
+                            <div class="col-sm-12 chartArea" id="vizdivSecondPart"></div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row rowTexty">
+                            <div class="col-sm-12 chartFooter">
+                                <p>Дані: Держстат, Євростат, НБУ</p>
+                                <p class="footnote">* тут і далі йдеться про фактичне покриття дефіциту<br/>бюджету Пенсійного фонду з Державного бюджету </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide active">
+                    <div class="container">
+                        <div class="row rowTexty">
+                            <div class="col-sm-12 content">
+                                <p>Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст </p>
+                                <p>Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="slide">
+                    <div class="container">
+                        <div class="row rowTexty">
+                            <div class="col-sm-12 chartTitle">
+                                <h1>Розподіл суспільного доходу через бюджет (% до ВВП)</h1> </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row rowTexty">
+                            <div class="col-sm-12 chartSubTitle">
+                                <p>У випадку України шлях до збагачення громадян полягає не у збільшенні податків і частки ВВП, яка розподіляється через бюджет, а у зростанні економіки</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row rowTexty">
+                            <div class="col-sm-12 toolBar">
+                                <p id="menu"> Bидатки бюджету:
+                                    <!--значение value в меню соответствует option в данных--><select>
+                    <option value="ttl">Всього</option>
+                    <option value="edu">Освіта</option>
+                    <option value="old">Пенсії</option>
+                    <option value="def">Безпека і oборона</option> 
+                    <option value="soc">Соціальний захист</option> 
+                    <option value="med">Медицина</option>
+                    <option value="deb">Відсотки за борг</option>
+                    <option value="hou">Дороги і ЖКГ</option>
+                    <option value="cle">Чиновники</option>       
+                    </select> <button type="button" class="btn btn-default myButton" onclick="sort09()">Cортувати!</button> </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--тут создаются и сортируются графики-->
+                    <div class="container">
+                        <div class="row rowTexty">
+                            <div class="col-sm-12 chartArea" id="vizdivThirdPart"></div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row rowTexty">
+                            <div class="col-sm-12 chartFooter">
+                                <p>Дані: Держстат, Євростат, НБУ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="container">
+                        <div class="row rowTexty">
+                            <div class="col-sm-12 content">
+                                <p>Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст </p>
+                                <p>Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="container">
+                    <div class="row rowTexty">
+                        <div class="col-sm-12 content">
+                            <p>Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст </p>
+                            <p>Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--основной код для отрисовки графиков-->
+        <script src="firstpart.js"></script>
+        <script src="secondpart.js"></script>
+        <script src="thirdpart.js"></script>
+        <!--для работы bootstrap-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <!--для сортировки графиков http://tinysort.sjeiti.com-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tinysort/2.2.4/tinysort.js"></script>
+        <!--http://underscorejs.org-->
+        <script src=https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js></script>
+    </body>
+
+</html>

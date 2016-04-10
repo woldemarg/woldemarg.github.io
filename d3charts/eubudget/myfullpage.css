@@ -1,0 +1,155 @@
+.jumbotron {
+    padding:70px 30px 70px 30px;
+    margin:0px auto;
+    background-color: #E3E6EA ;
+    color:#3A3F4A;
+    font-family: 'PT Sans', sans-serif;
+}
+
+body {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.rowTexty {
+   max-width: 940px; 
+}
+.chartTitle {    
+    background-color: #E3E6EA;
+    padding: 35px 40px 10px 35px;
+   
+  }
+
+.chartTitle h1{ 
+font-weight: bold;    
+}
+
+.chartSubTitle {
+    font-size: 18px;
+    background-color: #E3E6EA;
+    padding: 10px 40px 15px 35px;
+  }
+
+
+/*панель инструментов*/
+.toolBar {
+    font-size: 16px;  
+    background-color: #EFF2F4;
+    padding: 20px 40px 20px 35px;
+    }
+
+.chartArea {
+     background-color: #EFF2F4;
+    padding: 0px 40px 0px 40px;
+    font-size: 12px;
+     }
+
+.chartFooter {
+    background-color: #EFF2F4;
+    padding: 20px 40px 20px 35px;
+    font-size: 14px;
+    text-align: right;}
+
+.footnote {
+    text-align: left;
+}
+
+
+/*отступы для контейров с графиками*/
+.year,
+.item, 
+.country {
+    float: left;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 0;
+    padding-left: 0;
+}
+
+
+/*оси и линии сетки*/
+.axis path,
+.axis line {
+    fill: none;
+    stroke-width: 1px; /*толщина разделительной линии для 2004 года*/
+    shape-rendering: crispEdges;
+    stroke: #3A3F4A;
+    opacity: 1;
+    pointer-events: none;
+}
+
+
+
+.yFirstPart.axis path,
+.ySecondPart.axis path,
+.yThirdPart.axis path {
+    display: none;
+}
+
+/*подписи осей*/
+.axis text {
+    fill: #5D646F; 
+}
+
+#bar {
+     fill: #FEC779;
+   }
+
+.overlay {
+    fill: none;
+    pointer-events: all;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;    
+}
+
+.lineEU {
+fill: none;
+stroke-width: 1.5px;
+stroke: #80B0BE;
+}
+
+.lineAll {
+fill: none;
+stroke-width: 1.5px;
+stroke: #3A3F4A;
+}
+
+.areaSecondPart {
+     fill: #FEC779;
+  }
+
+ul#menuSecondPart {
+    padding: 5px 0 0 0;
+}
+
+ul#menuSecondPart li {
+    display: inline;
+    background-color: #A3A9B3;
+    padding: 10px 20px;
+    border-radius: 4px 4px 4px 4px;
+}
+
+ul#menuSecondPart li:hover {
+    background-color:  #80B0BE;
+}
+
+/*цвета для старых и новых членов*/
+.areaThirdPart {
+    fill:#FEC779;
+   }
+
+/*цвет Украины*/
+path#Україна {
+     fill: #80B0BE;    
+   }
+
+.circle {
+    pointer-events: none;
+     fill: #3A3F4A;
+}
+
+.myButton {
+    font-size: 16px; 
+}
