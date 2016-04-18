@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="test_description">
+    <meta name="author" content="test_author">
+
+    <title>test_header</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Base CSS for header and footer-->
+    <link href="css/template-style.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800&subset=cyrillic,latin' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+    <!-- OpenGraph Meta Tags -->
+    <meta property="og:site_name" content="ТЕКСТИ.ORG.UA" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="test_header" />
+    <meta property="og:image" content="http://texty.org.ua/d/logo.png" />
+    <meta property="og:description" content="test_description" />
+    <meta property="og:url" content="http://texty.org.ua/d/test_folder" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:site" content="@textyorgua" />
+    <meta property="twitter:account_id" content="49572937" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="http://texty.org.ua/d/test_folder" />
+    <meta name="twitter:title" content="test_header" />
+    <meta name="twitter:description" content="test_description" />
+    <meta name="twitter:image:src" content="http://texty.org.ua/d/logo.png" />
+    <meta name="twitter:image:width" content="1200" />
+    <meta name="twitter:image:height" content="630" />
+
+    <!-- Other Meta Tags -->
+    <meta name="title" content="test_header">
+    <meta name="description" content="test_description">
+    
+    <script src="js/jquery-2.1.4.min.js"></script>
+    
+    
+    <!--библиотека функций http://underscorejs.org-->
+        <script src=https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js></script>
+    <!--для сортировки графиков http://tinysort.sjeiti.com-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tinysort/2.2.4/tinysort.js"></script>
+    <!--мои стили-->
+        <link rel="stylesheet" href="css/myfullpage.css">
+
+</head>
+<body>
+
+<!-- Fixed navbar -->
+<header class="navbar navbar-fixed-top">
+  <div class="row wraper">
+         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+            <div class="logo">
+                    <a href="http://texty.org.ua/">
+                        <img title="ТЕКСТИ.ORG.UA" alt="ТЕКСТИ.ORG.UA" class = "img-responsive" src="img/logo.png" height="25" width="203">
+                    </a>
+             </div>
+         </div>
+         <div class="col-lg-5 col-md-4 col-sm-4 col-xs-3">
+             <div class="dj_header"><a href="/pg/blog/infoviz">Журналістика даних</a></div>
+         </div>
+         <div class="col-lg-2 col-md-3 col-sm-3 col-xs-4">
+             <div class="social-icons">
+                <a href="https://twitter.com/home?status=test_tweet" target="_blank"><i class="fa fa-twitter fa-fw fa-2x"></i></a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http://texty.org.ua/d/test_folder" target="_blank"><i class="fa fa-facebook fa-fw fa-2x"></i></a>
+             </div>
+         </div>
+    </div>
+</header>
+
+<!-- Your content here -->
+   
+<div class="fullPage chartPage">
+                       <div class="container">
+                        <div class="row heading">
+                            <div class="col-xs-10">
+                                <img src=img/money_blue.png class="img-responsive center-block" width=25%>           
+                              </div>
+                            </div>
+                            
+                             <div class="row heading">   
+                          <div class="col-xs-10 text-center">
+                                <h1>Бюджетні утриманці</h1>                                
+                            </div>
+                                </div>
+                        </div>
+                    
+              
+            
+            
+                    <div class="row content">
+                        <div class="col-sm-8 col-sm-push-2 col-lg-10 col-lg-push-1">
+                            <p>Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст </p>
+                            </div>
+                        </div>
+                            
+                   
+                    <div class="row content">
+                        <div class="col-sm-8 col-sm-push-2 col-lg-10 col-lg-push-1 text-center">
+                            <button type="button" class="btn btn-default myButton" id="nextBtn1">читати далі</button>
+                            <script>
+                           $("#nextBtn1").click(function() {
+    $('html,body').animate({
+        scrollTop: $("#text-start").offset().top},
+        'slow');
+                           });
+                            </script>
+                            
+                        </div>
+                            </div>
+                       
+                           </div>
+    </div>
+              
+                        
+                     
+                   
+              
+       
+        
+        
+        <div class="fullPage textPage" id="text-start">
+                    <div class="container">
+                        <div class="row content">
+                            <div class="col-sm-8 col-sm-push-2 col-lg-10 col-lg-push-1">
+                                <p>Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст </p>
+                                <p>Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст </p>
+                            </div>
+                        </div>
+                        <div class="row content">
+                        <div class="col-sm-8 col-sm-push-2 col-lg-10 col-lg-push-1 text-center">
+                            <button type="button" class="btn btn-default myButton" id="nextBtn2">до графіки</button>
+                            <script>
+                           $("#nextBtn2").click(function() {
+    $('html,body').animate({
+        scrollTop: $("#chart1").offset().top},
+        'slow');
+                           });
+                            </script>
+                            
+                        </div>
+                            </div>
+                   
+                </div></div>
+           
+        
+        <div class="fullPage chartPage" id="chart1">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-push-2 col-lg-10 col-lg-push-1 chartTitle">
+                             <h2>Видатки Зведеного бюджету України<small> (в поточних цінах, млрд EUR)</small></h2>
+                            </div>
+                        </div>
+                    
+                   
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-push-2 col-lg-10 col-lg-push-1 chartSubTitle">
+                                <p>Останні 10 років держава збирала кошти із громадян і бізнесу переважно для надання "соціальних" послуг студентам і пенсіонерам** та виплати відсотків за борги</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                                    <div class="col-xs-10 col-xs-push-1 col-sm-9 col-sm-push-3 col-lg-10 col-lg-push-1 chartLegend">
+                                <ul id="legendSecondPart">
+                                    <li><div id="UA"></div></li>
+                                    <li>Україна</li>
+                                    <li><div id="EU"></div></li>
+                                    <li>країни ЄС</li>
+                                </ul>
+                                    </div>
+                            </div>
+                 
+                 
+                        <div class="row">
+                            <div class="col-xs-10 col-xs-push-1 col-sm-2 col-sm-push-1 col-lg-10 col-lg-push-1 toolBar">
+                                <p>Порівняти:</p>
+                                <ul id="menuSecondPart">
+                                    <li id="2" country="Болгарія" onmouseover="getCountryName(this)" onmouseout="redrawSecondPart()">Болгарія</li>
+                                    <li id="3" country="Греція" onmouseover="getCountryName(this)" onmouseout="redrawSecondPart()">Греція</li>
+                                    <li id="9" country="Литва" onmouseover="getCountryName(this)" onmouseout="redrawSecondPart()">Литва</li>
+                                    <li id="13" country="Румунія" onmouseover="getCountryName(this)" onmouseout="redrawSecondPart()">Румунія</li>
+                                    <li id="17" country="Фінляндія" onmouseover="getCountryName(this)" onmouseout="redrawSecondPart()">Фінляндія</li>
+                                    <li id="19" country="Чехія" onmouseover="getCountryName(this)" onmouseout="redrawSecondPart()">Чехія</li>
+                                </ul>
+                                </div>
+                                
+                            
+                       
+                   
+                    
+                        
+                            <!--тут создаются и сортируются графики-->
+                            <div class="col-xs-10 col-xs-push-1 col-sm-8 col-sm-pull-1 col-lg-10 col-lg-push-1 chartArea" id="vizdivSecondPart">
+                            </div>
+                        </div>
+                  
+                   
+                        <div class="row">
+                            <div class="col-xs-7 col-xs-push-1 chartFooter">
+                                <p>* покриття дефіциту бюджету Пенсійного фонду за рахунок Державного бюджету</p>
+                                </div>
+                            <div class="col-xs-3 col-xs-offset-1 chartFooter">
+                                <p>Дані: Держстат, Євростат, НБУ</p>
+                                </div>
+                   </div>
+                
+        </div>
+    </div>
+                <div class="fullPage textPage">
+                    <div class="container">
+                        <div class="row content">
+                            <div class="col-sm-8 col-sm-push-2 col-lg-10 col-lg-push-1">
+                                <p>Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст </p>
+                                <p>Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст </p>
+                            </div>
+                        </div>
+                        <div class="row content">
+                        <div class="col-sm-8 col-sm-push-2 col-lg-10 col-lg-push-1 text-center">
+                            <button type="button" class="btn btn-default myButton" id="nextBtn3">до графіки</button>
+                            <script>
+                           $("#nextBtn3").click(function() {
+    $('html,body').animate({
+        scrollTop: $("#chart2").offset().top},
+        'slow');
+                           });
+                            </script>
+                            
+                        </div>
+                            </div>
+                   
+                </div>
+                    </div>
+            
+                <div class="fullPage chartPage" id="chart2">
+                   <div class="container">
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-push-2 col-lg-10 col-lg-push-1 chartTitle">
+                                <h2>Видатки бюджету на 1 особу<small> (в поточних цінах, тис. EUR)</small></h2> </div>
+                        </div>
+                   
+                   
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-push-2 col-lg-10 col-lg-push-1 chartSubTitle">
+                                <p>Кожний громадянин України щороку отримує державних послуг на суму вдесятеро менше за середнього європейця</p>
+                            </div>
+                             <div class="row">
+                                    <div class="col-xs-10 col-xs-push-1 col-sm-9 col-sm-push-3 col-lg-10 col-lg-push-3 chartLegend">
+                                <ul id="legendSecondPart">
+                                    
+                                    <li><div id="EU"></div></li>
+                                    <li>середнє значення для країн ЄС-28</li>
+                                </ul>
+                                    </div>
+                            </div>
+                        </div>
+                   
+                   
+                        <div class="row">
+                            <div class="col-xs-10 col-xs-push-1 col-sm-2 col-sm-push-1 col-lg-4 col-lg-push-3 toolBar">
+                                <p>Додати:</p> 
+                                <ul id="menuFirstPart">
+                                    <li><label class="checkbox-inline"><input type="checkbox" id="Bulgaria" onclick="addBulgaria()"><b><u>Бол</u></b>гарія</label></li>
+                                    <li><label class="checkbox-inline"><input type="checkbox" id="Lithuania" onclick="addLithuania()"><b><u>Лит</u></b>ва</label></li> 
+                                    <li><label class="checkbox-inline"><input type="checkbox" id="Romania" onclick="addRomania()"><b><u>Рум</u></b>унія</label></li>
+                                    <li><label class="checkbox-inline"><input type="checkbox" id="Finland" onclick="addFinland()"><b><u>Фін</u></b>ляндія</label></li>
+                                    <li><label class="checkbox-inline"><input type="checkbox" id="France" onclick="addFrance()"><b><u>Фра</u></b>нція</label></li>
+                                    <li><label class="checkbox-inline"><input type="checkbox" id="Sweden" onclick="addSweden()"><b><u>Шве</u></b>ція</label></li>
+                                </ul>
+                                    </div>
+                        
+                    
+                    <!--тут создаются и сортируются графики-->
+                    
+                        
+                            <div class="col-xs-10 col-xs-push-1 col-sm-8 col-sm-pull-1 col-lg-10 col-lg-push-3 chartArea" id="vizdivFirstPart"></div>
+                        </div>
+                   
+                    
+                    <div class="row">
+                            
+                            <div class="col-xs-4 col-xs-push-5 chartFooter">
+                                <p>Дані: Держстат, Євростат, НБУ</p>
+                                </div>
+                   </div>                    
+                        
+                   
+                    </div>
+                    </div>
+                <div class="fullPage textPage">
+                    <div class="container">
+                        <div class="row content">
+                            <div class="col-sm-8 col-sm-push-2 col-lg-10 col-lg-push-1">
+                                <p>Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст </p>
+                                <p>Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст </p>
+                            </div>
+                        </div>
+                        <div class="row content">
+                        <div class="col-sm-8 col-sm-push-2 col-lg-10 col-lg-push-1 text-center">
+                            <button type="button" class="btn btn-default myButton" id="nextBtn4">до графіки</button>
+                            <script>
+                           $("#nextBtn4").click(function() {
+    $('html,body').animate({
+        scrollTop: $("#chart3").offset().top},
+        'slow');
+                           });
+                            </script>
+                            
+                        </div>
+                            </div>
+                   
+                </div>
+                    </div>
+           
+            
+                
+            
+           
+                <div class="fullPage chartPage" id="chart3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-push-2 col-lg-10 col-lg-push-1 chartTitle">
+                                <h2>Розподіл суспільного доходу<small> (видатки бюджету* у % до ВВП)</small></h2> </div>
+                        </div>
+                    
+                    
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-push-2 col-lg-10 col-lg-push-1 chartSubTitle">
+                                <p>У випадку України шлях до збагачення громадян полягає не у збільшенні податків і частки ВВП, яка розподіляється через бюджет, а у зростанні економіки</p>
+                            </div>
+                        </div>
+                   <div class="row">
+                                    <div class="col-xs-10 col-xs-push-1 col-sm-9 col-sm-push-3 col-lg-10 col-lg-push-1 chartLegend">
+                                <ul id="legendSecondPart">
+                                    <li><div id="UA"></div></li>
+                                    <li>Україна</li>
+                                    <li><div id="EU"></div></li>
+                                    <li>країни ЄС</li>
+                                </ul>
+                                    </div>
+                            </div>
+                   
+                        <div class="row">
+                            <div class="col-xs-10 col-xs-push-1 col-sm-2 col-sm-push-1 col-lg-10 col-lg-push-1 toolBar">
+                                <p id="menu"> Bидатки бюджету:
+                                    <!--значение value в меню соответствует option в данных--><select>
+                    <option value="ttl">Всього</option>
+                    <option value="edu">Освіта</option>
+                    <option value="old">Пенсії</option>
+                    <option value="def">Безпека і oборона</option> 
+                    <option value="soc">Соціальний захист</option> 
+                    <option value="med">Медицина</option>
+                    <option value="deb">Відсотки за борг</option>
+                    <option value="hou">Дороги і ЖКГ</option>
+                    <option value="cle">Чиновники</option>       
+                    </select>
+                                    
+                    <button type="button" class="btn btn-default myButton" onclick="sort09()">Cортувати!</button> </p>
+                            </div>
+                        </div>
+                   
+                    <!--тут создаются и сортируются графики-->
+                    
+                        <div class="row">
+                            <div class="col-xs-10 col-xs-push-1 col-sm-8 col-sm-pull-1 col-lg-10 col-lg-push-1 chartArea" id="vizdivThirdPart"></div>
+                        </div>
+                   
+                    
+                        <div class="row">
+                            <div class="col-xs-7 col-xs-push-1  chartFooter">
+                                <p>* для всіх країн видатки державного і місцевих бюджетів без видатків соціальних фондів</p>
+                                </div>
+                            <div class="col-xs-3 col-xs-offset-1  chartFooter">
+                                <p>Дані: Держстат, Євростат, НБУ</p>
+                                </div>
+                   </div>
+                    
+                   
+        </div>
+                    </div>
+                
+          
+           <div class="fullPage textPage">
+                    <div class="container">
+                        <div class="row content">
+                            <div class="col-sm-8 col-sm-push-2 col-lg-10 col-lg-push-1">
+                                <p>Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст </p>
+                                <p>Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст Текст текст </p>
+                            </div>
+                        </div>
+                        
+                   
+                </div>
+    </div>
+<!-- End of your content -->
+
+<!-- Footer-->
+<footer id="footer" class="container-fluid">
+  <div id="footer-wraper" class="row wraper">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <div class="copyright">
+                <p class="p1">&copy; 2013, Тексти.org.ua</p>
+                <p class="p2">Медія для розумних</p>
+            </div>
+     </div>
+     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <ul class="links">
+                    <li><a href="http://texty.org.ua/mod/article/index.php?ed=1">Вибір редакції</a>
+                        <a href="http://texty.org.ua/mod/article/?view=rss&amp;ed=1">(RSS)</a>
+                    </li>
+                    <li><a href="http://texty.org.ua/mod/video/">Відео</a>
+                        <a href="http://texty.org.ua/mod/video/?view=rss">(RSS)</a>
+                    </li>
+                    <li><a href="http://texty.org.ua/mod/article/">Статті</a>
+                        <a href="http://texty.org.ua/mod/article/?view=rss">(RSS)</a>
+                    </li>
+                    <li><a href="http://texty.org.ua/mod/news/">Новини</a>
+                        <a href="http://texty.org.ua/mod/news/?view=rss">(RSS)</a>
+                    </li>
+                    <li><a href="http://texty.org.ua/mod/blog/everyone.php">Блоги</a>
+                        <a href="http://texty.org.ua/mod/blog/blog_list.php?view=rss">(RSS)</a>
+                    </li>
+                </ul>
+     </div>
+     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <ul class="links">
+                    <li>
+                        <a href="http://texty.org.ua/mod/archive/tag.php?tag=%D0%BA%D0%BE%D0%BD%D1%86%D0%B5%D0%BF%D1%86%D1%96%D1%8F">Концепції</a>
+                    </li>
+                    <li>
+                        <a href="http://texty.org.ua/mod/archive/tag.php?tag=%D1%80%D0%B5%D1%84%D0%BE%D1%80%D0%BC%D0%B8">Реформи</a>
+                    </li>
+                    <li><a href="http://texty.org.ua/mod/archive/tag.php?tag=%D0%B4%D0%BE%D1%81%D0%B2%D1%96%D0%B4">Важливий досвід</a></li>
+                    <li><a href="http://texty.org.ua/mod/archive/tag.php?tag=%D1%96%D0%BD%D0%BE%D0%B7%D0%BC%D1%96">Найцікавіше з інозмі</a></li>
+                    <li><a href="http://texty.org.ua/pg/blog/infoviz">Журналістика даних</a></li>
+            </ul>
+     </div>
+       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <ul class="links">
+                    <li><a href="http://texty.org.ua/mod/pages/donate.php" class="support-site">Підтримай сайт фінансово!</a></li>
+                    <li><a href="http://facebook.com/texty.org.ua">Ми у Фейсбуці</a></li>
+                    <li><a href="http://twitter.com/textyorgua">Ми у Твітері</a></li>
+                    <li><a href="http://texty.org.ua/pg/pages/view/22">Про нас</a></li>
+                    <li><a href="http://texty.org.ua/mod/archive/">Архів</a></li>
+            </ul>
+     </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="copying-info">
+            Матеріали ТЕКСТИ.org.ua можна поширювати згідно ліцензії Creative Commons з обов’язковим посиланням.
+            Велике прохання ставити гіперпосилання в першому чи другому абзаці вашого матеріалу.
+        </div>
+     </div>
+
+
+  </div>
+</footer>
+
+<!--todo CDNs here -->
+<!--<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>-->
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Custom d3 charts scripts -->
+<script src="js/firstpart.js"></script>
+<script src="js/secondpart.js"></script>
+<script src="js/thirdpart.js"></script>
+
+
+<!--  Google analytics -->
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-18136548-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+
+</html>
