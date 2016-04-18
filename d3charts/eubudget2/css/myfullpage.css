@@ -1,0 +1,217 @@
+html {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    font-family: "Open Sans", sans-serif;
+    font-size: 100%;
+    color: #383e47;
+    background: #fff;
+    width: 100%;
+    /*footer height plus padding*/
+    margin-bottom: 200px;
+    
+  }
+
+
+.fullPage {
+  min-height: 100%;
+  border-bottom: 2px solid #ffffff;
+  }
+
+
+.heading {
+     padding: 20px 0px 10px 0px;
+}
+
+
+.textPage {
+    background-color: #EFF2F4;
+}
+
+.chartPage {
+  background-color: #E3E6EA;    
+}
+.content {
+    margin:0px auto;
+    padding: 20px 40px 20px 40px;
+}
+
+.chartTitle {    
+    background-color: #E3E6EA;
+    padding: 35px 40px 10px 40px;
+   
+  }
+
+.chartSubTitle {
+    font-size: 1.4em; 
+    background-color: #E3E6EA;
+    padding: 10px 40px 15px 40px;
+  }
+
+
+/*панель инструментов*/
+.toolBar {
+    background-color: #E3E6EA;
+    padding: 10px 40px 20px 40px;
+    font-size: 1.2em;
+    }
+
+.chartLegend {
+    padding: 0px 40px 10px 40px;
+    font-size: 1.2em;
+    }
+
+.chartArea {
+    background-color: #E3E6EA;
+    padding: 0px 40px 0px 40px;
+    font-size: 1.15em;
+     }
+
+.chartFooter {
+    background-color: #E3E6EA;
+    padding: 10px 40px 0px 40px;
+    font-size: 1.1em;
+  }
+
+
+
+/*отступы для контейров с графиками*/
+.year,
+.item, 
+.country {
+    float: left;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-top: 0;
+    padding-left: 0;
+}
+
+
+/*оси и линии сетки*/
+.axis path,
+.axis line {
+    fill: none;
+    stroke-width: 1px; /*толщина разделительной линии для 2004 года*/
+    shape-rendering: crispEdges;
+    stroke: #3A3F4A;
+    opacity: 1;
+    pointer-events: none;
+}
+
+
+
+.yFirstPart.axis path,
+.ySecondPart.axis path,
+.yThirdPart.axis path {
+    display: none;
+}
+
+/*подписи осей*/
+.axis text {
+    fill: #5D646F; 
+}
+
+#bar {
+     fill: #FAA61A;
+   }
+
+.overlay {
+    fill: none;
+    pointer-events: all;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;    
+}
+
+.lineEU {
+fill: none;
+stroke-width: 1.5px;
+stroke: #008D9E;
+}
+
+.lineAll {
+fill: none;
+stroke-width: 1.5px;
+stroke: #3A3F4A;
+}
+
+.areaSecondPart {
+     fill: #FAA61A;
+  }
+
+ul#menuSecondPart {
+    padding: 0;
+      }
+
+ul#menuSecondPart li {
+    width: 70px;
+    text-align: center;
+    display: inline-block;
+    background-color: #A3A9B3;
+    margin: 3px 3px 3px 3px;
+    padding: 5px 2px 5px 2px; 
+    border-radius: 4px 4px 4px 4px;
+}
+
+ul#menuSecondPart li:hover {
+    background-color:  #008D9E;
+}
+
+ul#legendSecondPart {
+    padding: 0;    
+      }
+
+ul#legendSecondPart div#UA {
+    margin: 0px 5px 0px 0px;
+    width: 15px;
+    height: 15px;
+    background-color: #FAA61A;
+}
+
+ul#legendSecondPart div#EU {
+    margin: 0px 5px 0px 15px;
+    width: 15px;
+    height: 15px;
+    background-color: #008D9E;
+}
+
+ul#legendSecondPart li {
+    display: inline-block;   
+}
+
+ul#menuFirstPart {
+    padding: 0;
+}
+ul#menuFirstPart li {
+    width: 78px;
+    text-align: left;
+    display: inline-block;
+     margin: 0px 0px 3px 0px;
+       
+}
+
+
+/*цвета для старых и новых членов*/
+.areaThirdPart {
+    fill:#008D9E;
+   }
+
+/*цвет Украины*/
+path#Україна {
+     fill: #FAA61A;    
+   }
+
+.circle {
+    pointer-events: none;
+     fill: #3A3F4A;
+}
+
+.myButton {
+    font-size: 1.25em; 
+}
