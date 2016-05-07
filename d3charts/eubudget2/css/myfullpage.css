@@ -9,7 +9,6 @@ body {
     font-family: "Open Sans", sans-serif;
     font-size: 100%;
     color: #383e47;
-    background: #fff;
     width: 100%;
     /*footer height plus padding*/
     margin-bottom: 200px;
@@ -81,7 +80,6 @@ body {
 
 /*отступы для контейров с графиками*/
 .year,
-.item, 
 .country {
     float: left;
     padding-right: 10px;
@@ -105,7 +103,6 @@ body {
 
 
 .yFirstPart.axis path,
-.ySecondPart.axis path,
 .yThirdPart.axis path {
     display: none;
 }
@@ -141,9 +138,6 @@ stroke-width: 1.5px;
 stroke: #3A3F4A;
 }
 
-.areaSecondPart {
-     fill: #FAA61A;
-  }
 
 ul#menuSecondPart {
     padding: 0;
@@ -154,13 +148,14 @@ ul#menuSecondPart li {
     text-align: center;
     display: inline-block;
     background-color: #A3A9B3;
-    margin: 3px 3px 3px 3px;
-    padding: 5px 2px 5px 2px; 
+    margin: 4px 12px 4px 12px;
+    padding: 4px 4px 4px 4px; 
     border-radius: 4px 4px 4px 4px;
 }
 
 ul#menuSecondPart li:hover {
     background-color:  #008D9E;
+    color: #E3E6EA;
 }
 
 ul#legendSecondPart {
@@ -185,21 +180,10 @@ ul#legendSecondPart li {
     display: inline-block;   
 }
 
-ul#menuFirstPart {
-    padding: 0;
-}
-ul#menuFirstPart li {
-    width: 78px;
-    text-align: left;
-    display: inline-block;
-     margin: 0px 0px 3px 0px;
-       
-}
-
 
 /*цвета для старых и новых членов*/
 .areaThirdPart {
-    fill:#008D9E;
+    fill: #008D9E;
    }
 
 /*цвет Украины*/
@@ -213,5 +197,10 @@ path#Україна {
 }
 
 .myButton {
-    font-size: 1.25em; 
+    font-size: 1.1em; 
+}
+
+.fa {
+    font-size: 2em; 
+    font-weight: 400;
 }
