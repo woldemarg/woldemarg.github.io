@@ -1,30 +1,25 @@
-//размеры графиков
-var width = 145;
+"use strict";
 
-var height = 120;
+//размеры графиков
+var width = 120;
+
+var height = 115;
 
 var margin = {
     top: 15,
     right: 30,
     bottom: 47,
-    left: 25
+    left: 40
 };
-
-
-//переменные для функций выбора старых и новых членов ЕС
-var checkboxBulgaria = document.getElementById("Bulgaria");
-var checkboxLithuania = document.getElementById("Lithuania");
-var checkboxRomania = document.getElementById("Romania");
-var checkboxFinland = document.getElementById("Finland");
-var checkboxFrance = document.getElementById("France");
-var checkboxSweden = document.getElementById("Sweden");
 
 //исходный набр данных
 var datasetFirstPart;
 
+//шкала категорий
 var xFirstPart = d3.scale.ordinal()
-    .rangeRoundBands([0, width], 0.05);
+    .rangeRoundBands([0, width], 0.1);
 
+//линейная шкала
 var yFirstPart = d3.scale.linear()
     .range([height, 0]);
 
@@ -34,56 +29,61 @@ var yAxisFirstPart = d3.svg.axis()
     .ticks(4)
     .outerTickSize(0)
     .tickSubdivide(1);
-   
 
 var xAxisFirstPart = d3.svg.axis()
     .scale(xFirstPart)
     .orient("bottom")
     .outerTickSize(0)
     .tickPadding(7)
+    .tickValues([2004, 2014]); //первая и последняя метки на шкале х
 
-//загрузка исходных данных
-d3.csv("firstpart.csv", function (d) { //type - предварительная обработка данных
-    datasetFirstPart = d; //присвоение имени
-    redrawFirstPart(); //вызов основной функции
-});
+function sort() {
+    return tinysort("#vizdivFirstPart>div", {
+        attr: "lastYearValue",
+        order: "desc"
+    });
+}
+
+function typeFirstPart(d) {
+    d.bul = +d.bul;
+    d.cze = +d.cze;
+    d.fin = +d.fin;
+    d.fra = +d.fra;
+    d.lit = +d.lit;
+    d.pol = +d.pol;
+    d.swe = +d.swe;
+    d.ukr = +d.ukr;
+    d.gre = +d.gre; //преобразование значений в числовой формат
+    return d;
+}
 
 
 //основная функция
-//преобразование исходных данных в массив по типам расходов - option
-//пример - http://bl.ocks.org/nsonnad/4175202            
 function redrawFirstPart() {
-    
-    datasetFirstPart.sort(function (a,b) {return d3.ascending (
-        +a.val, +b.val)});
-    //пересортировка исходного набора по статьям затрат (option)
+
+    //преобразование формата исходных данных по категориям расходов
     var array = d3.nest()
+        .key(function (d) {
+            return d.item;
+        })
+        .entries(datasetFirstPart);
+
+    //массив по годам для задания автоматического колисества итераций в функции mousemove
+    var yearNames = d3.nest()
         .key(function (d) {
             return d.year;
         })
-        .entries(datasetFirstPart);
-    
-        
-
-    console.log(array)
-
-    var countriesNames = d3.nest()
-        .key(function (d) {
-            return d.country
-        })
         .map(datasetFirstPart);
 
-    console.log(countriesNames)
-
-    //определение диапазона    
-
+    //фиксированный диапазон (количество) по шкале х
     xFirstPart.domain(datasetFirstPart.map(function (d) {
-        return d.abbr;
+        return d.year;
     }));
-    //автоматический дипазон - каждый раз меняется при выбореновой статьи затрат, но один для всех стран. вводит в заблуждение при сравнении уровней по разным затратам, так как шкала каждый раз меняется   
+
+    //определение диапазона для графика по умолчанию    
     yFirstPart.domain([0, d3.max(array, function (c) {
         return d3.max(c.values, function (v) {
-            return +v.val;
+            return v.ukr;
         });
     })]);
 
@@ -92,9 +92,8 @@ function redrawFirstPart() {
         .selectAll(".year")
         .remove();
 
-    
     //содздание div-контейнера для каждого графика
-    var div = d3.select("#vizdivFirstPart") //vizdiv - общий контейнер для всех графиков, внутри которого происходит пересортировка
+    var div = d3.select("#vizdivFirstPart") //vizdivFirstPart - общий контейнер для всех графиков, внутри которого происходит пересортировка
         .selectAll(".year")
         .data(array);
 
@@ -102,7 +101,8 @@ function redrawFirstPart() {
     div.enter()
         .append("div")
         .attr("class", "year")
-        .append("svg") //реальные размеры svg
+        .append("svg")
+        //реальные размеры svg
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom);
 
@@ -111,9 +111,9 @@ function redrawFirstPart() {
         .attr("class", "viz")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    //переменная для линии, области и подписей
+    //переменная для столбиков и подписей
     var bars = svg.append("g")
-        .attr("class", "chart")
+        .attr("class", "chart");
 
     bars.append("text")
         .attr("id", "label")
@@ -121,7 +121,56 @@ function redrawFirstPart() {
         .attr("text-anchor", "middle")
         .attr("x", width / 2)
         .attr("y", height)
-        .attr("dy", 20)
+        .attr("dy", 20);
+
+    function mousemove() {
+        var xPos = d3.mouse(this)[0];
+        var leftEdges = xFirstPart.range();
+        var width = xFirstPart.rangeBand();
+        var count = _.size(yearNames);
+        var i;
+        var years = {};
+        //важно! количестов итераций - по количеству членов массива!
+        _.each(_.range(count), function (i) {
+            years[leftEdges[i]] = d3.keys(yearNames)[i];
+        });
+
+        d3.selectAll("#bar")
+            .style('fill', "#FAA61A");
+        d3.selectAll('#caption')
+            .style('display', 'none');
+
+        for (i = 0; xPos > (leftEdges[i] + width); i++) {}
+        if (leftEdges[i] !== undefined) {
+            var year = years[leftEdges[i]];
+            d3.selectAll(".col-" + year)
+                .style('fill', "#CE8A14"); //цвет выделения столбика
+            d3.selectAll('.cap-' + year)
+                .style('display', 'block');
+            d3.selectAll('#label')
+                .text(year);
+        }
+    }
+
+    function mouseover() {
+
+        d3.selectAll(".axis.xFirstPart text")
+            .classed("hidden", true);
+        d3.selectAll("#label")
+            .classed("hidden", false);
+        return mousemove.call(this);
+    }
+
+    function mouseout() {
+        d3.selectAll(".xFirstPart.axis text")
+            .classed("hidden", false); //возвращаем подпись шкалы времени
+        d3.selectAll("#bar")
+            .style('fill', "#FAA61A"); //возвращаем исходный цвет
+        d3.selectAll("#label")
+            .classed("hidden", true);
+        d3.selectAll('#caption')
+            .style('display', 'none');
+    }
 
     bars.append("rect")
         .attr("class", "overlay")
@@ -131,102 +180,49 @@ function redrawFirstPart() {
         .on("mousemove", mousemove)
         .on("mouseout", mouseout);
 
-    function mouseover() {
-
-        d3.selectAll(".axis.xFirstPart text")
-            .classed("hidden", true);
-        d3.selectAll("#label")
-            .classed("hidden", false);
-
-        //скрываем подпись оси
-
-        return mousemove.call(this);
-    }
-
-    function mousemove() {
-        var xPos = d3.mouse(this)[0];
-        var leftEdges = xFirstPart.range();
-        var width = xFirstPart.rangeBand();
-        var count = _.size(countriesNames);
-        var i;
-        var countries = {};
-        //важно! количестов итераций - по количеству членов массива!
-        _.each(_.range(count), function (i) {
-            countries[leftEdges[i]] = d3.keys(countriesNames)[i];
-        });
-
-        d3.selectAll("#bar")
-            .style('fill', "#FAA61A");
-        d3.selectAll('#caption')
-            .style('display', 'none')
-
-        for (i = 0; xPos > (leftEdges[i] + width); i++) {}
-        if (leftEdges[i] !== undefined) {
-            var country = countries[leftEdges[i]];
-            d3.selectAll(".col-" + country)
-                .style('fill', "#CE8A14");//цвет выделения столбика
-            d3.selectAll('.cap-' + country)
-                .style('display', 'block');
-            d3.selectAll('#label')
-                .text(country);
-        }
-    }
-
-    function mouseout() {
-        d3.selectAll(".xFirstPart.axis text")
-            .classed("hidden", false); //возвращаем подпись шкалы времени
-        d3.selectAll("#bar")
-            .style('fill', "#FAA61A");//возвращаем исходный цвет
-        d3.selectAll("#label")
-            .classed("hidden", true);
-        d3.selectAll('#caption')
-            .style('display', 'none')
-
-    }
-
     //столбцы  
     bars.selectAll(".bar")
         .data(function (d) {
-            return d.values
+            return d.values;
         })
         .enter()
         .append("rect")
         .attr("id", "bar")
         .attr("class", function (d) {
-            return "col-" + d.country + " " + d.eu
+            return "col-" + d.year;
         })
         .style("pointer-events", "none") //нечувствительна к движениям курсора  
         .attr("x", function (d) {
-            return xFirstPart(d.abbr)
+            return xFirstPart(d.year);
         })
         .attr("y", function (d) {
-            return yFirstPart(d.val)
+            return yFirstPart(d.ukr);
         })
         .attr("width", xFirstPart.rangeBand())
         .attr("height", function (d) {
-            return height - yFirstPart(d.val)
-        })
+            return height - yFirstPart(d.ukr);
+        });
 
     bars.selectAll("#caption")
         .data(function (d) {
-            return d.values
+            return d.values;
         })
         .enter()
         .append('text')
-        .attr("text-anchor", "start")
+        .attr("text-anchor", "middle")
         .attr('x', function (d) {
-            return xFirstPart(d.abbr);
+            return xFirstPart(d.year) + xFirstPart.rangeBand() / 2;
         })
         .attr('y', function (d) {
-            return yFirstPart(d.val) - 5;
+            return yFirstPart(d.ukr) - 5;
         })
         .attr('display', 'none')
         .attr('class', function (d) {
-            return 'cap-' + d.country
+            return 'cap-' + d.year;
         })
         .attr('id', 'caption')
         .text(function (d) {
-            return d.val;
+            return d.ukr;
         });
 
     //подпись
@@ -237,33 +233,8 @@ function redrawFirstPart() {
         .attr("y", height)
         .attr("dy", margin.bottom / 2 + 20) //динамический отступ
         .text(function (d) {
-            return d.key
+            return d.key;
         });
-   
-    var lineFirstPart = d3.svg.line()
-      .x(function(d){return xFirstPart(d.abbr) +xFirstPart.rangeBand()/2})
-      .y(function(d){return yFirstPart(+d.avg)});
-    
-    bars.append("path")
-        .datum(function (d) {
-            return d.values
-        })
-       .attr("class", "lineEU")
-        .attr("d", lineFirstPart);
-     
-        
-    
-    
-    bars.append ("text")
-     .datum(function (d) {
-            return d.values[d.values.length-1]
-        })
-    .attr("x", width + 3)
-    .attr("y", function(d) {return yFirstPart(+d.avg)})
-    .text("ЄС")
-    
-    
-    
 
     //ось у
     svg.append("g")
@@ -274,113 +245,1057 @@ function redrawFirstPart() {
     svg.append("g")
         .attr("class", "xFirstPart axis")
         .attr("transform", "translate(0," + height + ")")
-        .call(xAxisFirstPart)
-     .selectAll("text")  
-            .style("text-anchor", "end")
-            .attr("dx", "-.5em")
-            .attr("dy", ".15em")
-            .attr("transform", "rotate(-70)" );
+        .call(xAxisFirstPart);
+
+    //задание значения последнего года для каждого div-контейнера в качестве аттрибута для сортировки
+    d3.selectAll(".year")
+        .datum(function (d) { //не data!
+            return {
+                value: d.values[d.values.length - 1]
+            };
+        })
+        .attr("lastYearValue", function (d) {
+            return d.value.ukr;
+        });
+
+    sort();
 
 }
 
+//загрузка исходных данных
+d3.csv("secondpart.csv", typeFirstPart, function (d) {
+    datasetFirstPart = d;
+    redrawFirstPart(); //вызов основной функции
+});
 
-function addFrance() {
-    
-    if (checkboxFrance.checked) {
-    
-    
-    datasetFirstPart.push ({year:"2004", country:"Франція", abbr:"Фра", eu: "old", order: "18", val: "9.1", avg: "8.3"})
-    datasetFirstPart.push ({year:"2014", country:"Франція", abbr:"Фра", eu: "old", order: "18", val: "11.3", avg: "10.2"})
-    
-    }
-    
-    else {
-        datasetFirstPart = _.reject(datasetFirstPart, function(el) { return el.country === "Франція"; });      
-    
-    }    
-    redrawFirstPart ()
+function drawBul() {
+
+    var array = d3.nest()
+        .key(function (d) {
+            return d.item;
+        })
+        .entries(datasetFirstPart);
+
+    xFirstPart.domain(datasetFirstPart.map(function (d) {
+        return d.year;
+    }));
+
+    //диапазон по максимальному значению    
+    yFirstPart.domain([0, d3.max(array, function (c) {
+        return d3.max(c.values, function (v) {
+            return Math.max(v.ukr, v.bul);
+        });
+    })]);
+
+    d3.select("body")
+        .selectAll(".year")
+        .remove();
+
+    var div = d3.select("#vizdivFirstPart")
+        .selectAll(".year")
+        .data(array);
+
+    div.enter()
+        .append("div")
+        .attr("class", "year")
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom);
+
+    var svg = div.select("svg")
+        .append("g")
+        .attr("class", "viz")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var bars = svg.append("g")
+        .attr("class", "chart");
+
+    //столбцы  
+    bars.selectAll(".bar")
+        .data(function (d) {
+            return d.values;
+        })
+        .enter()
+        .append("rect")
+        .attr("id", "bar")
+        .style("pointer-events", "none") //нечувствительна к движениям курсора  
+        .attr("x", function (d) {
+            return xFirstPart(d.year);
+        })
+        .attr("y", function (d) {
+            return yFirstPart(d.ukr);
+        })
+        .attr("width", xFirstPart.rangeBand())
+        .attr("height", function (d) {
+            return height - yFirstPart(d.ukr);
+        });
+
+    //подпись
+    bars.append("text")
+        .attr("class", "title")
+        .attr("text-anchor", "middle")
+        .attr("x", width / 2)
+        .attr("y", height)
+        .attr("dy", margin.bottom / 2 + 20)
+        .text(function (d) {
+            return d.key;
+        });
+
+    var lineFirstPart = d3.svg.line()
+        .defined(function (d) {
+            return d.bul;
+        })
+        .x(function (d) {
+            return xFirstPart(d.year) + xFirstPart.rangeBand() / 2;
+        })
+        .y(function (d) {
+            return yFirstPart(d.bul);
+        });
+
+    bars.append("path")
+        .datum(function (d) {
+            return d.values;
+        })
+        .attr("class", "lineEU")
+        .attr("d", lineFirstPart);
+
+    bars.append("text")
+        .datum(function (d) {
+            return d.values[d.values.length - 1];
+        })
+        .attr("x", width + 3)
+        .attr("y", function (d) {
+            return yFirstPart(d.bul);
+        })
+        .text(function (d) {
+            return d.bul;
+        });
+
+    //ось у
+    svg.append("g")
+        .attr("class", "yFirstPart axis")
+        .call(yAxisFirstPart);
+
+    //ось х
+    svg.append("g")
+        .attr("class", "xFirstPart axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxisFirstPart);
+
+    //задание значения последнего года для каждого div-контейнера в качестве аттрибута для сортировки
+    d3.selectAll(".year")
+        .datum(function (d) { //не data!
+            return {
+                value: d.values[d.values.length - 1]
+            };
+        })
+        .attr("lastYearValue", function (d) {
+            return d.value.ukr;
+        });
+
+    sort();
+
 }
 
-function addFinland() {
-    
-    if (checkboxFinland.checked) {
-    
-    
-    datasetFirstPart.push ({year:"2004", country:"Фінляндія", abbr:"Фін", eu: "old", order: "17", val: "13", avg: "8.3"})
-    datasetFirstPart.push ({year:"2014", country:"Фінляндія", abbr:"Фін", eu: "old", order: "17", val: "19.7", avg: "10.2"})
-   
-    
-    }
-    
-    else {
-        datasetFirstPart = _.reject(datasetFirstPart, function(el) { return el.country === "Фінляндія"; });      
-    
-    }    
-    redrawFirstPart ()
+function drawCze() {
+
+    var array = d3.nest()
+        .key(function (d) {
+            return d.item;
+        })
+        .entries(datasetFirstPart);
+
+    xFirstPart.domain(datasetFirstPart.map(function (d) {
+        return d.year;
+    }));
+
+    //диапазон по максимальному значению    
+    yFirstPart.domain([0, d3.max(array, function (c) {
+        return d3.max(c.values, function (v) {
+            return Math.max(v.ukr, v.cze);
+        });
+    })]);
+
+    d3.select("body")
+        .selectAll(".year")
+        .remove();
+
+    var div = d3.select("#vizdivFirstPart")
+        .selectAll(".year")
+        .data(array);
+
+    div.enter()
+        .append("div")
+        .attr("class", "year")
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom);
+
+    var svg = div.select("svg")
+        .append("g")
+        .attr("class", "viz")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var bars = svg.append("g")
+        .attr("class", "chart");
+
+    //столбцы  
+    bars.selectAll(".bar")
+        .data(function (d) {
+            return d.values;
+        })
+        .enter()
+        .append("rect")
+        .attr("id", "bar")
+        .style("pointer-events", "none") //нечувствительна к движениям курсора  
+        .attr("x", function (d) {
+            return xFirstPart(d.year);
+        })
+        .attr("y", function (d) {
+            return yFirstPart(d.ukr);
+        })
+        .attr("width", xFirstPart.rangeBand())
+        .attr("height", function (d) {
+            return height - yFirstPart(d.ukr);
+        });
+
+    //подпись
+    bars.append("text")
+        .attr("class", "title")
+        .attr("text-anchor", "middle")
+        .attr("x", width / 2)
+        .attr("y", height)
+        .attr("dy", margin.bottom / 2 + 20)
+        .text(function (d) {
+            return d.key;
+        });
+
+    var lineFirstPart = d3.svg.line()
+        .defined(function (d) {
+            return d.cze;
+        })
+        .x(function (d) {
+            return xFirstPart(d.year) + xFirstPart.rangeBand() / 2;
+        })
+        .y(function (d) {
+            return yFirstPart(d.cze);
+        });
+
+    bars.append("path")
+        .datum(function (d) {
+            return d.values;
+        })
+        .attr("class", "lineEU")
+        .attr("d", lineFirstPart);
+
+    bars.append("text")
+        .datum(function (d) {
+            return d.values[d.values.length - 1];
+        })
+        .attr("x", width + 3)
+        .attr("y", function (d) {
+            return yFirstPart(d.cze);
+        })
+        .text(function (d) {
+            return d.cze;
+        });
+
+    //ось у
+    svg.append("g")
+        .attr("class", "yFirstPart axis")
+        .call(yAxisFirstPart);
+
+    //ось х
+    svg.append("g")
+        .attr("class", "xFirstPart axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxisFirstPart);
+
+    //задание значения последнего года для каждого div-контейнера в качестве аттрибута для сортировки
+    d3.selectAll(".year")
+        .datum(function (d) { //не data!
+            return {
+                value: d.values[d.values.length - 1]
+            };
+        })
+        .attr("lastYearValue", function (d) {
+            return d.value.ukr;
+        });
+
+    sort();
+
 }
 
-function addSweden() {
-    
-    if (checkboxSweden.checked) {
-    
-   datasetFirstPart.push ({year:"2004", country:"Швеція", abbr:"Шве", eu: "old", order: "20", val: "17.6", avg: "8.3"})
-   datasetFirstPart.push ({year:"2014", country:"Швеція", abbr:"Шве", eu: "old", order: "20", val: "25", avg: "10.2"})
-    
-    }
-    
-    else {
-        datasetFirstPart = _.reject(datasetFirstPart, function(el) { return el.country === "Швеція"; });      
-    
-    }    
-    redrawFirstPart ()
+function drawFin() {
+
+    var array = d3.nest()
+        .key(function (d) {
+            return d.item;
+        })
+        .entries(datasetFirstPart);
+
+    xFirstPart.domain(datasetFirstPart.map(function (d) {
+        return d.year;
+    }));
+
+    //диапазон по максимальному значению    
+    yFirstPart.domain([0, d3.max(array, function (c) {
+        return d3.max(c.values, function (v) {
+            return Math.max(v.ukr, v.fin);
+        });
+    })]);
+
+    d3.select("body")
+        .selectAll(".year")
+        .remove();
+
+    var div = d3.select("#vizdivFirstPart")
+        .selectAll(".year")
+        .data(array);
+
+    div.enter()
+        .append("div")
+        .attr("class", "year")
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom);
+
+    var svg = div.select("svg")
+        .append("g")
+        .attr("class", "viz")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var bars = svg.append("g")
+        .attr("class", "chart");
+
+    //столбцы  
+    bars.selectAll(".bar")
+        .data(function (d) {
+            return d.values;
+        })
+        .enter()
+        .append("rect")
+        .attr("id", "bar")
+        .style("pointer-events", "none") //нечувствительна к движениям курсора  
+        .attr("x", function (d) {
+            return xFirstPart(d.year);
+        })
+        .attr("y", function (d) {
+            return yFirstPart(d.ukr);
+        })
+        .attr("width", xFirstPart.rangeBand())
+        .attr("height", function (d) {
+            return height - yFirstPart(d.ukr);
+        });
+
+    //подпись
+    bars.append("text")
+        .attr("class", "title")
+        .attr("text-anchor", "middle")
+        .attr("x", width / 2)
+        .attr("y", height)
+        .attr("dy", margin.bottom / 2 + 20)
+        .text(function (d) {
+            return d.key;
+        });
+
+    var lineFirstPart = d3.svg.line()
+        .defined(function (d) {
+            return d.fin;
+        })
+        .x(function (d) {
+            return xFirstPart(d.year) + xFirstPart.rangeBand() / 2;
+        })
+        .y(function (d) {
+            return yFirstPart(d.fin);
+        });
+
+    bars.append("path")
+        .datum(function (d) {
+            return d.values;
+        })
+        .attr("class", "lineEU")
+        .attr("d", lineFirstPart);
+
+    bars.append("text")
+        .datum(function (d) {
+            return d.values[d.values.length - 1];
+        })
+        .attr("x", width + 3)
+        .attr("y", function (d) {
+            return yFirstPart(d.fin);
+        })
+        .text(function (d) {
+            return d.fin;
+        });
+
+    //ось у
+    svg.append("g")
+        .attr("class", "yFirstPart axis")
+        .call(yAxisFirstPart);
+
+    //ось х
+    svg.append("g")
+        .attr("class", "xFirstPart axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxisFirstPart);
+
+    //задание значения последнего года для каждого div-контейнера в качестве аттрибута для сортировки
+    d3.selectAll(".year")
+        .datum(function (d) { //не data!
+            return {
+                value: d.values[d.values.length - 1]
+            };
+        })
+        .attr("lastYearValue", function (d) {
+            return d.value.ukr;
+        });
+
+    sort();
+
 }
 
-function addBulgaria() {
-    
-    if (checkboxBulgaria.checked) {
-    
-    datasetFirstPart.push ({year:"2004", country:"Болгарія", abbr:"Бол", eu: "new", order: "2", val: "0.9", avg: "8.3"})
-   datasetFirstPart.push ({year:"2014", country:"Болгарія", abbr:"Бол", eu: "new", order: "2", val: "2.3", avg: "10.2"})
-    
-    }
-    
-    else {
-        datasetFirstPart = _.reject(datasetFirstPart, function(el) { return el.country === "Болгарія"; });      
-    
-    }    
-    redrawFirstPart ()
+function drawFra() {
+
+    var array = d3.nest()
+        .key(function (d) {
+            return d.item;
+        })
+        .entries(datasetFirstPart);
+
+    xFirstPart.domain(datasetFirstPart.map(function (d) {
+        return d.year;
+    }));
+
+    //диапазон по максимальному значению    
+    yFirstPart.domain([0, d3.max(array, function (c) {
+        return d3.max(c.values, function (v) {
+            return Math.max(v.ukr, v.fra);
+        });
+    })]);
+
+    d3.select("body")
+        .selectAll(".year")
+        .remove();
+
+    var div = d3.select("#vizdivFirstPart")
+        .selectAll(".year")
+        .data(array);
+
+    div.enter()
+        .append("div")
+        .attr("class", "year")
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom);
+
+    var svg = div.select("svg")
+        .append("g")
+        .attr("class", "viz")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var bars = svg.append("g")
+        .attr("class", "chart");
+
+    //столбцы  
+    bars.selectAll(".bar")
+        .data(function (d) {
+            return d.values;
+        })
+        .enter()
+        .append("rect")
+        .attr("id", "bar")
+        .style("pointer-events", "none") //нечувствительна к движениям курсора  
+        .attr("x", function (d) {
+            return xFirstPart(d.year);
+        })
+        .attr("y", function (d) {
+            return yFirstPart(d.ukr);
+        })
+        .attr("width", xFirstPart.rangeBand())
+        .attr("height", function (d) {
+            return height - yFirstPart(d.ukr);
+        });
+
+    //подпись
+    bars.append("text")
+        .attr("class", "title")
+        .attr("text-anchor", "middle")
+        .attr("x", width / 2)
+        .attr("y", height)
+        .attr("dy", margin.bottom / 2 + 20)
+        .text(function (d) {
+            return d.key;
+        });
+
+    var lineFirstPart = d3.svg.line()
+        .defined(function (d) {
+            return d.fra;
+        })
+        .x(function (d) {
+            return xFirstPart(d.year) + xFirstPart.rangeBand() / 2;
+        })
+        .y(function (d) {
+            return yFirstPart(d.fra);
+        });
+
+    bars.append("path")
+        .datum(function (d) {
+            return d.values;
+        })
+        .attr("class", "lineEU")
+        .attr("d", lineFirstPart);
+
+    bars.append("text")
+        .datum(function (d) {
+            return d.values[d.values.length - 1];
+        })
+        .attr("x", width + 3)
+        .attr("y", function (d) {
+            return yFirstPart(d.fra);
+        })
+        .text(function (d) {
+            return d.fra;
+        });
+
+    //ось у
+    svg.append("g")
+        .attr("class", "yFirstPart axis")
+        .call(yAxisFirstPart);
+
+    //ось х
+    svg.append("g")
+        .attr("class", "xFirstPart axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxisFirstPart);
+
+    //задание значения последнего года для каждого div-контейнера в качестве аттрибута для сортировки
+    d3.selectAll(".year")
+        .datum(function (d) { //не data!
+            return {
+                value: d.values[d.values.length - 1]
+            };
+        })
+        .attr("lastYearValue", function (d) {
+            return d.value.ukr;
+        });
+
+    sort();
+
 }
 
-function addLithuania() {
-    
-    if (checkboxLithuania.checked) {
-    
-    
-   datasetFirstPart.push ({year:"2004", country:"Литва", abbr:"Лит", eu: "new", order: "9", val: "1.8", avg: "8.3"})
-   datasetFirstPart.push ({year:"2014", country:"Литва", abbr:"Лит", eu: "new", order: "9", val: "3.8", avg: "10.2"})
-    
-    }
-    
-    else {
-        datasetFirstPart = _.reject(datasetFirstPart, function(el) { return el.country === "Литва"; });      
-    
-    }    
-    redrawFirstPart ()
+function drawLit() {
+
+    var array = d3.nest()
+        .key(function (d) {
+            return d.item;
+        })
+        .entries(datasetFirstPart);
+
+    xFirstPart.domain(datasetFirstPart.map(function (d) {
+        return d.year;
+    }));
+
+    //диапазон по максимальному значению    
+    yFirstPart.domain([0, d3.max(array, function (c) {
+        return d3.max(c.values, function (v) {
+            return Math.max(v.ukr, v.lit);
+        });
+    })]);
+
+    d3.select("body")
+        .selectAll(".year")
+        .remove();
+
+    var div = d3.select("#vizdivFirstPart")
+        .selectAll(".year")
+        .data(array);
+
+    div.enter()
+        .append("div")
+        .attr("class", "year")
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom);
+
+    var svg = div.select("svg")
+        .append("g")
+        .attr("class", "viz")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var bars = svg.append("g")
+        .attr("class", "chart");
+
+    //столбцы  
+    bars.selectAll(".bar")
+        .data(function (d) {
+            return d.values;
+        })
+        .enter()
+        .append("rect")
+        .attr("id", "bar")
+        .style("pointer-events", "none") //нечувствительна к движениям курсора  
+        .attr("x", function (d) {
+            return xFirstPart(d.year);
+        })
+        .attr("y", function (d) {
+            return yFirstPart(d.ukr);
+        })
+        .attr("width", xFirstPart.rangeBand())
+        .attr("height", function (d) {
+            return height - yFirstPart(d.ukr);
+        });
+
+    //подпись
+    bars.append("text")
+        .attr("class", "title")
+        .attr("text-anchor", "middle")
+        .attr("x", width / 2)
+        .attr("y", height)
+        .attr("dy", margin.bottom / 2 + 20)
+        .text(function (d) {
+            return d.key;
+        });
+
+    var lineFirstPart = d3.svg.line()
+        .defined(function (d) {
+            return d.lit;
+        })
+        .x(function (d) {
+            return xFirstPart(d.year) + xFirstPart.rangeBand() / 2;
+        })
+        .y(function (d) {
+            return yFirstPart(d.lit);
+        });
+
+    bars.append("path")
+        .datum(function (d) {
+            return d.values;
+        })
+        .attr("class", "lineEU")
+        .attr("d", lineFirstPart);
+
+    bars.append("text")
+        .datum(function (d) {
+            return d.values[d.values.length - 1];
+        })
+        .attr("x", width + 3)
+        .attr("y", function (d) {
+            return yFirstPart(d.lit);
+        })
+        .text(function (d) {
+            return d.lit;
+        });
+
+    //ось у
+    svg.append("g")
+        .attr("class", "yFirstPart axis")
+        .call(yAxisFirstPart);
+
+    //ось х
+    svg.append("g")
+        .attr("class", "xFirstPart axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxisFirstPart);
+
+    //задание значения последнего года для каждого div-контейнера в качестве аттрибута для сортировки
+    d3.selectAll(".year")
+        .datum(function (d) { //не data!
+            return {
+                value: d.values[d.values.length - 1]
+            };
+        })
+        .attr("lastYearValue", function (d) {
+            return d.value.ukr;
+        });
+
+    sort();
+
 }
 
-function addRomania() {
-    
-    if (checkboxRomania.checked) {
-    
-    
-   datasetFirstPart.push ({year:"2004", country:"Румунія", abbr:"Рум", eu: "new", order: "13", val: "0.9", avg: "8.3"})
-   datasetFirstPart.push ({year:"2014", country:"Румунія", abbr:"Рум", eu: "new", order: "13", val: "2.6", avg: "10.2"})
-    
-    }
-    
-    else {
-        datasetFirstPart = _.reject(datasetFirstPart, function(el) { return el.country === "Румунія"; });      
-    
-    }    
-    redrawFirstPart ()
+function drawPol() {
+
+    var array = d3.nest()
+        .key(function (d) {
+            return d.item;
+        })
+        .entries(datasetFirstPart);
+
+    xFirstPart.domain(datasetFirstPart.map(function (d) {
+        return d.year;
+    }));
+
+    //диапазон по максимальному значению    
+    yFirstPart.domain([0, d3.max(array, function (c) {
+        return d3.max(c.values, function (v) {
+            return Math.max(v.ukr, v.pol);
+        });
+    })]);
+
+    d3.select("body")
+        .selectAll(".year")
+        .remove();
+
+    var div = d3.select("#vizdivFirstPart")
+        .selectAll(".year")
+        .data(array);
+
+    div.enter()
+        .append("div")
+        .attr("class", "year")
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom);
+
+    var svg = div.select("svg")
+        .append("g")
+        .attr("class", "viz")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var bars = svg.append("g")
+        .attr("class", "chart");
+
+    //столбцы  
+    bars.selectAll(".bar")
+        .data(function (d) {
+            return d.values;
+        })
+        .enter()
+        .append("rect")
+        .attr("id", "bar")
+        .style("pointer-events", "none") //нечувствительна к движениям курсора  
+        .attr("x", function (d) {
+            return xFirstPart(d.year);
+        })
+        .attr("y", function (d) {
+            return yFirstPart(d.ukr);
+        })
+        .attr("width", xFirstPart.rangeBand())
+        .attr("height", function (d) {
+            return height - yFirstPart(d.ukr);
+        });
+
+    //подпись
+    bars.append("text")
+        .attr("class", "title")
+        .attr("text-anchor", "middle")
+        .attr("x", width / 2)
+        .attr("y", height)
+        .attr("dy", margin.bottom / 2 + 20)
+        .text(function (d) {
+            return d.key;
+        });
+
+    var lineFirstPart = d3.svg.line()
+        .defined(function (d) {
+            return d.pol;
+        })
+        .x(function (d) {
+            return xFirstPart(d.year) + xFirstPart.rangeBand() / 2;
+        })
+        .y(function (d) {
+            return yFirstPart(d.pol);
+        });
+
+    bars.append("path")
+        .datum(function (d) {
+            return d.values;
+        })
+        .attr("class", "lineEU")
+        .attr("d", lineFirstPart);
+
+    bars.append("text")
+        .datum(function (d) {
+            return d.values[d.values.length - 1];
+        })
+        .attr("x", width + 3)
+        .attr("y", function (d) {
+            return yFirstPart(d.pol);
+        })
+        .text(function (d) {
+            return d.pol;
+        });
+
+    //ось у
+    svg.append("g")
+        .attr("class", "yFirstPart axis")
+        .call(yAxisFirstPart);
+
+    //ось х
+    svg.append("g")
+        .attr("class", "xFirstPart axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxisFirstPart);
+
+    //задание значения последнего года для каждого div-контейнера в качестве аттрибута для сортировки
+    d3.selectAll(".year")
+        .datum(function (d) { //не data!
+            return {
+                value: d.values[d.values.length - 1]
+            };
+        })
+        .attr("lastYearValue", function (d) {
+            return d.value.ukr;
+        });
+
+    sort();
+
+}
+
+function drawSwe() {
+
+    var array = d3.nest()
+        .key(function (d) {
+            return d.item;
+        })
+        .entries(datasetFirstPart);
+
+    xFirstPart.domain(datasetFirstPart.map(function (d) {
+        return d.year;
+    }));
+
+    //диапазон по максимальному значению    
+    yFirstPart.domain([0, d3.max(array, function (c) {
+        return d3.max(c.values, function (v) {
+            return Math.max(v.ukr, v.swe);
+        });
+    })]);
+
+    d3.select("body")
+        .selectAll(".year")
+        .remove();
+
+    var div = d3.select("#vizdivFirstPart")
+        .selectAll(".year")
+        .data(array);
+
+    div.enter()
+        .append("div")
+        .attr("class", "year")
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom);
+
+    var svg = div.select("svg")
+        .append("g")
+        .attr("class", "viz")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var bars = svg.append("g")
+        .attr("class", "chart");
+
+    //столбцы  
+    bars.selectAll(".bar")
+        .data(function (d) {
+            return d.values;
+        })
+        .enter()
+        .append("rect")
+        .attr("id", "bar")
+        .style("pointer-events", "none") //нечувствительна к движениям курсора  
+        .attr("x", function (d) {
+            return xFirstPart(d.year);
+        })
+        .attr("y", function (d) {
+            return yFirstPart(d.ukr);
+        })
+        .attr("width", xFirstPart.rangeBand())
+        .attr("height", function (d) {
+            return height - yFirstPart(d.ukr);
+        });
+
+    //подпись
+    bars.append("text")
+        .attr("class", "title")
+        .attr("text-anchor", "middle")
+        .attr("x", width / 2)
+        .attr("y", height)
+        .attr("dy", margin.bottom / 2 + 20)
+        .text(function (d) {
+            return d.key;
+        });
+
+    var lineFirstPart = d3.svg.line()
+        .defined(function (d) {
+            return d.swe;
+        })
+        .x(function (d) {
+            return xFirstPart(d.year) + xFirstPart.rangeBand() / 2;
+        })
+        .y(function (d) {
+            return yFirstPart(d.swe);
+        });
+
+    bars.append("path")
+        .datum(function (d) {
+            return d.values;
+        })
+        .attr("class", "lineEU")
+        .attr("d", lineFirstPart);
+
+    bars.append("text")
+        .datum(function (d) {
+            return d.values[d.values.length - 1];
+        })
+        .attr("x", width + 3)
+        .attr("y", function (d) {
+            return yFirstPart(d.swe);
+        })
+        .text(function (d) {
+            return d.swe;
+        });
+
+    //ось у
+    svg.append("g")
+        .attr("class", "yFirstPart axis")
+        .call(yAxisFirstPart);
+
+    //ось х
+    svg.append("g")
+        .attr("class", "xFirstPart axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxisFirstPart);
+
+    //задание значения последнего года для каждого div-контейнера в качестве аттрибута для сортировки
+    d3.selectAll(".year")
+        .datum(function (d) { //не data!
+            return {
+                value: d.values[d.values.length - 1]
+            };
+        })
+        .attr("lastYearValue", function (d) {
+            return d.value.ukr;
+        });
+
+    sort();
+
+}
+
+function drawGre() {
+
+    var array = d3.nest()
+        .key(function (d) {
+            return d.item;
+        })
+        .entries(datasetFirstPart);
+
+    xFirstPart.domain(datasetFirstPart.map(function (d) {
+        return d.year;
+    }));
+
+    //диапазон по максимальному значению    
+    yFirstPart.domain([0, d3.max(array, function (c) {
+        return d3.max(c.values, function (v) {
+            return Math.max(v.ukr, v.gre);
+        });
+    })]);
+
+    d3.select("body")
+        .selectAll(".year")
+        .remove();
+
+    var div = d3.select("#vizdivFirstPart")
+        .selectAll(".year")
+        .data(array);
+
+    div.enter()
+        .append("div")
+        .attr("class", "year")
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom);
+
+    var svg = div.select("svg")
+        .append("g")
+        .attr("class", "viz")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var bars = svg.append("g")
+        .attr("class", "chart");
+
+    //столбцы  
+    bars.selectAll(".bar")
+        .data(function (d) {
+            return d.values;
+        })
+        .enter()
+        .append("rect")
+        .attr("id", "bar")
+        .style("pointer-events", "none") //нечувствительна к движениям курсора  
+        .attr("x", function (d) {
+            return xFirstPart(d.year);
+        })
+        .attr("y", function (d) {
+            return yFirstPart(d.ukr);
+        })
+        .attr("width", xFirstPart.rangeBand())
+        .attr("height", function (d) {
+            return height - yFirstPart(d.ukr);
+        });
+
+    //подпись
+    bars.append("text")
+        .attr("class", "title")
+        .attr("text-anchor", "middle")
+        .attr("x", width / 2)
+        .attr("y", height)
+        .attr("dy", margin.bottom / 2 + 20)
+        .text(function (d) {
+            return d.key;
+        });
+
+    var lineFirstPart = d3.svg.line()
+        .defined(function (d) {
+            return d.gre;
+        })
+        .x(function (d) {
+            return xFirstPart(d.year) + xFirstPart.rangeBand() / 2;
+        })
+        .y(function (d) {
+            return yFirstPart(d.gre);
+        });
+
+    bars.append("path")
+        .datum(function (d) {
+            return d.values;
+        })
+        .attr("class", "lineEU")
+        .attr("d", lineFirstPart);
+
+    bars.append("text")
+        .datum(function (d) {
+            return d.values[d.values.length - 1];
+        })
+        .attr("x", width + 3)
+        .attr("y", function (d) {
+            return yFirstPart(d.gre);
+        })
+        .text(function (d) {
+            return d.gre;
+        });
+
+    //ось у
+    svg.append("g")
+        .attr("class", "yFirstPart axis")
+        .call(yAxisFirstPart);
+
+    //ось х
+    svg.append("g")
+        .attr("class", "xFirstPart axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxisFirstPart);
+
+    //задание значения последнего года для каждого div-контейнера в качестве аттрибута для сортировки
+    d3.selectAll(".year")
+        .datum(function (d) { //не data!
+            return {
+                value: d.values[d.values.length - 1]
+            };
+        })
+        .attr("lastYearValue", function (d) {
+            return d.value.ukr;
+        });
+
+    sort();
+
 }
