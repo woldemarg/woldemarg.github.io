@@ -136,7 +136,7 @@ function redrawFirstPart() {
         });
 
         d3.selectAll("#bar")
-            .style('fill', "#FAA61A");
+            .style('fill', "#FCB64C");
         d3.selectAll('#caption')
             .style('display', 'none');
 
@@ -165,7 +165,7 @@ function redrawFirstPart() {
         d3.selectAll(".xFirstPart.axis text")
             .classed("hidden", false); //возвращаем подпись шкалы времени
         d3.selectAll("#bar")
-            .style('fill', "#FAA61A"); //возвращаем исходный цвет
+            .style('fill', "#FCB64C"); //возвращаем исходный цвет
         d3.selectAll("#label")
             .classed("hidden", true);
         d3.selectAll('#caption')
