@@ -41,7 +41,7 @@ body {
 
 .chartTitle {    
     background-color: #E3E6EA;
-    padding: 35px 40px 10px 40px;
+    padding: 50px 40px 10px 40px;
    
   }
 
@@ -113,7 +113,7 @@ body {
 }
 
 #bar {
-     fill: #FAA61A;
+     fill: #FCB64C;
    }
 
 .overlay {
@@ -129,7 +129,7 @@ body {
 .lineEU {
 fill: none;
 stroke-width: 1.5px;
-stroke: #008D9E;
+stroke: #549DAD;
 }
 
 .lineAll {
@@ -148,13 +148,13 @@ ul#menuSecondPart li {
     text-align: center;
     display: inline-block;
     background-color: #A3A9B3;
-    margin: 5px 12px 5px 12px;
+    margin: 5px 9px 5px 9px;
     padding: 4px 4px 4px 4px; 
     border-radius: 4px 4px 4px 4px;
 }
 
 ul#menuSecondPart li:hover {
-    background-color:  #008D9E;
+    background-color:  #549DAD;
     color: #E3E6EA;
 }
 
@@ -166,14 +166,14 @@ ul#legendSecondPart div#UA {
     margin: 0px 5px 0px 0px;
     width: 15px;
     height: 15px;
-    background-color: #FAA61A;
+    background-color: #FCB64C;
 }
 
 ul#legendSecondPart div#EU {
     margin: 0px 5px 0px 15px;
     width: 15px;
     height: 15px;
-    background-color: #008D9E;
+    background-color: #549DAD;
 }
 
 ul#legendSecondPart li {
@@ -183,12 +183,12 @@ ul#legendSecondPart li {
 
 /*цвета для старых и новых членов*/
 .areaThirdPart {
-    fill: #008D9E;
+    fill: #549DAD;
    }
 
 /*цвет Украины*/
 path#Україна {
-     fill: #FAA61A;    
+     fill: #FCB64C;    
    }
 
 .circle {
