@@ -1,15 +1,15 @@
 "use strict";
 
 //размеры графиков
-var width = 110;
+var width = 109;
 
-var height = 110;
+var height = 105;
 
 var margin = {
     top: 15,
     right: 28,
     bottom: 47,
-    left: 38
+    left: 39
 };
 
 //исходный набр данных
