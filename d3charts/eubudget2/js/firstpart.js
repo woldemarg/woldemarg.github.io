@@ -7,9 +7,9 @@ var height = 110;
 
 var margin = {
     top: 15,
-    right: 29,
+    right: 28,
     bottom: 47,
-    left: 39
+    left: 38
 };
 
 //исходный набр данных
