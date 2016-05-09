@@ -1,7 +1,7 @@
 "use strict";
 
 //размеры графиков
-var width = 120;
+var width = 115;
 
 var height = 115;
 
