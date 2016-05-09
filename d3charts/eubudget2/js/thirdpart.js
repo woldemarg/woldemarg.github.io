@@ -389,7 +389,7 @@ function redrawThirdPart() {
 
 function sort09() {
     return tinysort("#vizdivThirdPart>div", {
-        attr: "lastYearValue" //по значению последнего года
+        attr: "lastYearValue", order:"desc" //по значению последнего года
     });
     change()
 }
