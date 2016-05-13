@@ -7,7 +7,7 @@ var height = 105;
 
 var margin = {
     top: 15,
-    right: 28,
+    right: 29,
     bottom: 47,
     left: 39
 };
