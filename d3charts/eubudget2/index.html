@@ -215,7 +215,7 @@ $("#nextBtn2")
                         <p>Примітка: тут і далі йдеться про видатки державного і місцевих бюджетів без видатків соціальних фондів</p>
                     </div>
                     <div class="col-xs-3 col-xs-offset-1  chartFooter">
-                        <p>Дані: Держстат, Євростат, НБУ</p>
+                        <p>Дані: Держстат, Євростат, НБУ<a href="https://drive.google.com/file/d/0B5bT-h9e6mOJTzBKSnpMbENkdkU/view?usp=sharing" target="_blank"> (завантажити)</a></p>
                     </div>
                 </div>
 
@@ -287,17 +287,17 @@ $("#nextBtn3")
                     <div class="row">
                         <div class="col-xs-8 col-xs-push-1 col-sm-2 col-sm-push-1 col-lg-9 col-lg-push-2 toolBar">
                             <p>Порівняти:</p>
-                            <ul id="menuSecondPart">
-                                <li onmouseover="drawBul()" onmouseout="redrawFirstPart()">Болгарія</li>
-                                <li onmouseover="drawLit()" onmouseout="redrawFirstPart()">Литва</li>
-                                <li onmouseover="drawPol()" onmouseout="redrawFirstPart()">Польща</li>
-                                <li onmouseover="drawCze()" onmouseout="redrawFirstPart()">Чехія</li>
-                                <li onmouseover="drawGre()" onmouseout="redrawFirstPart()">Греція</li>
-                                <li onmouseover="drawFra()" onmouseout="redrawFirstPart()">Франція</li>
-                                <li onmouseover="drawFin()" onmouseout="redrawFirstPart()">Фінляндія</li>
-                                <li onmouseover="drawSwe()" onmouseout="redrawFirstPart()">Щвеція</li>
+                            <div class="btn-group btn-group-xs" id="menuSecondPart">
+                                <button type="button" class="btn btn-default btnCountry" onclick="clickBul()" id="btnBul">Болгарія</button>
+                                <button type="button" class="btn btn-default btnCountry" onclick="clickLit()" id="btnLit">Литва</button>
+                                <button type="button" class="btn btn-default btnCountry" onclick="clickPol()" id="btnPol">Польща</button>
+                                <button type="button" class="btn btn-default btnCountry" onclick="clickCze()" id="btnCze">Чехія</button>
+                                <button type="button" class="btn btn-default btnCountry" onclick="clickGre()" id="btnGre">Греція</button>
+                                <button type="button" class="btn btn-default btnCountry" onclick="clickFra()" id="btnFra">Франція</button>
+                                <button type="button" class="btn btn-default btnCountry" onclick="clickFin()" id="btnFin">Фінляндія</button>
+                                <button type="button" class="btn btn-default btnCountry" onclick="clickSwe()" id="btnSwe">Щвеція</button>
 
-                            </ul>
+                            </div>
                         </div>
 
 
@@ -309,11 +309,13 @@ $("#nextBtn3")
 
 
                     <div class="row">
-
-                        <div class="col-xs-7 col-xs-push-1 col-lg-3 col-lg-push-5 chartFooter">
-                            <p>Дані: Держстат, Євростат, НБУ</p>
-                        </div>
+                    <div class="col-xs-7 col-xs-push-1  chartFooter">
+                        <p>Примітка: усі розрахунки в базових цінах 2015 року, що виключає вплив інфляції та зміни валютного курсу</p>
                     </div>
+                    <div class="col-xs-3 col-xs-offset-1  chartFooter">
+                        <p>Дані: Держстат, Євростат, НБУ<a href="https://drive.google.com/file/d/0B5bT-h9e6mOJS295ZFlVZWxiU1E/view?usp=sharing" target="_blank"> (завантажити)</a></p>
+                    </div>
+                </div>
 
 
                 </div>
