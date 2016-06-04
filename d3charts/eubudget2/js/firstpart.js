@@ -269,7 +269,7 @@ d3.csv("secondpart.csv", typeFirstPart, function (d) {
 });
 
 function drawBul() {
-
+        
     var array = d3.nest()
         .key(function (d) {
             return d.item;
@@ -1298,4 +1298,232 @@ function drawGre() {
 
     sort();
 
+}
+     
+//алгоритм нажатия кнопок
+//1 - переключение кнопок между собой
+//2 - когда одна нажата, нажатие на вторую сразу рисует страну
+//3 при нажати кнопки меняется ее класс на selected
+var isPressedBul = false;
+var isPressedLit = false;
+var isPressedPol = false;
+var isPressedCze = false;
+var isPressedGre = false;
+var isPressedFra = false;
+var isPressedFin = false;
+var isPressedSwe = false;
+
+function clickBul() {
+
+    isPressedBul = !isPressedBul;
+    isPressedLit = false;
+    isPressedPol = false;
+    isPressedCze = false;
+    isPressedGre = false;
+    isPressedFra = false;
+    isPressedFin = false;
+    isPressedSwe = false;
+
+    d3.selectAll(".btnCountry")
+        .classed("selected", false);
+
+    if (isPressedBul) {
+        drawBul();
+        d3.select("#btnBul")
+            .classed("selected", true);
+
+    } else {
+        redrawFirstPart();
+        d3.select("#btnBul")
+            .classed("selected", false);
+    }
+}
+
+function clickLit() {
+
+    isPressedBul = false;
+    isPressedLit = !isPressedLit;
+    isPressedPol = false;
+    isPressedCze = false;
+    isPressedGre = false;
+    isPressedFra = false;
+    isPressedFin = false;
+    isPressedSwe = false;
+
+    d3.selectAll(".btnCountry")
+        .classed("selected", false);
+
+    if (isPressedLit) {
+        drawLit();
+        d3.select("#btnLit")
+            .classed("selected", true);
+
+    } else {
+        redrawFirstPart();
+        d3.select("#btnLit")
+            .classed("selected", false);
+
+    }
+}
+
+function clickPol() {
+
+    isPressedBul = false;
+    isPressedLit = false;
+    isPressedPol = !isPressedPol;
+    isPressedCze = false;
+    isPressedGre = false;
+    isPressedFra = false;
+    isPressedFin = false;
+    isPressedSwe = false;
+
+    d3.selectAll(".btnCountry")
+        .classed("selected", false);
+
+    if (isPressedPol) {
+        drawPol();
+        d3.select("#btnPol")
+            .classed("selected", true);
+
+    } else {
+        redrawFirstPart();
+        d3.select("#btnPol")
+            .classed("selected", false);
+
+    }
+}
+
+function clickCze() {
+
+    isPressedBul = false;
+    isPressedLit = false;
+    isPressedPol = false;
+    isPressedCze = !isPressedCze;
+    isPressedGre = false;
+    isPressedFra = false;
+    isPressedFin = false;
+    isPressedSwe = false;
+
+    d3.selectAll(".btnCountry")
+        .classed("selected", false);
+
+    if (isPressedCze) {
+        drawCze();
+        d3.select("#btnCze")
+            .classed("selected", true);
+
+    } else {
+        redrawFirstPart();
+        d3.select("#btnCze")
+            .classed("selected", false);
+
+    }
+}
+
+function clickGre() {
+
+    isPressedBul = false;
+    isPressedLit = false;
+    isPressedPol = false;
+    isPressedCze = false;
+    isPressedGre = !isPressedGre;
+    isPressedFra = false;
+    isPressedFin = false;
+    isPressedSwe = false;
+
+    d3.selectAll(".btnCountry")
+        .classed("selected", false);
+
+    if (isPressedGre) {
+        drawGre();
+        d3.select("#btnGre")
+            .classed("selected", true);
+
+    } else {
+        redrawFirstPart();
+        d3.select("#btnGre")
+            .classed("selected", false);
+
+    }
+}
+
+function clickFra() {
+
+    isPressedBul = false;
+    isPressedLit = false;
+    isPressedPol = false;
+    isPressedCze = false;
+    isPressedGre = false;
+    isPressedFra = !isPressedFra;
+    isPressedFin = false;
+    isPressedSwe = false;
+
+    d3.selectAll(".btnCountry")
+        .classed("selected", false);
+
+    if (isPressedFra) {
+        drawFra();
+        d3.select("#btnFra")
+            .classed("selected", true);
+
+    } else {
+        redrawFirstPart();
+        d3.select("#btnFra")
+            .classed("selected", false);
+
+    }
+}
+
+function clickFin() {
+
+    isPressedBul = false;
+    isPressedLit = false;
+    isPressedPol = false;
+    isPressedCze = false;
+    isPressedGre = false;
+    isPressedFra = false;
+    isPressedFin = !isPressedFin;
+    isPressedSwe = false;
+
+    d3.selectAll(".btnCountry")
+        .classed("selected", false);
+
+    if (isPressedFin) {
+        drawFin();
+        d3.select("#btnFin")
+            .classed("selected", true);
+
+    } else {
+        redrawFirstPart();
+        d3.select("#btnFin")
+            .classed("selected", false);
+
+    }
+}
+
+function clickSwe() {
+
+    isPressedBul = false;
+    isPressedLit = false;
+    isPressedPol = false;
+    isPressedCze = false;
+    isPressedGre = false;
+    isPressedFra = false;
+    isPressedFin = false;
+    isPressedSwe = !isPressedSwe;
+
+    d3.selectAll(".btnCountry")
+        .classed("selected", false);
+
+    if (isPressedSwe) {
+        drawSwe();
+        d3.select("#btnSwe")
+            .classed("selected", true);
+
+    } else {
+        redrawFirstPart();
+        d3.select("#btnSwe")
+            .classed("selected", false);
+
+    }
 }
