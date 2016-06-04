@@ -139,21 +139,27 @@ stroke: #3A3F4A;
 }
 
 
-ul#menuSecondPart {
+#menuSecondPart {
     padding: 0;
       }
 
-ul#menuSecondPart li {
+#menuSecondPart button{
     width: 70px;
     text-align: center;
-    display: inline-block;
+    /*display: inline-block;*/
     background-color: #A3A9B3;
     margin: 5px 9px 5px 9px;
-    padding: 4px 4px 4px 4px; 
-    border-radius: 4px 4px 4px 4px;
+    padding: 4px 4px 4px 4px;
+   border-radius: 4px 4px 4px 4px;
+    font-size: 1em;
 }
 
-ul#menuSecondPart li:hover {
+/*ul#menuSecondPart li:hover {
+    background-color:  #549DAD;
+    color: #E3E6EA;
+}*/
+
+#menuSecondPart button.selected {
     background-color:  #549DAD;
     color: #E3E6EA;
 }
