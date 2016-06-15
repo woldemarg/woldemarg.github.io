@@ -23,12 +23,13 @@ body {
 
 
 .heading {
-     padding: 20px 0px 10px 0px;
+     padding: 20px 0px 10px 0px;     
 }
 
 
 .textPage {
     background-color: #EFF2F4;
+    padding-top: 50px;
 }
 
 .chartPage {
@@ -209,4 +210,32 @@ path#Україна {
 .fa {
     font-size: 2em; 
     font-weight: 400;
+}
+
+.small {
+    font-size: 1.3em; 
+    font-weight: 400;
+}
+
+h4, h5 {
+    color: #f9a21b;
+}
+.spoiler {
+    display: table;
+    position: relative;	
+	margin-bottom: 10px;
+    font-size: 1.35em; 
+}
+
+.spoiler-btn {
+	padding: 2px 6px;
+	cursor: pointer;
+}
+
+.spoiler-body {
+	padding: 6px;
+    font-size: 0.75em; 
+}
+.spoiler-body ul, ol {
+	font-size: 1.3em; 
 }
