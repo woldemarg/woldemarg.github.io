@@ -1,7 +1,7 @@
  "use strict";              
 
         //основная функция и загрузка данных
-        d3.json("wordcloud/words_experts.php", function(error, data) {
+        d3.json("http://woldemarg.github.io/d3charts/wordcloud/words_experts.php", function(error, data) {
             if (error) {throw error};
 
             //создание облака - http://bl.ocks.org/jwhitfieldseed/9697914
