@@ -1,0 +1,52 @@
+ body {
+            font-family: 'PT Sans', sans-serif;
+      font-size: 15px;
+     font-weight: 300;
+     
+        }
+
+        
+.link {
+        
+            stroke: #708090;
+            stroke-opacity: 0.6;
+        }
+        
+.node {
+            
+            stroke: #fff;
+            stroke-width: 1.0px;
+        }
+
+.node-spd {
+    fill: #C0C0C0;
+}
+
+.node-dp {
+    fill: #808080;
+}
+
+/*http://stackoverflow.com/questions/30291452/d3-transitions-between-classes*/
+.newClass {
+    fill: #AA1111;
+    transition: fill 2500ms;
+}
+
+.chapter {        
+        color: #ddd;        
+       }
+
+ p {
+    width: inherit;
+     margin-bottom: 30px;
+        }
+/*классыдля фиксации элемента с графикой
+пример с помощью affix.js - http://jsfiddle.net/uvnGP/131/*/
+.affix {
+position:fixed;    
+      top: 30px;    
+  }
+
+.affix-bottom {
+      position:absolute;    
+  }
