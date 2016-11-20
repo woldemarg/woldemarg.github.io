@@ -1,52 +1,78 @@
- body {
-            font-family: 'PT Sans', sans-serif;
-      font-size: 15px;
-     font-weight: 300;
-     
-        }
+/*main*/
+body {
+font-family:'PT Sans', sans-serif;
+font-size:15px;
+font-weight:300;
+}
 
-        
+p {
+margin-bottom:30px;
+width:inherit;
+}
+
+/*network graph links and nodes*/
 .link {
-        
-            stroke: #708090;
-            stroke-opacity: 0.6;
-        }
-        
+stroke:#708090;
+stroke-opacity:0.6;
+}
+
 .node {
-            
-            stroke: #fff;
-            stroke-width: 1.0px;
-        }
+stroke:#fff;
+stroke-width:1.5px;
+}
 
 .node-spd {
-    fill: #C0C0C0;
+fill:silver;
 }
 
 .node-dp {
-    fill: #808080;
+fill:gray;
 }
 
-/*http://stackoverflow.com/questions/30291452/d3-transitions-between-classes*/
-.newClass {
-    fill: #AA1111;
-    transition: fill 2500ms;
+.picked {
+fill:#A11;
 }
 
-.chapter {        
-        color: #ddd;        
-       }
-
- p {
-    width: inherit;
-     margin-bottom: 30px;
-        }
-/*классыдля фиксации элемента с графикой
-пример с помощью affix.js - http://jsfiddle.net/uvnGP/131/*/
+/*networkgraph position*/
 .affix {
-position:fixed;    
-      top: 30px;    
-  }
+position:fixed;
+top:30px;
+}
 
 .affix-bottom {
-      position:absolute;    
-  }
+position:absolute;
+}
+
+/*comments block*/
+.chapter {
+color:#ddd;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
