@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles-spd.css" rel="stylesheet" type="text/css">
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+    </script>
+    <script src="https://d3js.org/d3.v3.min.js">
+    </script><!--https://github.com/d3/d3-queue-->
+
+    <script src="https://d3js.org/d3-queue.v3.min.js">
+    </script>
+
+    <title>
+    </title>
+</head>
+
+<body>
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1>Основний заголовок</h1>
+
+
+                    <p>Третина бюджетних коштів у розрахунках між ДП і ФОП витрачається неефективно або із порушенням закону</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="container" id="page">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Аномальі закупівлі</h3>
+
+
+                <p><b>Статтю краще почати із розповіді про одну окрему операцію.</b>Наприклад, ФОП Артюх в квітні поставив на ЧАЕС туалетного паперу (і серветок) на 109 тис. грн. Це майже річна норма споживання усього персоналу станції - зараз на ЧАЕС працює до 3 тис. людей (http://chnpp.gov.ua/uk/trade-union). Подальші мої розрахунки в текст включати не обов'язково, вони можуть лишитися поза кадром - це просто такі розмірковування для себе. Отже середня вартість рулона - до 5 грн. Сума закупівлі - 100 (тис. грн.) / 5 (грн.) = 20 тис. рулонів х 60 (м.) = 1200 (км.) / 3000 (люд.) = 400 м на 1 особу / 50 (м на одну особу на міс. - це середня норма споживання в армії) = 10 міс. За обсягом це близько 10 куб. м: середній рулон - це циліндр 90 х 95 (мм) = 0,0005 (куб.м.) х 20 (тис.). Обсяг кузова вантажівки - приблизно 6 куб.м. Або так. Вага 1 кв. м одношарового туалетного пареру - 15 г. (це є в Інтернеті). В одному рулоні - близько 5,4 кв.м. Сукупна вага 20 тис. рулонів - понад 1,6 тн.</p>
+
+
+                <p><b>Пустий абзац</b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis lobortis odio, vel bibendum ligula suscipit in. Proin scelerisque ipsum at mi efficitur, ut pharetra mi facilisis. Cras ut orci tincidunt, luctus magna consequat, mattis diam. Mauris molestie sodales nisi sagittis dignissim. Proin blandit pharetra finibus. Cras quis dignissim magna. Quisque consectetur consectetur turpis, sed vulputate sapien. Sed diam ex, vulputate viverra dictum a, interdum in purus.</p>
+
+
+                <p><b>Пустий абзац</b>Vestibulum et justo erat. Curabitur hendrerit dictum metus in aliquet. Pellentesque congue neque vel vulputate gravida. Morbi pellentesque a justo auctor fermentum. Donec nec purus eget justo elementum posuere. Quisque vel luctus erat. Aliquam sit amet lectus vel tortor dignissim dictum. Vivamus lacinia auctor nisl, auctor porttitor velit convallis a. Curabitur at orci luctus turpis facilisis placerat non faucibus enim. Morbi maximus magna libero, in consequat elit accumsan et. Sed convallis elementum sagittis. Aenean commodo commodo metus, id dapibus lorem porta vitae.</p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div id="chart_comments">
+                    <div id="OpeningComment">                      
+                        
+                        
+                        <p><b>Опис даних. </b> Період аналізу - з 1 жовтня 2015 по 30 вересня 2016 (12 міс.). Всі дані по транзакція - з e-data. Обмеження на дані. По-перше, не всі бюджетні підприємства зарежстровані і звітують на порталі. Тут можна дати посилання на індекс прозорості ДП, який ведуть у СASE. По-друге, ДП звітують лише про бюджетні кошти (а не про свої власні), тобто для аналізу доступні транзакції, проведені через казначейські рахунки. Всього в нашій вихідній базі даних 86866 записів для 423 ДП за 12 міс. В базу даних транзакцій між ДП і ФОП відібрані 2473 записів між 129 ДП і 586 ФОП. Для об'єктивного аналізу із Бд виключені операції, пов'язані із оплатою оренди приміщення, банківськи, комунально-побутових і монопольних (Укрпошта, Укртелеком) послу. Також виключено операції із оплати ремонтних робіт і обслуговування автодоріг.</p>
+                        
+                        <p><b>Тут іде опис основних тенденцій витрачання бюджетних коштів протягом року.</b> Vestibulum et justo erat. Curabitur hendrerit dictum metus in aliquet. Pellentesque congue neque vel vulputate gravida. Morbi pellentesque a justo auctor fermentum. Donec nec purus eget justo elementum posuere. Quisque vel luctus erat. Aliquam sit amet lectus vel tortor dignissim dictum. Vivamus lacinia auctor nisl, auctor porttitor velit convallis a. Curabitur at orci luctus turpis facilisis placerat non faucibus enim. Morbi maximus magna libero, in consequat elit accumsan et. Sed convallis elementum sagittis. Aenean commodo commodo metus, id dapibus lorem porta vitae.</p>
+                    </div>
+                        
+                         <div id="keepScrolling">
+                        <p><b>-= КРУТІТЬ ДАЛІ =-</b>
+                        </p>
+                        </div>
+
+                        
+
+
+                    <div class="chapter" id="streamGraph">
+                        <p><b>Тут іде аналіз особливостей транзакцій із ФОП.</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi laoreet, turpis vel pharetra rutrum, magna orci sagittis quam, sit amet eleifend ex dolor et lectus. Duis placerat ex nec lorem viverra, sit amet vulputate risus imperdiet. Pellentesque sagittis eleifend erat, quis porttitor eros interdum id. Curabitur dignissim metus eu mi aliquet, ac rutrum libero fermentum. Nullam tempor lacinia sagittis. Curabitur efficitur lobortis erat sed volutpat. Quisque ac dui risus. Donec eu congue diam. Nulla facilisi.</p>                        
+                    </div>                   
+
+
+                    <div class="chapter" id="lastMonth">
+                        <h3>Останній трамвай</h3>
+
+
+                        <p><b>Опис критерію - ФОП, які мали декілька (>1) транзакцій із ДП, і при цьому отримали в грудні 2015р. виплат на суму понад 80 тис. грн., що перевищило 50% сукупної суми, отриманої ними за весь досліджуваний період.</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi laoreet, turpis vel pharetra rutrum, magna orci sagittis quam, sit amet eleifend ex dolor et lectus. Duis placerat ex nec lorem viverra, sit amet vulputate risus imperdiet. Pellentesque sagittis eleifend erat, quis porttitor eros interdum id. Curabitur dignissim metus eu mi aliquet, ac rutrum libero fermentum. Nullam tempor lacinia sagittis. Curabitur efficitur lobortis erat sed volutpat. Quisque ac dui risus. Donec eu congue diam. Nulla facilisi. <span title="Заголовок" data-toggle="popover" data-placement="right" data-content="Таблиця">Приклад</span></p>
+                       
+                    </div>
+
+
+                    <div class="chapter" id="tenderAvoid">
+                        <h3>Поза конкурсом</h3>
+
+
+                        <p><b>Серед цих операцій (виплат в грудні) можна віднайти декілька випадків, схожих за формальними ознаками на спроби ухиляння від проведення тендеру. операції, що схожі на обхід тендера. Опис критерію -  2-3 платежі за різними договорами із одним ФОП щодо ідентичного предмету закупівлі із проміжком у 2-5 днів на загальну суму близько 100 тис. грн. (до введення елекронних закупівель - 100 тис. це поріг для проведення тендеру); або одноразові операції із ФОП на сумм 98-99 тим. грн. Операції із подібними ознаками легко знайти протягом усього досліджуваного періоду.</b> Mauris blandit ex est. Vivamus ac nibh euismod, aliquet risus ut, cursus elit. Fusce viverra risus orci, eu molestie ante rhoncus in. Nam eu imperdiet sem, quis hendrerit risus. Duis et fermentum nibh. Sed sapien nunc, tristique facilisis rutrum ac, tincidunt ut neque. Mauris in facilisis tortor, at ullamcorper diam. In vitae massa interdum, commodo risus id, dictum massa. Aenean quis facilisis libero. Vivamus venenatis posuere neque, non tincidunt quam elementum at. Proin vel justo sed ex pellentesque pretium. Phasellus eu malesuada augue. <span title="Заголовок" data-toggle="popover" data-placement="right" data-content="Таблиця">Приклад</span></p>
+                    </div>
+
+
+                    <div class="chapter" id="familyContract">
+                        <h3>Батьки і діти</h3>
+
+
+                        <p><b>В операціях із ознаками ухилення від тендерів нерідко були задіяні пов'язані між собою ФОП, cкоріш за все - родичі (ФОП із одним прізвищем але різними ініціалами, із якими укладалися договори поставку ідентичної продукції, або споріднених послуг, із одним і тим самим ДП). Така схема часто використовувалася для обходу тендеру. </b>Nam ac porta massa, in molestie enim. Ut lacinia at mauris at sollicitudin. Integer vitae ornare ex. Nam eget aliquam nisi. Etiam consectetur at lorem nec pharetra. Vestibulum id tristique diam, nec dignissim quam. Nulla eget magna id ipsum molestie volutpat eget sollicitudin sapien. Donec congue viverra posuere. Nulla non hendrerit purus, in gravida ligula. Sed ex diam, dapibus a leo ut, luctus ornare dolor. Mauris sed rutrum ante. Nunc non justo vitae ligula ullamcorper ornare. In a ipsum in tellus malesuada fermentum. Etiam imperdiet lorem libero, nec vulputate diam tincidunt nec. <span title="Заголовок" data-toggle="popover" data-placement="right" data-content="Таблиця">Приклад</span></p>
+                    </div>
+
+
+                    <div class="chapter" id="strongCollaboration">
+                        <h3>Обоє рябоє</h3>
+
+
+                        <p><b>Аналізуючи базу далі ми звернули увагу на окремих ФОП, які тісно співпрацюють із ДП та користуються "невиправданою" довірою у їх очільників. За нашим критерієм це ФОП, із яким здійснювалися операції не менш ніж в 9-ти місяцях із 12 досліджуваних, на загальну суму понад 200 тис. грн. Інколи в таких випадках зустрічаються і операції, що мають формалізовані нами ознаки обходу тендерного законодавства. Також до цієї групи віднесено випадки отримання ФОП значної передоплати на закупівлю товарів. Хоча це прямо і не заборонено законодавством (щоправда і тут є певні обмеженні на відсоток авансу і термін передоплати, які інколи прямо порушувалися), проте, на мою думку, такий підхід не дуже виправданий у відносинах із ФОП. </b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi laoreet, turpis vel pharetra rutrum, magna orci sagittis quam, sit amet eleifend ex dolor et lectus. Duis placerat ex nec lorem viverra, sit amet vulputate risus imperdiet. Pellentesque sagittis eleifend erat, quis porttitor eros interdum id. Curabitur dignissim metus eu mi aliquet, ac rutrum libero fermentum. Nullam tempor lacinia sagittis. Curabitur efficitur lobortis erat sed volutpat. Quisque ac dui risus. Donec eu congue diam. Nulla facilisi. <span title="Заголовок" data-toggle="popover" data-placement="right" data-content="Таблиця">Приклад</span></p>
+                    </div>
+
+
+                    <div class="chapter" id="strangeTransactions">
+                        <h3>Дорогою ціною</h3>
+
+
+                        <p><b>Це група не зовсім зрозумілих і підозрілих операцій, на які можна потрапити, працюючи із базаою (тобто вони не мають формалізованої ознаки). Таких операцій, очевидно, можна відшукати і більше, але опис в призначенні платежу не завжди дозволяє визначити кількість закупленого товару, а, отже, і розрахувати його вартість. Зокрема, в цю групи потрапив і постачальник туалетного паперу, з якого починається наша історія. </b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi laoreet, turpis vel pharetra rutrum, magna orci sagittis quam, sit amet eleifend ex dolor et lectus. Duis placerat ex nec lorem viverra, sit amet vulputate risus imperdiet. Pellentesque sagittis eleifend erat, quis porttitor eros interdum id. Curabitur dignissim metus eu mi aliquet, ac rutrum libero fermentum. Nullam tempor lacinia sagittis. Curabitur efficitur lobortis erat sed volutpat. Quisque ac dui risus. Donec eu congue diam. Nulla facilisi. <span title="Заголовок" data-toggle="popover" data-placement="right" data-content="Таблиця">Приклад</span></p>
+                    </div>
+
+
+                    <div class="chapter" id="closingComment">
+                        <p><b>Пустий абзац.</b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi laoreet, turpis vel pharetra rutrum, magna orci sagittis quam, sit amet eleifend ex dolor et lectus. Duis placerat ex nec lorem viverra, sit amet vulputate risus imperdiet. Pellentesque sagittis eleifend erat, quis porttitor eros interdum id. Curabitur dignissim metus eu mi aliquet, ac rutrum libero fermentum. Nullam tempor lacinia sagittis. Curabitur efficitur lobortis erat sed volutpat. Quisque ac dui risus. Donec eu congue diam. Nulla facilisi.</p>
+                    </div>
+                    <div id="keepScrolling2">
+                        <p><b>-= КРУТІТЬ ДАЛІ =-</b>
+                        </p>
+                        </div>
+
+                    
+                </div>
+            </div>
+
+
+            <div class="col-sm-8" id="thisdiv">
+                <div id="chart">
+                    <div id="chartTitle"></div>
+                    <div id="chartLegend"></div>
+                    <div id="chartBody"></div>
+                    <div id="chartFooter"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-12">
+                <p><p>Тут можна відмітити, що дивним виглядає те, що ФОП групуються навколо павного підприємства, і майже не обслуговують інші ДП. Це також наводить на думку про існування певних "неформальних" зв'язків між ними. В попередню версію графіки до цієї статті (net chart) можна додати декілька фільтрів (по регіонах, відомствах, сумах) і представити її інтерактивним додатком до цієї статті для самостійного і більш глибокого дослідження теми. </p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis lobortis odio, vel bibendum ligula suscipit in. Proin scelerisque ipsum at mi efficitur, ut pharetra mi facilisis. Cras ut orci tincidunt, luctus magna consequat, mattis diam. Mauris molestie sodales nisi sagittis dignissim. Proin blandit pharetra finibus. Cras quis dignissim magna. Quisque consectetur consectetur turpis, sed vulputate sapien. Sed diam ex, vulputate viverra dictum a, interdum in purus.</p>
+
+
+            <p><b>Обов'язкого треба написати про зміну системи закупівель на "ПроЗорро" з серпня 2016 р. Проте, з огляду на наявність "непрзорих" та неефективних операцій, і в серпні, і в вересні, ця система ще не запрацювала на повну силу. І призвела до появи нових схем. Зокрема, точно можу сказати з своєї особистої практики, що існує схема, за якою підприємство максимально зницую ціну на тендері (бо "домовитися" про перемогу, як це було раніше, стало, дійсно, важче), а потім підвищую акцептовану ціну до 10% (ліміт, встановлений законом) із посиланням на нібито зростання середніх цін на ринку. На підтвердження цього підприємство бере довідки в ергіональній ТПП. </b>Morbi nisi lectus, accumsan ac maximus sit amet, feugiat id elit. Fusce ornare gravida leo, at mollis sapien rutrum et. Maecenas non consectetur enim. Quisque suscipit et ipsum vitae dapibus. Proin ut diam vel ante interdum pharetra ac non ipsum. Nulla libero urna, suscipit nec sapien in, varius convallis lacus. Suspendisse commodo dui turpis, quis placerat metus faucibus id. Suspendisse molestie metus justo, euismod euismod urna consequat a.</p>
+
+
+            <p><b>Основний висновок про те, що третина бюджетних коштів у розрахунках між ДП і ФОП витрачається неефективно або із порушенням закону. Причому, як це випливає із нашого аналізу, зацікавлені у підтриманні таких схеми взаємодіє саме ДП (ми визначили майже 1/3 ДП як "неефективних), оскільки більшість ФОП просто надають послуги і щодо їх діяльності нема жодних підозр. </b>Vestibulum et justo erat. Curabitur hendrerit dictum metus in aliquet. Pellentesque congue neque vel vulputate gravida. Morbi pellentesque a justo auctor fermentum. Donec nec purus eget justo elementum posuere. Quisque vel luctus erat. Aliquam sit amet lectus vel tortor dignissim dictum. Vivamus lacinia auctor nisl, auctor porttitor velit convallis a. Curabitur at orci luctus turpis facilisis placerat non faucibus enim. Morbi maximus magna libero, in consequat elit accumsan et. Sed convallis elementum sagittis. Aenean commodo commodo metus, id dapibus lorem porta vitae.</p>               
+            </div>
+        </div>
+    </div>   
+        
+    <!--http://spin.js.org/
+    <script src="d3tip.js"></script>-->
+    <script src="js/noscroll-spd.js">
+    </script>
+    <script src="js/chart-spd.js">
+    </script> 
+    <script src="libs/noframework.waypoints.min.js">
+    </script> 
+    <script src="js/waypoints-spd.js">
+    </script>
+    
+    <script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script>  
+</body>
+</html>
