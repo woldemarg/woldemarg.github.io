@@ -1,0 +1,65 @@
+body {
+font-family:'PT Sans', sans-serif;
+font-size:15px;
+font-weight:300;
+}
+
+p {
+margin-bottom:30px;
+width:inherit;
+}
+
+.chapter {
+color:#ddd;
+}
+
+#chartTitle {
+    height:50px;
+}
+
+#chart text {
+font-size:.8em;
+}
+
+.y.axis line {
+fill:none;
+shape-rendering:crispEdges;
+stroke:#000;
+}
+
+.y.axis path,
+.x.axis line,
+.x.axis path {
+display:none;
+}
+
+#nspd.layer {
+fill:#ccc;
+}
+
+#mistrust-bars,
+.mistrustBox {
+fill:#A11;
+}
+
+.affix {
+position:fixed;
+top:30px;
+}
+
+.affix-bottom {
+position:absolute;
+}
+
+#spd.layer,
+.bar,
+.spdBox {
+fill:#555;
+}
+
+span {
+cursor:pointer;
+font-weight:600;
+text-decoration:underline;
+text-decoration-style: dashed;
+}
