@@ -224,6 +224,8 @@ function MyChart(div, spdNspdData, csv3) {
             
             var textLength = document.getElementById("textToMeasure").clientWidth;
             
+            console.log(textLength);
+            
             legend.append("rect")
                 .attr("class", "mistrustBox")
                 .attr("x", 5 + 10 + 5 + textLength + 25)
