@@ -169,10 +169,7 @@ function MyChart(div, spdNspdData, csv3) {
     
         radius = 3,
 
-        barWidthToShift,
-        
-        textLength;
-
+        barWidthToShift;
     
     function changeTitle(chapter) {
         
@@ -216,21 +213,22 @@ function MyChart(div, spdNspdData, csv3) {
                 .attr("height", 10);
         
             legend.append("text")
+                .attr("id", "textToMeasure")
                 .attr("x", 20)
                 .attr("y", 15)
-                .text("транзакції з ФОП")
-                .attr("id", "textToMeasure");
-            
-            textLength = document.getElementById("textToMeasure").clientWidth;
+                .text("транзакції з ФОП");           
         }
         
         if (chapter === 2) {
-            
-            console.log(textLength);
+                        
+            // http://stackoverflow.com/questions/1636842/svg-get-text-element-width
+            var textBbox = document.getElementById("textToMeasure").getBBox(),            
+                widthT = textBbox.width,
+                heightT = textBbox.height;
             
             legend.append("rect")
                 .attr("class", "mistrustBox")
-                .attr("x", 5 + 10 + 5 + textLength + 25)
+                .attr("x", 5 + 10 + 5 + widthT + 25)
                 .attr("y", 5)
                 .attr("width", 10)
                 .attr("height", 10)
