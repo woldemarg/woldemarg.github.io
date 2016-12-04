@@ -25,10 +25,11 @@ var q = d3.queue(),
         "days": ["неділя", "понеділок", "вівторок", "середа", "четвер", "п'ятниця", "субота"],
         "shortDays": ["нд", "пн", "вт", "ср", "чт", "пт", "сб"],
         "months": ["січень", "лютий", "березень", "квітень", "травень", "червень", "липень", "серпень", "вересень", "жовтень", "листопад", "грудень"],
-        "shortMonths": ["січ", "лют", "бер", "кві", "тра", "чер", "лип", "сер", "вер", "жов", "лис", "гру"]
+        "shortMonths": ["січ '16", "лют", "бер", "кві", "тра", "чер", "лип", "сер", "вер", "жов", "лис", "гру"]
     }),
 
     formatDate = ua_locale.timeFormat("%d.%m.%Y"),
+    //formatDate = d3.time.format("%d.%m.%Y"),
 
     cumulMistrustData = [],
 
@@ -125,9 +126,10 @@ function MyChart(div, spdNspdData, csv3) {
         xAxis = d3.svg.axis()
             .scale(x)
             .orient("bottom")
-            .tickFormat(ua_locale.timeFormat("%b '%y")),
+            .ticks(d3.time.month)
+            .tickFormat(ua_locale.timeFormat("%b"))
             //.outerTickSize(0)
-            //.tickSubdivide(1)
+            .tickSubdivide(1),
             //.tickSize(-height)
 
         yAxis = d3.svg.axis()
