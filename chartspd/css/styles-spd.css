@@ -1,6 +1,5 @@
 body {
 font-family:'PT Sans', sans-serif;
-font-size:15px;
 font-weight:300;
 }
 
@@ -14,7 +13,8 @@ color:#ddd;
 }
 
 #chartTitle {
-    height:50px;
+height:80px;
+margin-bottom:5px;
 }
 
 #chart text {
@@ -62,4 +62,20 @@ cursor:pointer;
 font-weight:600;
 text-decoration:underline;
 text-decoration-style: dashed;
+}
+
+/* ======== responsive-font-size ======== */
+body {
+    font-size:18px;
+}
+
+@media(max-width: 992px) {
+  body {
+    font-size: 15px;
+  }  
+}
+@media(max-width: 768px) {
+  body {
+    font-size: 12px;
+  }
 }
