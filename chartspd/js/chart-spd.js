@@ -238,7 +238,7 @@ function MyChart(div, spdNspdData, csv3) {
                 .style("opacity", 1);
         
             legend.append("text")
-                .attr("x", 5 + 10 + 5 + textLength + 25 + 15)
+                .attr("x", 5 + 10 + 5 + widthT + 25 + 15)
                 .attr("y", 15)
                 .text("частка сумнівних* ФОП").style("opacity", 1e-6)
                 .transition()
