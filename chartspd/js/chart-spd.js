@@ -169,7 +169,9 @@ function MyChart(div, spdNspdData, csv3) {
     
         radius = 3,
 
-        barWidthToShift;
+        barWidthToShift,
+        
+        textLength;
 
     
     function changeTitle(chapter) {
@@ -219,12 +221,10 @@ function MyChart(div, spdNspdData, csv3) {
                 .text("транзакції з ФОП")
                 .attr("id", "textToMeasure");
             
-             var textLength = document.getElementById("textToMeasure").clientWidth;
+            textLength = document.getElementById("textToMeasure").clientWidth;
         }
         
         if (chapter === 2) {
-            
-            //var textLength = document.getElementById("textToMeasure").clientWidth;
             
             console.log(textLength);
             
