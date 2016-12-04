@@ -218,11 +218,13 @@ function MyChart(div, spdNspdData, csv3) {
                 .attr("y", 15)
                 .text("транзакції з ФОП")
                 .attr("id", "textToMeasure");
+            
+             var textLength = document.getElementById("textToMeasure").clientWidth;
         }
         
         if (chapter === 2) {
             
-            var textLength = document.getElementById("textToMeasure").clientWidth;
+            //var textLength = document.getElementById("textToMeasure").clientWidth;
             
             console.log(textLength);
             
