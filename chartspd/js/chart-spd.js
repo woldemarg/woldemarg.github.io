@@ -1,6 +1,5 @@
 /*jslint plusplus: true*/
 /*jslint regexp: true*/
-
 // force page scroll to top at refresh
 window.onbeforeunload = function () {
     "use strict";
@@ -10,9 +9,9 @@ window.onbeforeunload = function () {
 var q = d3.queue(),
 
     chart,
-    
+
     barWidthToShift,
-    
+
     ua_locale = d3.locale({
         "decimal": ",",
         "thousands": "\u00A0",
@@ -128,18 +127,13 @@ function MyChart(div, spdNspdData, csv3) {
             .orient("bottom")
             .ticks(d3.time.month)
             .tickFormat(ua_locale.timeFormat("%b"))
-            //.outerTickSize(0)
             .tickSubdivide(1),
-            //.tickSize(-height)
-
+        
         yAxis = d3.svg.axis()
             .scale(y)
             .orient("left")
             .ticks(6),
-            //.tickPadding(3)        
-            //.tickSubdivide(1)
-            //.tickSize(5,5)
-
+        
         area = d3.svg.area()
             .interpolate("monotone")
             .x(function (d) {
@@ -150,6 +144,7 @@ function MyChart(div, spdNspdData, csv3) {
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")"),
 
         dots = svg.append("g")
+            .attr("class", "dotsG")
             .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")"),
 
         xAxisDispl = svg.append("g")
@@ -161,38 +156,52 @@ function MyChart(div, spdNspdData, csv3) {
         yAxisDispl = svg.append("g")
             .attr("class", "y axis")
             .attr("transform", "translate(" + (margin.left - yAxisShift) + "," + margin.top + ")"),
-        
+
         legend = d3.select("#chartLegend")
             .append("svg")
             .attr("width", svgMaxWidth)
             .attr("height", 30),
-        
+
         duration = 2000,
-    
+
         radius = 3,
 
-        barWidthToShift;
-    
+        barWidthToShift,
+
+        sumSpd,
+        sumAll,
+        mistShare,
+        numAnim,
+
+        numAnimOptions = {  
+            useEasing: true,
+              useGrouping: false,
+              separator: ',',
+              decimal: '.',
+              prefix: '',
+              suffix: '%'
+        };
+
     function changeTitle(chapter) {
-        
+
         var header = d3.select("#chartTitle"),
-            
+
             firstTitle,
             secondTitle;
-        
+
         if (chapter === 1) {
             firstTitle = header.append("h4")
                 .html("Динаміка бюджетних транзакцій ДП щодо закупівлі товарів і послуг</br><small>(крім банківських, комунально-побутових, монопольних і пов'язаних із обслуговування автодоріг)</small>");
         }
-        
+
         if (chapter === 2) {
-            
+
             header.select("h4")
                 .transition()
                 .duration(duration / 4)
                 .style("opacity", 1e-6)
                 .remove();
-            
+
             secondTitle = header.append("h4")
                 .style("opacity", 1e-6)
                 .html("Динаміка бюджетних транзакції між ДП і ФОП")
@@ -202,32 +211,41 @@ function MyChart(div, spdNspdData, csv3) {
                 .style("opacity", 1);
         }
     }
-    
+
     function drawLegend(chapter) {
-        
+
         if (chapter === 1) {
-            
+
             legend.append("rect")
                 .attr("class", "spdBox")
                 .attr("x", 5)
                 .attr("y", 5)
                 .attr("width", 10)
                 .attr("height", 10);
-        
+
             legend.append("text")
                 .attr("id", "textToMeasure")
                 .attr("x", 20)
                 .attr("y", 15)
-                .text("транзакції з ФОП");           
+                .text("транзакції з ФОП");
         }
-        
+
         if (chapter === 2) {
-                        
+
             // http://stackoverflow.com/questions/1636842/svg-get-text-element-width
-            var textBbox = document.getElementById("textToMeasure").getBBox(),            
+            var textBbox = document.getElementById("textToMeasure")
+                .getBBox(),
                 widthT = textBbox.width,
-                heightT = textBbox.height;
-            
+                heightT = textBbox.height,
+                
+                footer = d3.select("#chartFooter")
+                .append("p")
+                .style("opacity", 1e-6)
+                .html("* сумнівність транзакцій і контрагентів визначається за критеріями, описаними в тексті статті")
+                .transition()
+                .duration(duration / 4)
+                .style("opacity", 1);
+
             legend.append("rect")
                 .attr("class", "mistrustBox")
                 .attr("x", 5 + 10 + 5 + widthT + 25)
@@ -238,31 +256,26 @@ function MyChart(div, spdNspdData, csv3) {
                 .transition()
                 .duration(duration / 4)
                 .style("opacity", 1);
-        
+
             legend.append("text")
                 .attr("x", 5 + 10 + 5 + widthT + 25 + 15)
                 .attr("y", 15)
-                .text("частка сумнівних* ФОП").style("opacity", 1e-6)
-                .transition()
-                .duration(duration / 4)
-                .style("opacity", 1);
-            
-            var footer = d3.select("#chartFooter")
-                .append("p")
+                .text("сумнівні транзакції/контрагенти*")
                 .style("opacity", 1e-6)
-                .html("* сумнівність транзакцій і контрагентів визначається за критеріями, описаними в тексті статті")
                 .transition()
                 .duration(duration / 4)
                 .style("opacity", 1);
+
             
+
         }
     }
-    
+
     // http://stackoverflow.com/questions/7176908/how-to-get-index-of-object-by-its-property-in-javascript
     function findWithAttr(array, attr, value) {
-       
+
         var i;
-        
+
         for (i = 0; i < array.length; i += 1) {
             if (array[i][attr] === value) {
                 return i;
@@ -272,7 +285,7 @@ function MyChart(div, spdNspdData, csv3) {
     }
 
     function getMonthsCombined(input, cumulative) {
-        
+
         var i = input.length,
             j;
 
@@ -291,9 +304,9 @@ function MyChart(div, spdNspdData, csv3) {
     }
 
     function isInArray(el, arr) {
-        
+
         var i;
-        
+
         for (i = 0; i < arr.length; i += 1) {
             if (el === +arr[i].dat) {
                 return true;
@@ -312,6 +325,7 @@ function MyChart(div, spdNspdData, csv3) {
                 cumulative.push(insert[i]);
             }
         }
+
         return cumulative;
     }
 
@@ -341,7 +355,7 @@ function MyChart(div, spdNspdData, csv3) {
                 return height - y(d.val);
             });
     }
-    
+
     function transToBars() {
 
         y = d3.scale.linear()
@@ -362,6 +376,10 @@ function MyChart(div, spdNspdData, csv3) {
                 });
             }
         });
+
+        sumAll = spdDB.reduce(function (total, month) {
+            return total + month.val;
+        }, 0);
 
         xScaleOrdinal.domain(spdDB.map(function (d) {
             return d.dat;
@@ -398,8 +416,9 @@ function MyChart(div, spdNspdData, csv3) {
             .style("fill-opacity", 1);
 
         barWidthToShift = xScaleOrdinal.rangeBand();
+
     }
-    
+
     function calculateGrid(csv3) {
 
         var xDots = d3.scale.ordinal(),
@@ -428,7 +447,7 @@ function MyChart(div, spdNspdData, csv3) {
                 placeHolders[i][j].y = yDots(j);
             }
         }
-       
+
         for (c = 0; c < placeHolders.length; c++) {
             for (r = 0; r < placeHolders[c].length; r++) {
                 if (n === csv3.length) {
@@ -443,9 +462,9 @@ function MyChart(div, spdNspdData, csv3) {
 
         return csv3;
     }
-    
+
     function moveDots() {
-        
+
         dots.selectAll(".dot-spd")
             .transition()
             .duration(duration)
@@ -453,40 +472,40 @@ function MyChart(div, spdNspdData, csv3) {
             .attr("transform", function (d) {
                 return "translate(" + (d.x + barWidthToShift) + "," + d.y + ")";
             });
-        
+
         dots.selectAll(".dot-dp")
             .transition()
             .duration(duration)
             .attr("fill", "#777");
-        
+
         // определяем позицию первой точки .dot-spd
         // выбор элемента по классу - http://www.w3schools.com/jsref/met_element_getelementsbyclassname.asp
         // получение координат выбранного элемента - http://stackoverflow.com/questions/10349811/how-to-manipulate-translate-transforms-on-a-svg-element-with-javascript-in-chrom
         var firstSpdDot = document.getElementsByClassName("dot-spd")[0],
             translateAttr = firstSpdDot.getAttribute('transform'),
-            coordinates  = /translate\(\s*([^\s,)]+)[ ,]([^\s,)]+)/.exec(translateAttr),
+            coordinates = /translate\(\s*([^\s,)]+)[ ,]([^\s,)]+)/.exec(translateAttr),
             firstX = parseFloat(coordinates[1]),
             firstY = parseFloat(coordinates[2]);
-        
+
         dots.append("text")
             .attr("y", height2 + 10)
             .attr("x", barWidthToShift + firstX)
             .style("text-anchor", "start")
             .style("opacity", 1e-6)
-            .text("ФОП (586)")
+            .text("ФОП")
             .transition()
             .duration(duration)
             .style("opacity", 1);
-        
+
         dots.append("text")
             .attr("y", height2 + 10)
             .style("text-anchor", "start")
             .style("opacity", 1e-6)
-            .text("ДП (129)")
+            .text("ДП")
             .transition()
             .duration(duration)
             .style("opacity", 1);
-        
+
         setTimeout(enable_scroll, duration);
     }
 
@@ -594,33 +613,67 @@ function MyChart(div, spdNspdData, csv3) {
             .duration(duration)
             .call(yAxis);
 
-        changeTitle(2);       
+        changeTitle(2);
         setTimeout(transToBars, duration);
     };
 
     this.stepByStep = function (name) {
 
         if (name === "last") {
-            
+
             drawLegend(2);
+
+            sumSpd = cumulMistrustData.reduce(function (total, month) {
+                return total + month.val;
+            }, 0);
+
+            mistShare = sumSpd / sumAll * 100;
+
+            elements.append("text")
+                .attr("x", width * 0.85)
+                .attr("y", height * 0.15)
+                //.attr("x", 15)
+                //.attr("y", 15)
+                .attr("id", "counter2");
+
+            elements.append("text")
+                .attr("x", width * 0.85)
+                .attr("y", height * 0.15 + 12)
+                .style("font-size", "0.7em")
+                //.attr("x", 15)
+                //.attr("y", 15)
+                .text("суми транзакцій");
+
+            numAnim = new CountUp("counter2", 0, mistShare, 1, duration / 1000, numAnimOptions);
+
             updateMistBars(cumulMistrustData);
-            
+
+            numAnim.start();
+
         } else {
 
             var currentStepData = mistrust.filter(function (d) {
                     return d.cat === name;
                 }),
-                
+
                 combinedMonths = getMonthsCombined(currentStepData, cumulMistrustData);
 
             reCummulate(currentStepData, combinedMonths, cumulMistrustData);
 
+            sumSpd = cumulMistrustData.reduce(function (total, month) {
+                return total + month.val;
+            }, 0);
+
+            mistShare = sumSpd / sumAll * 100;
+
             updateMistBars(cumulMistrustData);
+
+            numAnim.update(mistShare);
         }
     };
 
     this.dots = function () {
-        
+
         xAxisDispl.append("text")
             .attr("y", 50)
             .style("text-anchor", "start")
@@ -632,8 +685,12 @@ function MyChart(div, spdNspdData, csv3) {
             .data(nodes)
             .enter()
             .append("circle")
-            .attr("class", function (d) {return "dot-" + d.cat; })
-            .attr("id", function (d) {return "id-" + d.mistrust; })
+            .attr("class", function (d) {
+                return "dot-" + d.cat;
+            })
+            .attr("id", function (d) {
+                return "id-" + d.mistrust;
+            })
             .attr("r", radius)
             .attr("transform", function (d) {
                 return "translate(" + d.x + "," + d.y + ")";
@@ -649,12 +706,12 @@ function MyChart(div, spdNspdData, csv3) {
                 return "translate(" + d.x + "," + d.y + ")";
             })
             .style("opacity", 1);
-        
+
         setTimeout(moveDots, duration);
     };
-    
+
     this.highlightDots = function (name) {
-        
+
         // выбираем только точки по свойству mistrust
         // свойство mistrust определяет id для класса node-spd 
         // http://stackoverflow.com/questions/30066259/d3-js-changing-opacity-of-element-on-mouseover-if-condition-false
@@ -671,7 +728,7 @@ function MyChart(div, spdNspdData, csv3) {
                     .attr("r", radius);
             });
     };
-    
+
 }
 
 function cleanData(d) {
@@ -714,7 +771,6 @@ function getData(error, csv1, csv2, csv3) {
     // начало наполнения кумулятивной БД
     cumulMistrustData = lastMonthData;
 
-           
     return chart.stream();
 }
 
