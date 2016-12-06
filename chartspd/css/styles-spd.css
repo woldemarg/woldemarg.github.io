@@ -17,7 +17,10 @@ height:80px;
 margin-bottom:5px;
 }
 
-#chart text {
+.dotsG text,
+#chartFooter,
+.x.axis text,
+.y.axis text{
 font-size:.8em;
 }
 
@@ -64,9 +67,15 @@ text-decoration:underline;
 text-decoration-style: dashed;
 }
 
+#counter2{
+    font-size:2em;
+    fill:#A11;
+    font-weight:500;    
+}
+
 /* ======== responsive-font-size ======== */
 body {
-    font-size:18px;
+    font-size:17px;
 }
 
 @media(max-width: 992px) {
