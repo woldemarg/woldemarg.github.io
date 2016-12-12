@@ -5,14 +5,18 @@
 var keys = [37, 38, 39, 40];
 
 function preventDefault(e) {
-  e = e || window.event;
-  if (e.preventDefault)
-      e.preventDefault();
-  e.returnValue = false;  
+    "use strict";
+    e = e || window.event;
+    if (e.preventDefault) {
+        e.preventDefault();
+        e.returnValue = false;
+    }
 }
 
 function keydown(e) {
-    for (var i = keys.length; i--;) {
+    "use strict";
+    var i = keys.length;
+    while (i--) {
         if (e.keyCode === keys[i]) {
             preventDefault(e);
             return;
@@ -21,20 +25,23 @@ function keydown(e) {
 }
 
 function wheel(e) {
-  preventDefault(e);
+    "use strict";
+    preventDefault(e);
 }
 
 function disable_scroll() {
-  if (window.addEventListener) {
-      window.addEventListener('DOMMouseScroll', wheel, false);
-  }
-  window.onmousewheel = document.onmousewheel = wheel;
-  document.onkeydown = keydown;
+    "use strict";
+    if (window.addEventListener) {
+        window.addEventListener('DOMMouseScroll', wheel, false);
+    }
+    window.onmousewheel = document.onmousewheel = wheel;
+    document.onkeydown = keydown;
 }
 
 function enable_scroll() {
+    "use strict";
     if (window.removeEventListener) {
         window.removeEventListener('DOMMouseScroll', wheel, false);
     }
-    window.onmousewheel = document.onmousewheel = document.onkeydown = null;  
+    window.onmousewheel = document.onmousewheel = document.onkeydown = null;
 }
