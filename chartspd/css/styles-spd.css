@@ -1,90 +1,130 @@
 body {
-font-family:'PT Sans', sans-serif;
-font-weight:300;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 300;
 }
 
 p {
-margin-bottom:30px;
-width:inherit;
+    margin-bottom: 30px;
+    width: inherit;
 }
 
 .chapter {
-color:#ddd;
+    color: #ddd;
+}
+
+.center {
+    color: #ddd;
+    text-align: center;
+}
+
+#left {
+    float: left;
+}
+
+#right {
+    float: right;
+}
+
+#keepScrolling, #keepScrolling2 {
+    font-size: .9em;
 }
 
 #chartTitle {
-height:80px;
-margin-bottom:5px;
+    height: 80px;
+    margin-bottom: 5px;
 }
 
-.dotsG text,
-#chartFooter,
-.x.axis text,
-.y.axis text{
-font-size:.8em;
+.dotsG text, #chartFooter, .x.axis text, .y.axis text {
+    font-size: .8em;
 }
 
 .y.axis line {
-fill:none;
-shape-rendering:crispEdges;
-stroke:#000;
+    fill: none;
+    shape-rendering: crispEdges;
+    stroke: #000;
 }
 
-.y.axis path,
-.x.axis line,
-.x.axis path {
-display:none;
+.y.axis path, .x.axis line, .x.axis path {
+    display: none;
 }
 
 #nspd.layer {
-fill:#ccc;
+    fill: #ccc;
 }
 
-#mistrust-bars,
-.mistrustBox {
-fill:#A11;
+#mistrust-bars, .mistrustBox {
+    fill: #A11;
 }
 
 .affix {
-position:fixed;
-top:30px;
+    position: fixed;
+    top: 30px;
 }
 
 .affix-bottom {
-position:absolute;
+    position: absolute;
 }
 
-#spd.layer,
-.bar,
-.spdBox {
-fill:#555;
+#spd.layer, .bar, .spdBox {
+    fill: #555;
 }
 
-span {
-cursor:pointer;
-font-weight:600;
-text-decoration:underline;
-text-decoration-style: dashed;
+.myLabel {
+    background-color: #ddd;
+    color: #eee;
+    stroke: #fff;
+    stroke-width: 1px;
 }
 
-#counter2{
-    font-size:2em;
-    fill:#A11;
-    font-weight:500;    
+#counter {
+    fill: #A11;
+    font-size: 2em;
+    font-weight: 500;
 }
 
-/* ======== responsive-font-size ======== */
-body {
-    font-size:17px;
+.table {
+    font-size: .85em;
+    text-align: left;
+    width: 100%;
 }
 
-@media(max-width: 992px) {
-  body {
-    font-size: 15px;
-  }  
+.table th text {
+    font-weight: 500;
+    padding: .8em;
 }
-@media(max-width: 768px) {
-  body {
-    font-size: 12px;
-  }
+
+.table td {
+    padding: .5em;
+}
+
+.popover {
+    max-width: 95%;
+}
+
+.popover-heading {
+    color: #A11;
+    font-size: .9em;
+    font-weight: 700;
+}
+
+circle:hover {
+    r: 3.75;
+    transition: r .5s;
+}
+
+#myTooltip {
+    font-size: 16px;
+}
+
+@mediamax-width 992px {
+    body {
+        font-size: 15px;
+    }
+}
+
+@mediamax-width 768px {
+    body {
+        font-size: 13px;
+    }
 }
