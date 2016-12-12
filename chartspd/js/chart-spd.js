@@ -1,10 +1,5 @@
 /*jslint plusplus: true*/
 /*jslint regexp: true*/
-// force page scroll to top at refresh
-window.onbeforeunload = function () {
-    "use strict";
-    window.scrollTo(0, 0);
-};
 
 var q = d3.queue(),
 
@@ -28,7 +23,7 @@ var q = d3.queue(),
     }),
 
     formatDate = ua_locale.timeFormat("%d.%m.%Y"),
-    //formatDate = d3.time.format("%d.%m.%Y"),
+    // formatDate = d3.time.format("%d.%m.%Y"),
 
     cumulMistrustData = [],
 
@@ -77,7 +72,6 @@ function setLayout() {
                 bottom: afBottom
             }
         });
-
 }
 
 function MyChart(div, spdNspdData, csv3) {
@@ -120,7 +114,7 @@ function MyChart(div, spdNspdData, csv3) {
             .rangeRoundBands([0, width], 0.4),
 
         y = d3.scale.linear()
-            .range([height, 0]),
+                .range([height, 0]),
 
         xAxis = d3.svg.axis()
             .scale(x)
@@ -128,12 +122,12 @@ function MyChart(div, spdNspdData, csv3) {
             .ticks(d3.time.month)
             .tickFormat(ua_locale.timeFormat("%b"))
             .tickSubdivide(1),
-        
+
         yAxis = d3.svg.axis()
             .scale(y)
             .orient("left")
             .ticks(6),
-        
+
         area = d3.svg.area()
             .interpolate("monotone")
             .x(function (d) {
@@ -148,7 +142,7 @@ function MyChart(div, spdNspdData, csv3) {
             .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")"),
 
         xAxisDispl = svg.append("g")
-            .attr("class", "x axis")
+                .attr("class", "x axis")
             .attr("transform", "translate(" + margin.left + "," + (height + margin.top) + ")"),
 
         yAxisShift = 4,
@@ -173,14 +167,27 @@ function MyChart(div, spdNspdData, csv3) {
         mistShare,
         numAnim,
 
-        numAnimOptions = {  
+       numAnimOptions = {  
             useEasing: true,
               useGrouping: false,
-              separator: ',',
-              decimal: '.',
-              prefix: '',
-              suffix: '%'
-        };
+              separator: ",",
+              decimal: ".",
+              prefix: "",
+              suffix: "%"
+        },
+
+        noDec = d3.format(",.0f"),
+        oneDec = d3.format(",.1f");
+
+    function formatNum(num) {
+        if (num > 1000) {
+            return oneDec(num / 1000) + " млн грн.";
+        } else if (num < 1) {
+            return noDec(num * 1000) + " грн.";
+        } else {
+            return noDec(num) + " тис. грн.";
+        }
+    }
 
     function changeTitle(chapter) {
 
@@ -237,11 +244,11 @@ function MyChart(div, spdNspdData, csv3) {
                 .getBBox(),
                 widthT = textBbox.width,
                 heightT = textBbox.height,
-                
-                footer = d3.select("#chartFooter")
+
+                footer = d3.select("#left")
                 .append("p")
                 .style("opacity", 1e-6)
-                .html("* сумнівність транзакцій і контрагентів визначається за критеріями, описаними в тексті статті")
+                .html("*сумнівність транзакцій і контрагентів визначається</br>за критеріями, описаними в тексті статті")
                 .transition()
                 .duration(duration / 4)
                 .style("opacity", 1);
@@ -266,14 +273,11 @@ function MyChart(div, spdNspdData, csv3) {
                 .duration(duration / 4)
                 .style("opacity", 1);
 
-            
-
         }
     }
 
     // http://stackoverflow.com/questions/7176908/how-to-get-index-of-object-by-its-property-in-javascript
     function findWithAttr(array, attr, value) {
-
         var i;
 
         for (i = 0; i < array.length; i += 1) {
@@ -285,7 +289,6 @@ function MyChart(div, spdNspdData, csv3) {
     }
 
     function getMonthsCombined(input, cumulative) {
-
         var i = input.length,
             j;
 
@@ -304,7 +307,6 @@ function MyChart(div, spdNspdData, csv3) {
     }
 
     function isInArray(el, arr) {
-
         var i;
 
         for (i = 0; i < arr.length; i += 1) {
@@ -317,7 +319,6 @@ function MyChart(div, spdNspdData, csv3) {
     }
 
     function reCummulate(insert, addon, cumulative) {
-
         var i;
 
         for (i = 0; i < insert.length; i += 1) {
@@ -423,6 +424,7 @@ function MyChart(div, spdNspdData, csv3) {
 
         var xDots = d3.scale.ordinal(),
             yDots = d3.scale.ordinal(),
+            
             // проверка: cols x rows >= nodes.length
             numColDots = 72,
             numRowDots = 10,
@@ -560,7 +562,6 @@ function MyChart(div, spdNspdData, csv3) {
         xAxisDispl.call(xAxis)
             .selectAll("text")
             .attr("y", 15)
-            //.attr("x", 6)
             .style("text-anchor", "start");
 
         yAxisDispl.call(yAxis)
@@ -632,19 +633,23 @@ function MyChart(div, spdNspdData, csv3) {
             elements.append("text")
                 .attr("x", width * 0.85)
                 .attr("y", height * 0.15)
-                //.attr("x", 15)
-                //.attr("y", 15)
-                .attr("id", "counter2");
+                .attr("id", "counter")
+                .style("opacity", 1e-6)
+                .transition()
+                .duration(duration / 2)
+                .style("opacity", 1);
 
             elements.append("text")
                 .attr("x", width * 0.85)
                 .attr("y", height * 0.15 + 12)
                 .style("font-size", "0.7em")
-                //.attr("x", 15)
-                //.attr("y", 15)
-                .text("суми транзакцій");
+                .style("opacity", 1e-6)
+                .text("суми транзакцій")
+                .transition()
+                .duration(duration / 2)
+                .style("opacity", 1);
 
-            numAnim = new CountUp("counter2", 0, mistShare, 1, duration / 1000, numAnimOptions);
+            numAnim = new CountUp("counter", 0, mistShare, 1, duration / 1000, numAnimOptions);
 
             updateMistBars(cumulMistrustData);
 
@@ -677,27 +682,28 @@ function MyChart(div, spdNspdData, csv3) {
         xAxisDispl.append("text")
             .attr("y", 50)
             .style("text-anchor", "start")
-            .text("Учасники транзакцій:");
+            .text("Учасники транзакцій (з 01.10.15 по 30.09.16):");
 
-        var nodes = calculateGrid(csv3);
+        var nodes = calculateGrid(csv3),
 
-        dots.selectAll("circle")
-            .data(nodes)
-            .enter()
-            .append("circle")
-            .attr("class", function (d) {
-                return "dot-" + d.cat;
-            })
-            .attr("id", function (d) {
-                return "id-" + d.mistrust;
-            })
-            .attr("r", radius)
-            .attr("transform", function (d) {
-                return "translate(" + d.x + "," + d.y + ")";
-            })
-            .attr("fill", "#ccc")
-            .style("opacity", 1e-6)
-            .transition()
+            circles = dots.selectAll("circle")
+                .data(nodes)
+                .enter()
+                .append("circle")
+                .attr("class", function (d) {
+                    return "dot-" + d.cat;
+                })
+                .attr("id", function (d) {
+                    return "id-" + d.mistrust;
+                })
+                .attr("r", radius)
+                .attr("transform", function (d) {
+                    return "translate(" + d.x + "," + d.y + ")";
+                })
+                .attr("fill", "#ccc")
+                .style("opacity", 1e-6);
+
+        circles.transition()
             .delay(function (d, i) {
                 return i / nodes.length * duration / 2;
             })
@@ -706,6 +712,130 @@ function MyChart(div, spdNspdData, csv3) {
                 return "translate(" + d.x + "," + d.y + ")";
             })
             .style("opacity", 1);
+
+        circles.on('mouseover', function (d) {
+
+            var dotTransformAttr = this.getAttribute('transform'),
+                coordArray = /translate\(\s*([^\s,)]+)[ ,]([^\s,)]+)/.exec(dotTransformAttr),
+                dotX = parseFloat(coordArray[1]),
+                dotY = parseFloat(coordArray[2]),
+                
+                tHeight = height2 * 0.49,
+                tWidth = (width + barWidthToShift) * 0.49,
+
+                tooltip = dots.append("g")
+                    .attr("id", "myTooltip"),
+
+                tool = tooltip.append("rect")
+                    .attr("x", function () {
+                        if (dotX + tWidth > width + barWidthToShift) {
+                            return dotX - tWidth;
+                        } else {
+                            return dotX;
+                        }
+                    })
+                    .attr("y", function () {
+                        if (dotY + tHeight > height2) {
+                            return dotY - tHeight;
+                        } else {
+                            return dotY;
+                        }
+                    })
+                    .attr("height", tHeight)
+                    .attr("width", tWidth)
+                    .attr("rx", 5)
+                    .attr("ry", 5)
+                    .attr("fill", function () {
+                        if (d.cat === "dp") {
+                            return "#777";
+                        } else {
+                            return "#bbb";
+                        }
+                    })
+                    .attr("stroke", "#fff")
+                    .attr("stroke-width", "1px")
+                    .style("opacity", 1e-6),
+
+                text1 = tooltip.append("text")
+                    .attr("x", function () {
+                        if (dotX + tWidth > width + barWidthToShift) {
+                            return dotX - tWidth + tWidth / 2;
+                        } else {
+                            return dotX + tWidth / 2;
+                        }
+                    })
+                    .attr("y", function () {
+                        if (dotY + tHeight > height2) {
+                            return dotY - tHeight + ((tHeight * 0.1) + 12);
+                        } else {
+                            return dotY + ((tHeight * 0.1) + 12);
+                        }
+                    })
+                    .attr("fill", function () {
+                        if (d.cat === "dp") {
+                            return "#fff";
+                        } else {
+                            return "#444";
+                        }
+                    })
+                    .style("text-anchor", "middle")
+                    .text(function () {
+                        if (d.cat === "dp") {
+                            return d.name;
+                        } else {
+                            return "ФОП " + d.name + " отримав(-ла)";
+                        }
+                    })
+                    .style("opacity", 1e-6),
+
+                text2 = tooltip.append("text")
+                    .attr("x", function () {
+                        if (dotX + tWidth > width + barWidthToShift) {
+                            return dotX - tWidth + tWidth / 2;
+                        } else {
+                            return dotX + tWidth / 2;
+                        }
+                    })
+                    .attr("y", function () {
+                        if (dotY + tHeight > height2) {
+                            return dotY - tHeight + ((tHeight * 0.85));
+                        } else {
+                            return dotY + ((tHeight * 0.85));
+                        }
+                    })
+                    .attr("fill", function () {
+                        if (d.cat === "dp") {
+                            return "#fff";
+                        } else {
+                            return "#444";
+                        }
+                    })
+                    .style("text-anchor", "middle")
+                    .text(function () {
+                        if (d.cat === "dp") {
+                            return "заплатило ФОП з бюджету " + formatNum(+d.amount);
+                        } else {
+                            return "через ДП з бюджету " + formatNum(+d.amount);
+                        }
+                    })
+                    .style("opacity", 1e-6);
+
+            tool.transition()
+                    .duration(duration / 4)
+                    .style("opacity", 1);
+
+            text1.transition()
+                    .duration(duration / 4)
+                    .style("opacity", 1);
+
+            text2.transition()
+                    .duration(duration / 4)
+                    .style("opacity", 1);
+        })
+            .on('mouseout', function (d) {
+                d3.select("#myTooltip")
+                    .remove();
+            });
 
         setTimeout(moveDots, duration);
     };
@@ -774,7 +904,25 @@ function getData(error, csv1, csv2, csv3) {
     return chart.stream();
 }
 
-q.defer(d3.csv, "data/stream.csv")
-    .defer(d3.csv, "data/mistrust.csv")
-    .defer(d3.csv, "data/nodes.csv")
-    .await(getData);
+if ($(window)
+        .width() >= 992) {
+
+    // force page scroll to top at refresh
+    window.onbeforeunload = function () {
+        "use strict";
+        window.scrollTo(0, 0);
+    };
+
+    q.defer(d3.csv, "data/stream.csv")
+        .defer(d3.csv, "data/mistrust.csv")
+        .defer(d3.csv, "data/nodes.csv")
+        .await(getData);
+
+} else {
+
+    d3.select("#chartBody")
+        .append("img")
+        .attr("src", "pics/chart.png")
+        .attr("class", "img-responsive")
+        .attr("alt", "Динаміка бюджетних транзакції між ДП і ФОП");
+}
