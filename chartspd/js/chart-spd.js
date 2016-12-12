@@ -822,7 +822,7 @@ function MyChart(div, spdNspdData, csv3) {
 
             tool.transition()
                     .duration(duration / 4)
-                    .style("opacity", 1);
+                    .style("opacity", 0.85);
 
             text1.transition()
                     .duration(duration / 4)
