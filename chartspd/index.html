@@ -197,11 +197,17 @@
     </script> <!--http://stackoverflow.com/questions/31342983/putting-table-into-bootstrap-popover/31346546#31346546--> 
     <script src="js/popovers-spd.js" type="text/javascript">
     </script> <!--http://stackoverflow.com/questions/5836779/how-can-i-refresh-the-screen-on-browser-resize-->
-    <script>
+     
+    <script>        
+    window.onbeforeunload = function () {
+        "use strict";
+        window.scrollTo(0, 0); 
+    };   
+         
     window.addEventListener('resize', function () { 
-    "use strict";
-    window.location.reload(); 
-    });
+    	"use strict";
+    	window.location.reload(); 
+    });    
     </script>
 </body>
 </html>
