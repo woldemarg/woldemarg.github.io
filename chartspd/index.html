@@ -186,7 +186,8 @@
         </div>
     </div>
     <script src="js/noscroll-spd.js" type="text/javascript">
-    </script> <!--https://github.com/inorganik/CountUp.js--> 
+    </script> <!--https://github.com/inorganik/CountUp.js-->
+     
     <script src="libs/countUp.js" type="text/javascript">
     </script> 
     <script src="js/chart-spd.js" type="text/javascript">
@@ -194,20 +195,40 @@
     <script src="libs/noframework.waypoints.min.js" type="text/javascript">
     </script> 
     <script src="js/waypoints-spd.js" type="text/javascript">
-    </script> <!--http://stackoverflow.com/questions/31342983/putting-table-into-bootstrap-popover/31346546#31346546--> 
+    </script> <!--http://stackoverflow.com/questions/31342983/putting-table-into-bootstrap-popover/31346546#31346546-->
+     
     <script src="js/popovers-spd.js" type="text/javascript">
     </script> <!--http://stackoverflow.com/questions/5836779/how-can-i-refresh-the-screen-on-browser-resize-->
      
-    <script>
-        var screenWidth = $(window).width();
-        
-        $(window).resize(function() {
-            if (width > 991 && $(window).width() < 991) {
-                location.reload();
-            } else if (width < 991 && $(window).width() > 991) {
-                location.reload();
+    <script>        
+            // возврат к началу страницы при перезагрузке
+            window.onbeforeunload = function () {
+                "use strict";
+                window.scrollTo(0, 0);
+            };
+
+            // перезагруке при смене ширины экрана
+            // http://stackoverflow.com/questions/10576370/reload-page-when-a-certain-width-is-passed
+            var ww = $(window)
+                .width(),
+                limit = 993,
+                tOut;
+
+            function refresh () {
+                ww = $(window)
+                    .width();
+                var w = ww < limit ? (location.reload(true)) : (ww > limit ? (location.reload(true)) : ww = limit);
             }
-        });   
+                    
+            $(window)
+                .resize(function () {
+                    var resW = $(window)
+                        .width();
+                    clearTimeout(tOut);
+                    if ((ww > limit && resW < limit) || (ww < limit && resW > limit)) {
+                        tOut = setTimeout(refresh, 100);
+                    }
+                });
     </script>
 </body>
 </html>
