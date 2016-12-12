@@ -906,13 +906,7 @@ function getData(error, csv1, csv2, csv3) {
 
 if ($(window)
         .width() >= 992) {
-
-    // force page scroll to top at refresh
-    window.onbeforeunload = function () {
-        "use strict";
-        window.scrollTo(0, 0);
-    };
-
+        
     q.defer(d3.csv, "data/stream.csv")
         .defer(d3.csv, "data/mistrust.csv")
         .defer(d3.csv, "data/nodes.csv")
