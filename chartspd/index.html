@@ -198,16 +198,16 @@
     <script src="js/popovers-spd.js" type="text/javascript">
     </script> <!--http://stackoverflow.com/questions/5836779/how-can-i-refresh-the-screen-on-browser-resize-->
      
-    <script>        
-    window.onbeforeunload = function () {
-        "use strict";
-        window.scrollTo(0, 0); 
-    };   
-         
-    window.addEventListener('resize', function () { 
-    	"use strict";
-    	window.location.reload(); 
-    });    
+    <script>
+        var screenWidth = $(window).width();
+        
+        $(window).resize(function() {
+            if (width > 991 && $(window).width() < 991) {
+                location.reload();
+            } else if (width < 991 && $(window).width() > 991) {
+                location.reload();
+            }
+        });   
     </script>
 </body>
 </html>
