@@ -109,8 +109,24 @@ p {
 }
 
 circle:hover {
-    r: 3.75;
+    r: 5;
     transition: r .5s;
+}
+
+circle.dot-spd:hover {
+    fill: #444;
+    transition: fill .5s;
+}
+
+circle.dot-dp:hover {
+    stroke:#444;
+    stroke-width: 1px;
+    fill: #bbb;
+    transition: fill .5s;
+}
+
+circle.mistrust:hover {
+    fill: #A11;
 }
 
 #myTooltip {
