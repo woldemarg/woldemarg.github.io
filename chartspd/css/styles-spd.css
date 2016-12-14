@@ -1,3 +1,27 @@
+@font-face {
+    font-family: 'PT Sans';
+    src: url('PT_Sans-Web-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    font-weight: bold;
+    src: url('PT_Sans-Web-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    font-style: italic;
+    src: url('PT_Sans-Web-Italic.ttf');
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    font-weight: bold;
+    font-style: italic;
+    src: url('PT_Sans-Web-BoldItalic.ttf');
+}
+
 body {
     font-family: 'PT Sans', sans-serif;
     font-size: 17px;
@@ -114,12 +138,12 @@ circle:hover {
 }
 
 circle.dot-spd:hover {
-    fill: #444;
+    fill: #777;
     transition: fill .5s;
 }
 
 circle.dot-dp:hover {
-    stroke:#444;
+    stroke: #777;
     stroke-width: 1px;
     fill: #bbb;
     transition: fill .5s;
