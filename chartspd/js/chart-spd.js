@@ -267,7 +267,7 @@ function MyChart(div, spdNspdData, csv3) {
             legend.append("text")
                 .attr("x", 5 + 10 + 5 + widthT + 25 + 15)
                 .attr("y", 15)
-                .text("сумнівні транзакції/контрагенти*")
+                .text("сумнівні* транзакції/контрагенти")
                 .style("opacity", 1e-6)
                 .transition()
                 .duration(duration / 4)
