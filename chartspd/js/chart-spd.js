@@ -726,7 +726,7 @@ function MyChart(div, spdNspdData, csv3) {
                 tooltip = dots.append("g")
                     .attr("id", "myTooltip"),
 
-                tool = tooltip.append("rect")
+                tipRect = tooltip.append("rect")
                     .attr("x", function () {
                         if (dotX + tWidth > width + barWidthToShift) {
                             return dotX - tWidth;
@@ -756,79 +756,71 @@ function MyChart(div, spdNspdData, csv3) {
                     .attr("stroke-width", "1px")
                     .style("opacity", 1e-6),
 
-                text1 = tooltip.append("text")
-                    .attr("x", function () {
-                        if (dotX + tWidth > width + barWidthToShift) {
-                            return dotX - tWidth + tWidth / 2;
-                        } else {
-                            return dotX + tWidth / 2;
-                        }
-                    })
-                    .attr("y", function () {
-                        if (dotY + tHeight > height2) {
-                            return dotY - tHeight + ((tHeight * 0.1) + 12);
-                        } else {
-                            return dotY + ((tHeight * 0.1) + 12);
-                        }
-                    })
-                    .attr("fill", function () {
-                        if (d.cat === "dp") {
-                            return "#fff";
-                        } else {
-                            return "#444";
-                        }
-                    })
-                    .style("text-anchor", "middle")
-                    .text(function () {
-                        if (d.cat === "dp") {
-                            return d.name;
-                        } else {
-                            return "ФОП " + d.name + " отримав(-ла)";
-                        }
-                    })
-                    .style("opacity", 1e-6),
-
-                text2 = tooltip.append("text")
-                    .attr("x", function () {
-                        if (dotX + tWidth > width + barWidthToShift) {
-                            return dotX - tWidth + tWidth / 2;
-                        } else {
-                            return dotX + tWidth / 2;
-                        }
-                    })
-                    .attr("y", function () {
-                        if (dotY + tHeight > height2) {
-                            return dotY - tHeight + ((tHeight * 0.85));
-                        } else {
-                            return dotY + ((tHeight * 0.85));
-                        }
-                    })
-                    .attr("fill", function () {
-                        if (d.cat === "dp") {
-                            return "#fff";
-                        } else {
-                            return "#444";
-                        }
-                    })
-                    .style("text-anchor", "middle")
-                    .text(function () {
-                        if (d.cat === "dp") {
-                            return "заплатило ФОП з бюджету " + formatNum(+d.amount);
-                        } else {
-                            return "через ДП з бюджету " + formatNum(+d.amount);
-                        }
-                    })
+                tipText = tooltip.append("text")
                     .style("opacity", 1e-6);
-
-            tool.transition()
+            
+            tipText.append("tspan")
+                    .attr("x", function () {
+                    if (dotX + tWidth > width + barWidthToShift) {
+                        return dotX - tWidth + tWidth / 2;
+                    } else {
+                        return dotX + tWidth / 2;
+                    }
+                })
+                    .attr("y", function () {
+                    if (dotY + tHeight > height2) {
+                        return dotY - tHeight + (tHeight / 2);
+                    } else {
+                        return dotY + (tHeight / 2);
+                    }
+                })
+                    .attr("dy", "-0.1em")
+                    .attr("fill", function () {
+                    if (d.cat === "dp") {
+                        return "#fff";
+                    } else {
+                        return "#444";
+                    }
+                })
+                    .style("text-anchor", "middle")
+                    .text(function () {
+                    if (d.cat === "dp") {
+                        return d.name;
+                    } else {
+                        return "ФОП " + d.name + " отримав(-ла)";
+                    }
+                });
+                    
+            tipText.append("tspan")
+                .attr("x", function () {
+                    if (dotX + tWidth > width + barWidthToShift) {
+                        return dotX - tWidth + tWidth / 2;
+                    } else {
+                        return dotX + tWidth / 2;
+                    }
+                })
+                .attr("dy", "1.1em")
+                    .attr("fill", function () {
+                    if (d.cat === "dp") {
+                        return "#fff";
+                    } else {
+                        return "#444";
+                    }
+                })
+                    .style("text-anchor", "middle")
+                    .text(function () {
+                    if (d.cat === "dp") {
+                        return "заплатило ФОП з бюджету " + formatNum(+d.amount);
+                    } else {
+                        return "через ДП з бюджету " + formatNum(+d.amount);
+                    }
+                });
+            
+            tipRect.transition()
                     .duration(duration / 4)
                     .style("opacity", 0.85);
 
-            text1.transition()
-                    .duration(duration / 4)
-                    .style("opacity", 1);
-
-            text2.transition()
+            tipText.transition()
                     .duration(duration / 4)
                     .style("opacity", 1);
         })
@@ -847,6 +839,9 @@ function MyChart(div, spdNspdData, csv3) {
         // http://stackoverflow.com/questions/30066259/d3-js-changing-opacity-of-element-on-mouseover-if-condition-false
         // http://jaketrent.com/post/d3-class-operations/
         dots.selectAll("circle#id-" + name)
+            .classed("dot-dp", false)
+            .classed("dot-spd", false)
+            .classed("mistrust", true)
             .transition()
             .duration(duration / 2)
             .attr("fill", "#A11")
@@ -905,8 +900,8 @@ function getData(error, csv1, csv2, csv3) {
 }
 
 if ($(window)
-        .width() >= 992) {   
-        
+        .width() >= 992) {
+    
     q.defer(d3.csv, "data/stream.csv")
         .defer(d3.csv, "data/mistrust.csv")
         .defer(d3.csv, "data/nodes.csv")
