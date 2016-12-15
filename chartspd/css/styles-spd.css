@@ -1,3 +1,4 @@
+/*===fonts===*/
 @font-face {
     font-family: 'PT Sans';
     src: url('../fonts/PT_Sans-Web-Regular.ttf');
@@ -22,6 +23,22 @@
     src: url('../fonts/PT_Sans-Web-BoldItalic.ttf');
 }
 
+
+/*===viewports===*/
+@mediamax-width 992px {
+    body {
+        font-size: 15px;
+    }
+}
+
+@mediamax-width 768px {
+    body {
+        font-size: 12px;
+    }
+}
+
+
+/*===main===*/
 body {
     font-family: 'PT Sans', sans-serif;
     font-size: 17px;
@@ -54,9 +71,24 @@ p {
     font-size: .9em;
 }
 
+.affix {
+    position: fixed;
+    top: 30px;
+}
+
+.affix-bottom {
+    position: absolute;
+}
+
+
+/*===chart===*/
 #chartTitle {
     height: 80px;
     margin-bottom: 5px;
+}
+
+#chartLegend text {
+    font-size: .9em;
 }
 
 .dotsG text, #chartFooter, .x.axis text, .y.axis text {
@@ -81,30 +113,23 @@ p {
     fill: #A11;
 }
 
-.affix {
-    position: fixed;
-    top: 30px;
-}
-
-.affix-bottom {
-    position: absolute;
-}
-
 #spd.layer, .bar, .spdBox {
     fill: #555;
-}
-
-.myLabel {
-    background-color: #ddd;
-    color: #eee;
-    stroke: #fff;
-    stroke-width: 1px;
 }
 
 #counter {
     fill: #A11;
     font-size: 2em;
     font-weight: 500;
+}
+
+
+/*===popovers===*/
+.myLabel {
+    background-color: #ddd;
+    color: #eee;
+    stroke: #fff;
+    stroke-width: 1px;
 }
 
 .table {
@@ -132,6 +157,12 @@ p {
     font-weight: 700;
 }
 
+
+/*===tooltips===*/
+#myTooltip {
+    font-size: 16px;
+}
+
 circle:hover {
     r: 5;
     transition: r .5s;
@@ -151,20 +182,4 @@ circle.dot-dp:hover {
 
 circle.mistrust:hover {
     fill: #A11;
-}
-
-#myTooltip {
-    font-size: 16px;
-}
-
-@mediamax-width 992px {
-    body {
-        font-size: 15px;
-    }
-}
-
-@mediamax-width 768px {
-    body {
-        font-size: 12px;
-    }
 }
