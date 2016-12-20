@@ -222,7 +222,7 @@ if ($(window)
         offset: "35%"
     });
 
-    var wp_restoreNet = new Waypoint({
+   /* var wp_restoreNet = new Waypoint({
         element: document.getElementById('closingComment'),
         handler: function (dir) {
             "use strict";
@@ -230,13 +230,13 @@ if ($(window)
             showExamples(dir, null, "strange");
         },
         offset: "35%"
-    });
+    });*/
     
     var wp_keepScrolling2 = new Waypoint({
         element: document.getElementById('keepScrolling2'),
         handler: function (dir) {
             "use strict";
-            switch_colors(dir, 'keepScrolling2', "closingComment");            
+            switch_colors(dir, 'keepScrolling2', "strangeTransactions");       showExamples(dir, null, "strange");     
         },
         offset: "50%"
     });
