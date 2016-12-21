@@ -47,11 +47,23 @@ body {
 
 p {
     margin-bottom: 30px;
-    width: inherit;
+}
+
+.copyright {
+    font-size: .9em;
+    color: #555;
+}
+
+.jumbotron h1 {
+    color: #A11;
 }
 
 .chapter {
-    color: #ddd;
+    color: #ddd;    
+}
+
+h3 {
+    margin-top: 40px;
 }
 
 .center {
