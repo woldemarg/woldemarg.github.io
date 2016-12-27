@@ -1,197 +1,274 @@
 /*===fonts===*/
+
 @font-face {
-    font-family: 'PT Sans';
-    src: url('../fonts/PT_Sans-Web-Regular.ttf');
+	font-family: 'PT Sans';
+	src: url('../fonts/PT_Sans-Web-Regular.ttf');
 }
 
 @font-face {
-    font-family: 'PT Sans';
-    font-weight: bold;
-    src: url('../fonts/PT_Sans-Web-Bold.ttf');
+	font-family: 'PT Sans';
+	font-weight: bold;
+	src: url('../fonts/PT_Sans-Web-Bold.ttf');
 }
 
 @font-face {
-    font-family: 'PT Sans';
-    font-style: italic;
-    src: url('../fonts/PT_Sans-Web-Italic.ttf');
+	font-family: 'PT Sans';
+	font-style: italic;
+	src: url('../fonts/PT_Sans-Web-Italic.ttf');
 }
 
 @font-face {
-    font-family: 'PT Sans';
-    font-weight: bold;
-    font-style: italic;
-    src: url('../fonts/PT_Sans-Web-BoldItalic.ttf');
+	font-family: 'PT Sans';
+	font-weight: bold;
+	font-style: italic;
+	src: url('../fonts/PT_Sans-Web-BoldItalic.ttf');
+}
+
+@font-face {
+	font-family: 'Roboto Slab';
+	font-weight: bold;
+	src: url('../fonts/RobotoSlab-Bold.ttf');
 }
 
 
 /*===viewports===*/
-@mediamax-width 992px {
-    body {
-        font-size: 15px;
-    }
+
+@media (max-width 992px) {
+	body {
+		font-size: 14px;
+	}
 }
 
-@mediamax-width 768px {
-    body {
-        font-size: 12px;
-    }
+@media (max-width 768px) {
+	body {
+		font-size: 12px;
+	}
+}
+
+
+/*===header===*/
+
+header {
+	height;
+	3em;
+	background: #333332;
+	color: #d3d3d3;
+}
+
+header #title #ukraineFlag {
+	display: inline-block;
+	width: 1.2em;
+	height: 0.5em;
+	background: #ffda00;
+	border-top: 0.5em solid #0366c3;
+	margin-right: 0.5em;
+	box-sizing: content-box;
+}
+
+#title a, header #title a:hover, header #title a:active, header #title a:visited {
+	text-decoration: none;
+	color: #d3d3d3;
+}
+
+.social-icons a {
+	text-decoration: none;
+	color: #d3d3d3;
+	float: left;
+	padding-top: 0.25em;
+	font-size: 1.3em;
+	margin-right: 0.5em;
+}
+
+header #title {
+	float: left;
+	padding-top: 0.25em;
+	font-family: 'Roboto Slab', serif;
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
+
+/*===footer===*/
+
+footer {
+	font-size: 0.85em;
+	padding-bottom: 1.5em;
+	padding-top: 1.5em;
+	padding-left: 0;
+	text-align: left;
+	color: #d3d3d3;
+	background: #161616;
+}
+
+footer ul.links {
+	float: left;
+	list-style: none;
+}
+
+footer a, footer a:hover, footer a:active, footer a:visited {
+	text-decoration: underline;
+	color: #d3d3d3;
 }
 
 
 /*===main===*/
+
 body {
-    font-family: 'PT Sans', sans-serif;
-    font-size: 17px;
-    font-weight: 300;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 300;
 }
 
 p {
-    margin-bottom: 30px;
+	margin-bottom: 30px;
 }
 
 .copyright {
-    font-size: .9em;
-    color: #555;
+	font-size: .9em;
+	color: #555;
 }
 
 .jumbotron h1 {
-    color: #A11;
+	color: #A11;
 }
 
 .chapter {
-    color: #ddd;    
+	color: #ddd;
 }
 
 h3 {
-    margin-top: 40px;
+	margin-top: 40px;
 }
 
 .center {
-    color: #ddd;
-    text-align: center;
+	color: #ddd;
+	text-align: center;
 }
 
 #left {
-    float: left;
+	float: left;
 }
 
 #right {
-    float: right;
+	float: right;
 }
 
 #keepScrolling, #keepScrolling2 {
-    font-size: .9em;
+	font-size: .9em;
 }
 
 .affix {
-    position: fixed;
-    top: 30px;
+	position: fixed;
+	top: 30px;
 }
 
 .affix-bottom {
-    position: absolute;
+	position: absolute;
 }
 
 
 /*===chart===*/
+
 #chartTitle {
-    height: 80px;
-    margin-bottom: 5px;
+	height: 80px;
+	margin-bottom: 5px;
 }
 
 #chartLegend text {
-    font-size: .9em;
+	font-size: .9em;
 }
 
 .dotsG text, #chartFooter, .x.axis text, .y.axis text {
-    font-size: .8em;
+	font-size: .8em;
 }
 
 .y.axis line {
-    fill: none;
-    shape-rendering: crispEdges;
-    stroke: #000;
+	fill: none;
+	shape-rendering: crispEdges;
+	stroke: #000;
 }
 
 .y.axis path, .x.axis line, .x.axis path {
-    display: none;
+	display: none;
 }
 
 #nspd.layer {
-    fill: #ccc;
+	fill: #ccc;
 }
 
 #mistrust-bars, .mistrustBox {
-    fill: #A11;
+	fill: #A11;
 }
 
 #spd.layer, .bar, .spdBox {
-    fill: #555;
+	fill: #555;
 }
 
 #counter {
-    fill: #A11;
-    font-size: 2em;
-    font-weight: 500;
+	fill: #A11;
+	font-size: 2em;
+	font-weight: 500;
 }
 
 
 /*===popovers===*/
+
 .myLabel {
-    background-color: #ddd;
-    color: #eee;
-    stroke: #fff;
-    stroke-width: 1px;
+	background-color: #ddd;
+	color: #eee;
+	stroke: #fff;
+	stroke-width: 1px;
 }
 
 .table {
-    font-size: .85em;
-    text-align: left;
-    width: 100%;
+	font-size: .85em;
+	text-align: left;
+	width: 100%;
 }
 
 .table th text {
-    font-weight: 500;
-    padding: .8em;
+	font-weight: 500;
+	padding: .8em;
 }
 
 .table td {
-    padding: .5em;
+	padding: .5em;
 }
 
 .popover {
-    max-width: 95%;
+	max-width: 95%;
 }
 
 .popover-heading {
-    color: #A11;
-    font-size: .9em;
-    font-weight: 700;
+	color: #A11;
+	font-size: .9em;
+	font-weight: 700;
 }
 
 
 /*===tooltips===*/
+
 #myTooltip {
-    font-size: 16px;
+	font-size: 16px;
 }
 
 circle:hover {
-    r: 5;
-    transition: r .5s;
+	r: 5;
+	transition: r .5s;
 }
 
 circle.dot-spd:hover {
-    fill: #777;
-    transition: fill .5s;
+	fill: #777;
+	transition: fill .5s;
 }
 
 circle.dot-dp:hover {
-    stroke: #777;
-    stroke-width: 1px;
-    fill: #bbb;
-    transition: fill .5s;
+	stroke: #777;
+	stroke-width: 1px;
+	fill: #bbb;
+	transition: fill .5s;
 }
 
 circle.mistrust:hover {
-    fill: #A11;
+	fill: #A11;
 }
