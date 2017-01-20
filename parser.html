@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -331,4 +332,95 @@ df</code></pre>
 ## 45  14358604    79946550
 ## 46  20025456    86137850
 ## 47  26444836   102174540
-## 48  32359108   25501
+## 48  32359108   255012950
+## 49  35879807    80714530
+## 50  34353904   171691020
+## 51   1386326   104946280
+## 52    152230   256316670
+## 53  14308569        &lt;NA&gt;
+## 54  24425738   322251390
+## 55    135390 12051169770
+## 56  22927045   252094700
+## 57    178175   173019910
+## 58    174846   155298020
+## 59    174668   272588750
+## 60  19358767   807360410
+## 61  36506535    82774600
+## 62  32265612        &lt;NA&gt;
+## 63  24595667   115912340
+## 64  32363486   177675950
+## 65  31146251   209025200
+## 66  20355550    68021350
+## 67  22959559    82535910
+## 68  31176312   111293460
+## 69  30035446    75695370
+## 70  20041662   153345200
+## 71  34454281    93738530
+## 72  34325421        &lt;NA&gt;
+## 73  34265200   594738540
+## 74  36697357    90459250
+## 75  37748281    80216290
+## 76  37763781   185227400
+## 77  31789453        &lt;NA&gt;
+## 78  26475516    59216230
+## 79  30558017   135514270
+## 80  33867056    88468500
+## 81  37701112   546016810
+## 82  37933897    83650190
+## 83  35935515    86926230
+## 84  33972597        &lt;NA&gt;
+## 85  34013028   102904390
+## 86  37642733   312700180
+## 87  35715610    98419100
+## 88  36884163   173366930
+## 89  37098324    69106030
+## 90  26287625    54521400
+## 91  33733580           0
+## 92  21237338        &lt;NA&gt;
+## 93  32813827   206345440
+## 94  34763705  1609127560
+## 95  31088169           0
+## 96  38694075   105475340
+## 97  32772037    88530780
+## 98  32869749   289521000
+## 99  20749622        &lt;NA&gt;
+## 100 14308894    85795190</code></pre>
+<pre class="r"><code>#запись таблицы в файл
+#write.csv(df, file = &quot;df.csv&quot;)</code></pre>
+</div>
+<div id="--" class="section level2">
+<h2>7. Результаты и доработка</h2>
+<p>Парсер “обучается” на выборке предприятий из рейтинга <a href="https://opendatabot.com/statistics/debt" class="uri">https://opendatabot.com/statistics/debt</a>, успешно проходит по всем 100 страницам и различает данные в информационном блоке (NA-долг-0).</p>
+<p>Необходимо дополнительно: - подобрать время ожидания ответа на HTTP-запрос для исключения значений NA - предусмотреть обработку страниц с ошибками во избежание зависания (<a href="http://stackoverflow.com/questions/39056103/iterating-rvest-scrape-function-gives-error-in-open-connectionx-rb-time" class="uri">http://stackoverflow.com/questions/39056103/iterating-rvest-scrape-function-gives-error-in-open-connectionx-rb-time</a>)</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
