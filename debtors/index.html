@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang = "uk-UA">
+    <head>
+        <meta charset="utf-8">
+        <title>data table</title>
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+            crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
+        <link rel="stylesheet" type="text/css" href="css/my_styles.css">
+        <script type="text/javascript" charset="utf-8"
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+        <script type="text/javascript" charset="utf-8"
+            src="https://d3js.org/d3.v4.min.js"></script> 
+        <script type="text/javascript" charset="utf-8"
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+        <script type="text/javascript" charset="utf-8" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script> 
+    </head>
+    <body>
+        <div class="container">
+            <div class="page-header">
+                <h1>Example Page Header</h1>
+            </div>
+            <div class = "row">
+                <div class="col-sm-12 col-md-10 col-md-offset-1">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut finibus ipsum. Ut condimentum purus quis elementum cursus. Vestibulum vitae laoreet libero, sit amet suscipit sem. Donec non aliquam tellus. Donec scelerisque felis nec justo tempus, id ultrices libero vulputate. Sed in sapien ligula. Integer a pretium est, vitae finibus urna. Quisque vel aliquet purus. Phasellus rutrum tempus nisl, eu pretium justo. Phasellus ultrices blandit mattis.</p>
+                    <p>Curabitur ac neque erat. Praesent pellentesque ipsum eget dolor dictum eleifend eu quis eros. Donec nulla sapien, gravida id viverra sit amet, rutrum nec odio. Nulla convallis, massa ut accumsan dapibus, urna arcu accumsan ante, at commodo nunc nisl vel nisl. Praesent ac fermentum massa. Fusce dictum urna sit amet commodo rhoncus. Integer id ornare sem. Vestibulum ultrices et tellus quis mollis. Etiam risus tellus, luctus nec eros quis, dapibus maximus orci. Vestibulum eleifend risus eleifend nisi egestas, vitae convallis elit ornare. Morbi finibus sit amet leo in fermentum. Etiam consectetur sapien et ex mollis, vel ultricies nisi ullamcorper.</p>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                    <div id = "my_search">
+                        <div class="inner-addon left-addon">
+                            <i class="glyphicon glyphicon-search"></i>
+                            <form>
+                                <input type="text" id = "my_input" class="form-search" placeholder="Пошук"/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-10 col-md-offset-1">
+                    <div class = "table-responsive">
+                        <table id="my_table" class="table table-striped compact dt-responsive no-wrap">
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class = "row">
+                <div class="col-sm-12 col-md-10 col-md-offset-1">
+                    <p>Quisque sem sapien, efficitur at neque sed, rutrum placerat dolor. Vestibulum ultrices, neque in vulputate bibendum, felis urna cursus dolor, eu tristique sapien ligula at est. Fusce vestibulum eu turpis ac rutrum. Vestibulum vitae nibh id nibh aliquet venenatis. Ut ultricies interdum diam, quis laoreet ex scelerisque ac. Nulla facilisi. Fusce nec eros ac sapien aliquet sodales.</p>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" charset="utf-8"
+            src="libs/spin.min.js"></script>
+        <script type="text/javascript" charset="utf-8"
+            src="js/get_data.js"></script>     
+    </body>
+</html>
