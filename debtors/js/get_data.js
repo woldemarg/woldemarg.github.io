@@ -21,23 +21,10 @@ var opts = {
         position: "absolute" // Element positioning
     },
 
-    target = document.getElementById("my_table"),
+    target = document.getElementById("my_table_div"),
 
     spinner = new Spinner(opts)
-        .spin(target);
-
-d3.csv("data/data.csv", function (error, dt) {
-
-    "use strict";
-
-    if (error) {
-        throw error;
-    }
-
-    var data = dt;
-
-    $("#my_table")
-        .append("<tfoot><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></tfoot>");
+        .spin(target);   
 
     /* Formatting function for row details - modify as you need */
     function format(d) {
@@ -58,15 +45,22 @@ d3.csv("data/data.csv", function (error, dt) {
             "</table>";
     }
 
+ $("#my_table")
+        .append("<tfoot><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></tfoot>");
+
     $(document)
         .ready(function () {
             var table = $("#my_table")
                 .DataTable({
                     
-                    "sDom": "<'top'l>rt<'bottom'ip><'clear'>",
+                    "sDom": "<'top'l>rt<'bottom'ip><'clear'>",                    
                     
-                    "data": data,
-                    
+                    "ajax": "data/data.json",
+                    //"ajax": {
+                    //    "url": "data/test2.json",
+                    //    "dataSrc": ""
+                    //        },    
+                                         
                     "columnDefs": [
                         {
                             "targets": 0,
@@ -126,7 +120,7 @@ d3.csv("data/data.csv", function (error, dt) {
                         "lengthMenu": "Показати _MENU_ записів",
                         "zeroRecords": "Записів не знайдено",
                         "info": "Записи з _START_ по _END_ із _TOTAL_",
-                        "infoEmpty": "записів не знайдено",
+                        "infoEmpty": "0 записів",
                         "infoFiltered": "(всього _MAX_ записів)",
                         "thousands": " ",
                         "paginate": {
@@ -165,9 +159,13 @@ d3.csv("data/data.csv", function (error, dt) {
                                         select.append("<option value='" + d + "'>" + d + "</option>");
                                     });
                             });
+                        spinner.stop();
+                        $("#my_table").show();
                     }
                     
                 });
+        
+        
         
             // Add event listener for opening and closing details
             $("#my_table tbody")
@@ -194,8 +192,6 @@ d3.csv("data/data.csv", function (error, dt) {
                     table.search(this.value)
                         .draw();
                 });
-        });
-
-    spinner.stop();
-
-});
+        
+         
+        });  
