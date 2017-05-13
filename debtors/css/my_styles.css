@@ -1,92 +1,72 @@
-@media max-width 992px{
-body {
-font-size:14px;
-}
+/*media query*/
+@media only screen and (min-width: 768px) {
+	body {
+        font-size:12px;
+    }
+ }
+@media only screen and (min-width: 992px) { 
+	body {
+        font-size:14px;
+    }
 }
 
-@media max-width 768px{
+/*main*/
 body {
-font-size:12px;
-}
-}
-
-body {
-font-family:'PT Sans', sans-serif;
+font-family:"PT Sans", sans-serif;
 font-size:16px;
 }
-
-#my_table {
-border-spacing:0;
-display:none;
-font-size:.75em;
-/*width:95%;*/
-}
-
-#my_input {
--webkit-transition:width .5s ease-in-out;
-border:2px solid #ccc;
-border-radius:4px;
-box-sizing:border-box;
-font-size:1.3em;
-transition:width .5s ease-in-out;
-width:150px;
-}
-
-#my_input:focus {
-/*border-color:red;*/
-width:100%;
-}
-
-.inner-addon {
-position:relative;
-}
-
-.inner-addon .glyphicon {
-padding:10px;
-pointer-events:none;
-position:absolute;
-}
-
-.left-addon .glyphicon {
-left:0;
-}
-
-.left-addon input {
-padding-left:30px;
-}
-
-i {
-color:#ccc;
-}
-
 p {
 padding:30px 0 5px;
 }
 
-#my_search {
-padding:35px 0 55px;
+/*my_search*/
+#search_info{
+color: #aaa;
+font-size:.85em;
+padding:0 0 35px;
 }
 
+#my_toolbar {
+padding:35px 0 0;
+}
+
+#my_input {
+font-size:1.25em;
+}
+
+/*my_search placeholder*/
+input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.5s ease;}
+input::-moz-placeholder                {opacity: 1; transition: opacity 0.5s ease;}
+input:-moz-placeholder                 {opacity: 1; transition: opacity 0.5s ease;}
+input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.5s ease;}
+input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.5s ease;}
+input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.5s ease;}
+input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.5s ease;}
+input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.5s ease;}
+
+::-webkit-input-placeholder {color:#bbb;}
+::-moz-placeholder          {color:#bbb;}/* Firefox 19+ */
+:-moz-placeholder           {color:#bbb;}/* Firefox 18- */
+:-ms-input-placeholder      {color:#bbb;}
+
+/*my_table*/
+label {
+font-size:.8em;
+}
+#my_table {
+border-spacing:0;
+display:none;
+font-size:.85em;
+}
 .bottom {
-font-size:.7em;
+font-size:.75em;
 }
 
+/*my_table child rows*/
 td.details-control {
 background:url(http://www.datatables.net/examples/resources/details_open.png) no-repeat center center;
 cursor:pointer;
 }
-
 tr.shown td.details-control {
 background:url(http://www.datatables.net/examples/resources/details_close.png) no-repeat center center;
-}
-
-input::-webkit-input-placeholder,input:-moz-placeholder,input::-moz-placeholder,input:-ms-input-placeholder {
-color:#ccc!important;
-opacity:1;
-transition:opacity .5s ease;
-}
-
-input:focus::-webkit-input-placeholder,input:focus::-moz-placeholder,input:focus:-moz-placeholder,input:focus:-ms-input-placeholder {
-opacity:0;
-transition:opacity .5s ease;
 }
