@@ -1,93 +1,250 @@
 /* Large Devices, Wide Screens */
-@media only screen and (max-width : 1200px) {body {
-        font-size:18px;
-    }}
-@media only screen and (max-width : 1199px) {body {
-        font-size:18px;
-    }}
 
+@media only screen and (max-width: 1200px) {
+    body {
+        font-size: 19px;
+    }
+}
+@media only screen and (max-width: 1199px) {
+    body {
+        font-size: 19px;
+    }
+}
 /* Medium Devices, Desktops */
-@media only screen and (max-width : 992px) {body {
-        font-size:16px;
-    }}
-@media only screen and (max-width : 991px) {body {
-        font-size:16px;
-    }}
 
+@media only screen and (max-width: 992px) {
+    body {
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 991px) {
+    body {
+        font-size: 16px;
+    }
+}
 /* Small Devices, Tablets */
-@media only screen and (max-width : 768px) {body {
-        font-size:14px;
-    }}
-@media only screen and (max-width : 767px) {body {
-        font-size:14px;
-    }}
 
-/* Extra Small Devices, Phones */ 
-@media only screen and (max-width : 480px) {body {
-        font-size:12px;
-    }}
-@media only screen and (max-width : 479px) {body {
-        font-size:12px;
-    }}
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    body {
+        font-size: 14px;
+    }
+}
+/* Extra Small Devices, Phones */
 
-
-
+@media only screen and (max-width: 480px) {
+    body {
+        font-size: 13px;
+    }
+}
+@media only screen and (max-width: 479px) {
+    body {
+        font-size: 13px;
+    }
+}
+.jumbotron {
+    background: repeating-linear-gradient( 135deg, #fff 6px, #fff 6px, #fffed9 15px, #fffed9 15px);
+}
 /*main*/
+
 body {
-font-family:"PT Sans", sans-serif;
+    font-family: "PT Sans", sans-serif;
+    background-color: #FAFAFA:
 }
 p {
-padding:30px 0 5px;
+    padding: 30px 0 5px;
 }
+/*===header===*/
 
+header {
+    height;
+    3em;
+    background: #333332;
+    color: #d3d3d3;
+}
+header #title #ukraineFlag {
+    display: inline-block;
+    width: 1.2em;
+    height: 0.5em;
+    background: #ffda00;
+    border-top: 0.5em solid #0366c3;
+    margin-right: 0.5em;
+    box-sizing: content-box;
+}
+#title a,
+header #title a:hover,
+header #title a:active,
+header #title a:visited {
+    text-decoration: none;
+    color: #d3d3d3;
+}
+.social-icons a {
+    text-decoration: none;
+    color: #d3d3d3;
+    float: left;
+    padding-top: 0.25em;
+    font-size: 1.3em;
+    margin-right: 0.5em;
+}
+header #title {
+    float: left;
+    padding-top: 0.25em;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+/*===footer===*/
+
+footer {
+    font-size: 0.85em;
+    padding-bottom: 1.5em;
+    padding-top: 1.5em;
+    padding-left: 0;
+    text-align: left;
+    color: #d3d3d3;
+    background: #161616;
+}
+footer ul.links {
+    float: left;
+    list-style: none;
+}
+footer a,
+footer a:hover,
+footer a:active,
+footer a:visited {
+    text-decoration: underline;
+    color: #d3d3d3;
+}
+.btn-group,
+.input-group {
+    height: 3em;
+}
 /*my_search*/
-#search_info{
-color: #aaa;
-font-size:.85em;
-padding:0 0 35px;
+
+#search_info {
+    color: #aaa;
+    font-size: .85em;
+    padding: 0 0 35px;
+}
+#my_toolbar {
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+#my_input {
+    /* width: 200px;*/
+    
+    text-overflow: ellipsis;
+}
+/*-webkit-transition: width 0.5s ease-in-out;
+    transition: width 0.5s ease-in-out;*/
+}
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    
+    color: pink;
+}
+::-moz-placeholder {
+    /* Firefox 19+ */
+    
+    color: pink;
+}
+:-ms-input-placeholder {
+    /* IE 10+ */
+    
+    color: pink;
+}
+:-moz-placeholder {
+    /* Firefox 18- */
+    
+    color: pink;
+}
+.input-group-addon,
+.btn {
+    background-color: #FFD64C;
+    border: 1px solid #4A4B4D
+}
+.fa-search,
+.fa-refresh {
+    color: #4A4B4D;
+}
+button {
+    cursor: pointer;
+}
+/*#clear_btn {
+    background-color: #FFD64C;
 }
 
-#my_toolbar {
-padding:35px 0 0;
-}
+
+
+#clear_btn:hover {
+    color: #FFD64C;   
+    background-color: #4A4B4D;
+}*/
 
 #my_input {
-font-size:1.25em;
+    border: 1px solid #4A4B4D;
 }
-
 /*my_search placeholder*/
-input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.5s ease;}
-input::-moz-placeholder                {opacity: 1; transition: opacity 0.5s ease;}
-input:-moz-placeholder                 {opacity: 1; transition: opacity 0.5s ease;}
-input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.5s ease;}
-input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.5s ease;}
-input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.5s ease;}
-input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.5s ease;}
-input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.5s ease;}
 
-::-webkit-input-placeholder {color:#bbb;}
-::-moz-placeholder          {color:#bbb;}/* Firefox 19+ */
-:-moz-placeholder           {color:#bbb;}/* Firefox 18- */
-:-ms-input-placeholder      {color:#bbb;}
-
+:focus::-webkit-input-placeholder {
+    color: transparent
+}
+:focus::-moz-placeholder {
+    color: transparent
+}
+:focus:-moz-placeholder {
+    color: transparent
+}
+:focus:-ms-input-placeholder {
+    color: transparent
+}
 /*my_table*/
+
 label {
-font-size:.8em;
+    font-size: .8em;
 }
 #my_table {
-border-spacing:0;
-display:none;
-font-size:.85em;
+    border-spacing: 0;
+    display: none;
+    font-size: .85em;
+    width: 100%;
 }
 .bottom {
-font-size:.75em;
+    font-size: .75em;
 }
-
 /*my_table child rows*/
-td.details-control {
-background:url(http://www.datatables.net/examples/resources/details_open.png) no-repeat center center;
-cursor:pointer;
+
+td.details-control:before {
+    /*background:url(http://www.datatables.net/examples/resources/details_open.png) no-repeat center center;*/
+    
+    cursor: pointer;
+    font-family: "FontAwesome";
+    content: "\f0fe";
+    color: #4A4B4D;
 }
-tr.shown td.details-control {
-background:url(http://www.datatables.net/examples/resources/details_close.png) no-repeat center center;
+tr.shown td.details-control:before {
+    /*background:url(http://www.datatables.net/examples/resources/details_close.png) no-repeat center center;*/
+    
+    cursor: pointer;
+    font-family: "FontAwesome";
+    content: "\f146";
+    color: #FFD64C;
 }
+/*table.dataTable tr.odd { background-color: green; }*/
+/*table.dataTable tr.even { background-color: #FFF9DC; }*/
+/*table td table td {
+    border-bottom: 1px solid white;
+    border-top: 1px solid green;}
+/*table td table {
+    border-top: 1px solid red;
+    }*/
+
+table.dataTable td,
+th {
+    border-top: none;
+}
+/*table.dataTable tr:nth-child(even) {background-color: lightslategrey;}*/

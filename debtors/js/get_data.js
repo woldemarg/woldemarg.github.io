@@ -26,9 +26,9 @@ var opts = {
     spinner = new Spinner(opts)
         .spin(target);
 
-$("#my_toolbar")
-    .css("width", $("#info_text")
-        .width() + "px");
+var min_width = $("#my_toolbar").width() * 0.6;
+
+$("#my_input").css("width", min_width);
 
 $("#my_table")
     .append("<tfoot><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></tfoot>");
@@ -164,7 +164,9 @@ $(document)
                     $("#my_table")
                         .show();
                 }
-            });
+            }),
+            
+            max_width = $(window).innerWidth() - $("#my_input").offset().left - $("#my_toolbar").offset().left;
 
         // Add event listener for opening and closing details
         $("#my_table tbody")
@@ -185,7 +187,16 @@ $(document)
                 }
             });
 
-        // #myInput is a <input type="text"> element
+        
+      
+    
+    
+        $(window).resize(function () {
+            max_width = $(window).innerWidth() - $("#my_input").offset().left - $("#my_toolbar").offset().left;
+            min_width = $("#my_toolbar").width() * 0.6;
+        });
+    
+    
         $("#my_input")
             .on("keyup", function () {
                 table.search(this.value)
@@ -194,15 +205,13 @@ $(document)
             .focus(function () {
                 $(this)
                     .animate({
-                        width: $("#my_row")
-                            .width()
+                        width: max_width
                     }, 500);
             })
             .focusout(function () {
                 $(this)
                     .animate({
-                        width: $("#info_text")
-                            .width()
+                        width: min_width
                     }, 500);
             });
     
