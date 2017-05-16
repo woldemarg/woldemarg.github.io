@@ -24,11 +24,69 @@ var opts = {
     target = document.getElementById("my_table_div"),
 
     spinner = new Spinner(opts)
-        .spin(target);
+        .spin(target),
 
-var min_width = $("#my_toolbar").width() * 0.6;
+    min_width = $("#my_toolbar")
+        .width() * 0.55,
+    
+    max_width = $(window)
+        .innerWidth() - $("#my_input")
+        .offset()
+        .left - $("#my_toolbar")
+        .offset()
+        .left;
 
-$("#my_input").css("width", min_width);
+function checkScroll() {
+    "use strict";
+    
+    var startY = $(".navbar")
+        .height(); //The point where the navbar changes in px
+    
+    if ($(window)
+            .scrollTop() > startY) {
+        $(".navbar")
+            .css("background", "rgba(51,51,50,0)");
+        $("#logo_pic")
+            .addClass("scrolled");
+    
+    } else {
+        
+        $(".navbar")
+            .css("background", "rgb(51,51,50)");
+        $("#logo_pic")
+            .removeClass("scrolled");
+    }
+}
+
+if ($(".navbar")
+        .length > 0) {
+    $(window)
+        .on("scroll load resize", function () {
+            "use strict";
+            checkScroll();
+        });
+}
+
+$(window)
+    .resize(function () {
+        "use strict";
+        max_width = $(window)
+            .innerWidth() - $("#my_input")
+            .offset()
+            .left - $("#my_toolbar")
+            .offset()
+            .left;
+        min_width = $("#my_toolbar")
+            .width() * 0.55;
+        $("#my_input")
+            .animate({
+                width: min_width
+            }, 200);
+    });
+
+
+$("#my_input")
+    .css("width", min_width);
 
 $("#my_table")
     .append("<tfoot><tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr></tfoot>");
@@ -143,7 +201,7 @@ $(document)
                                     .on("change", function () {
                                         var val = $.fn.dataTable.util.escapeRegex(
                                                 $(this)
-                                                    .val()
+                                                        .val()
                                             );
 
                                         column
@@ -164,9 +222,7 @@ $(document)
                     $("#my_table")
                         .show();
                 }
-            }),
-            
-            max_width = $(window).innerWidth() - $("#my_input").offset().left - $("#my_toolbar").offset().left;
+            });
 
         // Add event listener for opening and closing details
         $("#my_table tbody")
@@ -187,16 +243,6 @@ $(document)
                 }
             });
 
-        
-      
-    
-    
-        $(window).resize(function () {
-            max_width = $(window).innerWidth() - $("#my_input").offset().left - $("#my_toolbar").offset().left;
-            min_width = $("#my_toolbar").width() * 0.6;
-        });
-    
-    
         $("#my_input")
             .on("keyup", function () {
                 table.search(this.value)
@@ -214,13 +260,14 @@ $(document)
                         width: min_width
                     }, 500);
             });
-    
-        
-        $(function () {$("#clear_btn")
-            .click(function () {
-                $("#my_input")
-                    .val("");
-                table.search("").draw();
-            });
-            });
+
+        $(function () {
+            $("#clear_btn")
+                .click(function () {
+                    $("#my_input")
+                        .val("");
+                    table.search("")
+                        .draw();
+                });
+        });
     });
