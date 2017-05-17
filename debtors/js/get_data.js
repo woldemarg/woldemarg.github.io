@@ -40,7 +40,7 @@ function checkScroll() {
     "use strict";
     
     var startY = $(".navbar")
-        .height(); //The point where the navbar changes in px
+        .height() * 1.2; //The point where the navbar changes in px
     
     if ($(window)
             .scrollTop() > startY) {

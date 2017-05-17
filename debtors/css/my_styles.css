@@ -82,7 +82,8 @@ navbar
 }
 
 /*
-jumbotron*/
+jumbotron
+*/
 .jumbotron {
     background: repeating-linear-gradient(135deg, #fff 6px, #fff 6px, #fffed9 15px, #fffed9 15px);
 }
@@ -119,6 +120,7 @@ toolbar
 .btn {
     background-color: #FFD64C;
     border: 1px solid #4A4B4D;
+    color: #333332;
     height: 3em;
 }
 button {
