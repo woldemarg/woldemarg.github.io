@@ -1,0 +1,11 @@
+.full, .prc {
+  fill: lightblue;
+}
+
+.fop, .dead {
+  fill: blue;
+}
+
+.axis--y path {
+  display: none;
+}
