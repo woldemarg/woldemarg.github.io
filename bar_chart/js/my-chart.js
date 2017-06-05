@@ -1,39 +1,48 @@
-var svg = d3.select("svg"),
-    margin = {
-        top: 20,
-        right: 40,
-        bottom: 90,
-        left: 40
-    },
-    width = +svg.attr("width") - margin.left - margin.right,
-    height = +svg.attr("height") - margin.top - margin.bottom;
+var svg = d3.select("#my_chart")
+    .append("svg")
+    .attr("width", my_chart.offsetWidth)
+    .attr("height", viewport_h * 0.7),
 
-var x = d3.scaleBand()
+    margin = {
+        top: 15,
+        right: 40,
+        bottom: 115,
+        left: 25
+    },
+
+    width = +svg.attr("width") - margin.left - margin.right,
+    height = +svg.attr("height") - margin.top - margin.bottom,
+
+    x = d3.scaleBand()
     .rangeRound([0, width])
     .padding(0.1),
     y = d3.scaleLinear()
-    .rangeRound([height, 0]);
+    .rangeRound([height, 0]),
 
-var g = svg.append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    g = svg.append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")"),
 
-var yAxis = g.append("g")
+    yAxis = g.append("g")
     .attr("class", "axis axis--y")
-    .attr("transform", "translate(" + width + ", 0)");
+    .attr("transform", "translate(" + width + ", 0)"),
 
-var xAxis = g.append("g")
-        .attr("class", "axis axis--x")
-        .attr("transform", "translate(0," + height + ")");
+    xAxis = g.append("g")
+    .attr("class", "axis axis--x")
+    .attr("transform", "translate(0," + height + ")"),
 
-var time = 1000;
+    time = 750,
 
-var new_key,
+    new_key,
     raw;
 
 function type(d) {
     "use strict";
-    d.dead = +d.dead;
-    d.full = +d.full;
+    Object.keys(d)
+        .forEach(function (prop) {
+            if (prop !== "reg") {
+                d[prop] = +d[prop];
+            }
+        });
     return d;
 }
 
@@ -61,8 +70,10 @@ function update_yAxis(key) {
         return d.value;
     })]);
     yAxis.transition()
+        .duration(time)
         .call(d3.axisRight(y)
-            .ticks(4))
+            .ticks(5)
+            .tickFormat(d3.format(".0d")))
         .selectAll(".tick")
         .each(function (d, i) {
             if (d === 0) {
@@ -72,13 +83,13 @@ function update_yAxis(key) {
 }
 
 function add_bars(key) {
-    
+
     "use strict";
-    
+
     var data = filter_by_key(raw, key),
-        
+
         bars = g.selectAll("." + key)
-            .data(data);
+        .data(data);
 
     bars.enter()
         .append("rect")
@@ -106,9 +117,9 @@ function add_bars(key) {
 function remove_bars(key) {
 
     "use strict";
-    
+
     var data = filter_by_key(raw, key),
-        
+
         bars = g.selectAll("." + key);
 
     bars.transition()
@@ -134,50 +145,131 @@ d3.csv("data/data.csv", type, function (error, csv) {
     raw = csv;
 
     raw.sort(function (a, b) {
-        return a.full - b.full;
+        return a.sum - b.sum;
     });
-    
+
     x.domain(raw.map(function (d) {
         return d.reg;
     }));
-    
+
     xAxis.call(d3.axisBottom(x)
-        .tickSizeOuter([0]))
+            .tickSizeOuter([0]))
         .selectAll("text")
         .style("text-anchor", "end")
         .attr("dx", "-.8em")
-        .attr("dy", ".15em")
-        .attr("transform", "rotate(-65)");
-    
-    new_key = "full";
+        .attr("dy", "-.25em")
+        .attr("transform", "rotate(-70)");
+
+    new_key = "sum";
 
     update_yAxis(new_key);
     add_bars(new_key);
 });
 
-/*d3.select("#add_dead")
-    .on("click", function () {
-        "use strict";
-        new_key = "dead";
-        add_bars(new_key);
-    });
-d3.select("#add_full")
-    .on("click", function () {
-        "use strict";
-        new_key = "full";
-        add_bars(new_key);
-    });
+var exp = [
+    {
+        nam: "ЖКГ",
+        val: 403
+    },
+    {
+        nam: "дороги",
+        val: 719
+    },
+    {
+        nam: "медицина",
+        val: 2145
+    }
+];
 
-d3.select("#remove_dead")
-    .on("click", function () {
-        "use strict";
-        new_key = "dead";
-        remove_bars(new_key);
-    });
+function add_lines() {
 
-d3.select("#remove_full")
-    .on("click", function () {
-        "use strict";
-        new_key = "full";
-        remove_bars(new_key);
-    });*/
+    "use strict";
+
+    var lines = g.selectAll(".exp_line")
+        .data(exp);
+
+    lines.enter()
+        .append("line")
+        .attr("class", "exp_line")
+        .attr("opacity", 0)
+        .attr("x1", 0)
+        .attr("y1", height)
+        .attr("x2", width)
+        .attr("y2", height)
+        .merge(lines)
+        .transition()
+        .delay(function (d, i) {
+            return i / exp.length * time / 2;
+        })
+        .duration(time)
+        .attr("opacity", 1)
+        .attr("x1", 0)
+        .attr("y1", function (d) {
+            return y(d.val);
+        })
+        .attr("x2", width)
+        .attr("y2", function (d) {
+            return y(d.val);
+        });
+
+    var labels = g.selectAll(".label")
+        .data(exp);
+
+    labels.enter()
+        .append("text")
+        .attr("class", "label")
+        .attr("opacity", 0)
+        .attr("x", 10)
+        .attr("y", height)
+        .attr("dy", ".95em")
+        .merge(labels).transition()
+        .delay(function (d, i) {
+            return i / exp.length * time / 2;
+        })
+        .duration(time)
+        .attr("opacity", 1)
+        .attr("y", function (d) {
+            return y(d.val);
+        })
+        .text(function (d) {
+            return d.nam;
+        });
+
+
+}
+
+function remove_lines() {
+
+    "use strict";
+
+    var lines = g.selectAll(".exp_line");
+
+    lines.transition()
+        .delay(function (d, i) {
+            return i / exp.length * time / 2;
+        })
+        .duration(time)
+        .attr("opacity", 0)
+        .attr("x1", 0)
+        .attr("y1", height)
+        .attr("x2", width)
+        .attr("y2", height);
+
+    lines.exit()
+        .remove();
+
+    var labels = g.selectAll(".label");
+
+    labels.transition()
+        .delay(function (d, i) {
+            return i / exp.length * time / 2;
+        })
+        .duration(time)
+        .attr("opacity", 0)
+        .attr("x", 10)
+        .attr("y", height);
+
+    labels.exit()
+        .remove();
+
+}

@@ -1,5 +1,0 @@
-http://www.convertcsv.com/csv-to-json.html
-
-{lb}{br}"data":[{br}
-{lb}"{h1}":"{f1}","{h2}":"{f2}","{h3}":"{f3}","{h4}":"{f4}","{h5}":"{f5}","{h6}":"{f6}","{h7}":"{f7}","{h8}":"{f8}","{h9}":"{f9}"{rb}
-{br}]{br}{rb}
