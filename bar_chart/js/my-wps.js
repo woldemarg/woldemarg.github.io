@@ -13,11 +13,11 @@ function text_color(id, color) {
 function switch_colors(dir, id1, id2) {
     "use strict";
     if (dir === "down") {
-        text_color(id1, "#666");
+        text_color(id1, "#555");
         text_color(id2, "#ddd");
     } else {
         text_color(id1, "#ddd");
-        text_color(id2, "#666");
+        text_color(id2, "#555");
     }
 }
 
