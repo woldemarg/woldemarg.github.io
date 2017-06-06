@@ -6,7 +6,7 @@ var svg = d3.select("#my_chart")
     margin = {
         top: 15,
         right: 40,
-        bottom: 115,
+        bottom: 105,
         left: 25
     },
 
@@ -186,6 +186,9 @@ function add_lines() {
     "use strict";
 
     var lines = g.selectAll(".exp_line")
+        .data(exp),
+        
+        labels = g.selectAll(".label")
         .data(exp);
 
     lines.enter()
@@ -211,10 +214,7 @@ function add_lines() {
         .attr("y2", function (d) {
             return y(d.val);
         });
-
-    var labels = g.selectAll(".label")
-        .data(exp);
-
+    
     labels.enter()
         .append("text")
         .attr("class", "label")
@@ -235,14 +235,16 @@ function add_lines() {
             return d.nam;
         });
 
-
+    d3.selectAll("rect")
+        .classed("opac", true);
 }
 
 function remove_lines() {
 
     "use strict";
 
-    var lines = g.selectAll(".exp_line");
+    var lines = g.selectAll(".exp_line"),
+        labels = g.selectAll(".label");
 
     lines.transition()
         .delay(function (d, i) {
@@ -257,9 +259,7 @@ function remove_lines() {
 
     lines.exit()
         .remove();
-
-    var labels = g.selectAll(".label");
-
+    
     labels.transition()
         .delay(function (d, i) {
             return i / exp.length * time / 2;
@@ -272,4 +272,6 @@ function remove_lines() {
     labels.exit()
         .remove();
 
+    d3.selectAll("rect")
+        .classed("opac", false);
 }
