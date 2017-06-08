@@ -1,6 +1,4 @@
-/*
-media queries
-*/
+/*media queries*/
 
 @media only screen and (max-width: 1920px) {
     body {
@@ -87,7 +85,8 @@ media queries
 }
 
 body {
-    /*background-color: #EFEFEF;*/
+    /*background-color: #EFEFEF;
+    */
     font-family: "PT Sans", sans-serif;
 }
 
@@ -140,6 +139,30 @@ svg {
     top: 10%;
 }
 
+
+/* basic positioning */
+
+.legend {
+    list-style: none;
+    float: left;
+    padding: 0;
+}
+
+
+/* your colors */
+
+.leg_square {
+    background-color: #40A0D7;
+    float: left;
+    width: 0.9em;
+    height: 0.9em;
+    margin: 0.3em 0.7em 0em 0em;
+}
+
+.leg_text {
+    font-size: 0.9em;
+}
+
 #empty {
     height: 250px;
 }
@@ -161,7 +184,7 @@ svg {
 }
 
 .opac {
-    opacity: 0.5;
+    opacity: 0.3;
 }
 
 .axis--y path {
@@ -243,11 +266,7 @@ h1 {
 }
 
 
-
-
-/*
-footer
-*/
+/*footer*/
 
 footer {
     background: #333332;
