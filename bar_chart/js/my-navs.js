@@ -38,6 +38,6 @@ function make_nav_items(h, n) {
 }
 
 if ($(window)
-    .width() >= 767) {
+        .width() >= min_width) {
     make_nav_items(viewport_h, nav_items);
 }

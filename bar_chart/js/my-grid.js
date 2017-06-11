@@ -1,5 +1,7 @@
+var min_width = 767;
+
 if ($(window)
-    .width() >= 767) {
+        .width() >= min_width) {
 
     var stickyElements = document.getElementsByClassName("sticky"),
 
@@ -27,5 +29,5 @@ if ($(window)
 
     $("#empty").height(added_h + my_navbar.offsetHeight);
 } else {
-    alert("Нажаль, розір екрану Вашого мобільного пристрою не дозволяє переглянути інтерактивний контент цієї сторінки")
+    alert("На жаль, на цьому пристрої Ви не побачите інтерактивний контент :(\nБудь ласка, поверніться до перегляду сторінки на комп'ютері!");
 }

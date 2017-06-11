@@ -37,7 +37,7 @@ function make_active(dir, id1, id2) {
 }
 
 if ($(window)
-    .width() >= 767) {
+        .width() >= min_width) {
 
     var wp_0 = $("#slide_0").waypoint({
         handler: function (dir) {

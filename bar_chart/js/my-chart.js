@@ -1,3 +1,55 @@
+var svg = d3.select("#my_chart")
+        .append("svg")
+        .attr("width", my_chart.offsetWidth)
+        .attr("height", viewport_h * 0.7),
+
+    margin = {
+        top: 15,
+        right: 40,
+        bottom: 105,
+        left: 25
+    },
+
+    width = +svg.attr("width") - margin.left - margin.right,
+    height = +svg.attr("height") - margin.top - margin.bottom,
+
+    x = d3.scaleBand()
+        .rangeRound([0, width])
+        .padding(0.1),
+    y = d3.scaleLinear()
+        .rangeRound([height, 0]),
+
+    g = svg.append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")"),
+
+    yAxis = g.append("g")
+                .attr("class", "axis axis--y")
+        .attr("transform", "translate(" + width + ", 0)"),
+
+    xAxis = g.append("g")
+        .attr("class", "axis axis--x")
+        .attr("transform", "translate(0," + height + ")"),
+
+    time = 750,
+
+    exp = [
+        {
+            nam: "ЖКГ",
+            val: 403
+        },
+        {
+            nam: "дороги",
+            val: 719
+        },
+        {
+            nam: "медицина",
+            val: 2145
+        }
+    ],
+
+    new_key,
+    raw;
+
 function type(d) {
     "use strict";
     Object.keys(d)
@@ -52,7 +104,7 @@ function add_bars(key) {
     var data = filter_by_key(raw, key),
 
         bars = g.selectAll("." + key)
-        .data(data);
+            .data(data);
 
     bars.enter()
         .append("rect")
@@ -192,90 +244,40 @@ function remove_lines() {
         .classed("opac", false);
 }
 
-if ($(window)
-    .width() >= 767) {
 
-    var svg = d3.select("#my_chart")
-        .append("svg")
-        .attr("width", my_chart.offsetWidth)
-        .attr("height", viewport_h * 0.7),
 
-        margin = {
-            top: 15,
-            right: 40,
-            bottom: 105,
-            left: 25
-        },
+d3.csv("data/data.csv", type, function (error, csv) {
 
-        width = +svg.attr("width") - margin.left - margin.right,
-        height = +svg.attr("height") - margin.top - margin.bottom,
+    "use strict";
 
-        x = d3.scaleBand()
-        .rangeRound([0, width])
-        .padding(0.1),
-        y = d3.scaleLinear()
-        .rangeRound([height, 0]),
-
-        g = svg.append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")"),
-
-        yAxis = g.append("g")
-        .attr("class", "axis axis--y")
-        .attr("transform", "translate(" + width + ", 0)"),
-
-        xAxis = g.append("g")
-        .attr("class", "axis axis--x")
-        .attr("transform", "translate(0," + height + ")"),
-
-        time = 750,
-
-        exp = [
-            {
-                nam: "ЖКГ",
-                val: 403
-    },
-            {
-                nam: "дороги",
-                val: 719
-    },
-            {
-                nam: "медицина",
-                val: 2145
+    if (error) {
+        throw error;
     }
-],
 
-        new_key,
-        raw;
+    raw = csv;
 
-    d3.csv("data/data.csv", type, function (error, csv) {
+    raw.sort(function (a, b) {
+        return a.sum - b.sum;
+    });
 
-        "use strict";
+    x.domain(raw.map(function (d) {
+        return d.reg;
+    }));
 
-        if (error) {
-            throw error;
-        }
+    xAxis.call(d3.axisBottom(x)
+            .tickSizeOuter([0]))
+        .selectAll("text")
+        .style("text-anchor", "end")
+        .attr("dx", "-.8em")
+        .attr("dy", "-.25em")
+        .attr("transform", "rotate(-70)");
 
-        raw = csv;
+    new_key = "sum";
 
-        raw.sort(function (a, b) {
-            return a.sum - b.sum;
-        });
 
-        x.domain(raw.map(function (d) {
-            return d.reg;
-        }));
-
-        xAxis.call(d3.axisBottom(x)
-                .tickSizeOuter([0]))
-            .selectAll("text")
-            .style("text-anchor", "end")
-            .attr("dx", "-.8em")
-            .attr("dy", "-.25em")
-            .attr("transform", "rotate(-70)");
-
-        new_key = "sum";
-
+    if ($(window)
+            .width() >= min_width) {
         update_yAxis(new_key);
         add_bars(new_key);
-    });
-}
+    }
+});
