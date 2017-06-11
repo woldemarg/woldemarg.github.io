@@ -1,40 +1,3 @@
-var svg = d3.select("#my_chart")
-    .append("svg")
-    .attr("width", my_chart.offsetWidth)
-    .attr("height", viewport_h * 0.7),
-
-    margin = {
-        top: 15,
-        right: 40,
-        bottom: 105,
-        left: 25
-    },
-
-    width = +svg.attr("width") - margin.left - margin.right,
-    height = +svg.attr("height") - margin.top - margin.bottom,
-
-    x = d3.scaleBand()
-    .rangeRound([0, width])
-    .padding(0.1),
-    y = d3.scaleLinear()
-    .rangeRound([height, 0]),
-
-    g = svg.append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")"),
-
-    yAxis = g.append("g")
-    .attr("class", "axis axis--y")
-    .attr("transform", "translate(" + width + ", 0)"),
-
-    xAxis = g.append("g")
-    .attr("class", "axis axis--x")
-    .attr("transform", "translate(0," + height + ")"),
-
-    time = 750,
-
-    new_key,
-    raw;
-
 function type(d) {
     "use strict";
     Object.keys(d)
@@ -134,60 +97,13 @@ function remove_bars(key) {
         .remove();
 }
 
-d3.csv("data/data.csv", type, function (error, csv) {
-
-    "use strict";
-
-    if (error) {
-        throw error;
-    }
-
-    raw = csv;
-
-    raw.sort(function (a, b) {
-        return a.sum - b.sum;
-    });
-
-    x.domain(raw.map(function (d) {
-        return d.reg;
-    }));
-
-    xAxis.call(d3.axisBottom(x)
-            .tickSizeOuter([0]))
-        .selectAll("text")
-        .style("text-anchor", "end")
-        .attr("dx", "-.8em")
-        .attr("dy", "-.25em")
-        .attr("transform", "rotate(-70)");
-
-    new_key = "sum";
-
-    update_yAxis(new_key);
-    add_bars(new_key);
-});
-
-var exp = [
-    {
-        nam: "ЖКГ",
-        val: 403
-    },
-    {
-        nam: "дороги",
-        val: 719
-    },
-    {
-        nam: "медицина",
-        val: 2145
-    }
-];
-
 function add_lines() {
 
     "use strict";
 
     var lines = g.selectAll(".exp_line")
         .data(exp),
-        
+
         labels = g.selectAll(".label")
         .data(exp);
 
@@ -214,7 +130,7 @@ function add_lines() {
         .attr("y2", function (d) {
             return y(d.val);
         });
-    
+
     labels.enter()
         .append("text")
         .attr("class", "label")
@@ -259,7 +175,7 @@ function remove_lines() {
 
     lines.exit()
         .remove();
-    
+
     labels.transition()
         .delay(function (d, i) {
             return i / exp.length * time / 2;
@@ -274,4 +190,92 @@ function remove_lines() {
 
     d3.selectAll("rect")
         .classed("opac", false);
+}
+
+if ($(window)
+    .width() >= 767) {
+
+    var svg = d3.select("#my_chart")
+        .append("svg")
+        .attr("width", my_chart.offsetWidth)
+        .attr("height", viewport_h * 0.7),
+
+        margin = {
+            top: 15,
+            right: 40,
+            bottom: 105,
+            left: 25
+        },
+
+        width = +svg.attr("width") - margin.left - margin.right,
+        height = +svg.attr("height") - margin.top - margin.bottom,
+
+        x = d3.scaleBand()
+        .rangeRound([0, width])
+        .padding(0.1),
+        y = d3.scaleLinear()
+        .rangeRound([height, 0]),
+
+        g = svg.append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")"),
+
+        yAxis = g.append("g")
+        .attr("class", "axis axis--y")
+        .attr("transform", "translate(" + width + ", 0)"),
+
+        xAxis = g.append("g")
+        .attr("class", "axis axis--x")
+        .attr("transform", "translate(0," + height + ")"),
+
+        time = 750,
+
+        exp = [
+            {
+                nam: "ЖКГ",
+                val: 403
+    },
+            {
+                nam: "дороги",
+                val: 719
+    },
+            {
+                nam: "медицина",
+                val: 2145
+    }
+],
+
+        new_key,
+        raw;
+
+    d3.csv("data/data.csv", type, function (error, csv) {
+
+        "use strict";
+
+        if (error) {
+            throw error;
+        }
+
+        raw = csv;
+
+        raw.sort(function (a, b) {
+            return a.sum - b.sum;
+        });
+
+        x.domain(raw.map(function (d) {
+            return d.reg;
+        }));
+
+        xAxis.call(d3.axisBottom(x)
+                .tickSizeOuter([0]))
+            .selectAll("text")
+            .style("text-anchor", "end")
+            .attr("dx", "-.8em")
+            .attr("dy", "-.25em")
+            .attr("transform", "rotate(-70)");
+
+        new_key = "sum";
+
+        update_yAxis(new_key);
+        add_bars(new_key);
+    });
 }

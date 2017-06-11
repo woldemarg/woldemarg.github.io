@@ -184,8 +184,13 @@ svg {
 }
 
 .opac {
-    opacity: 0.3;
+    opacity: 0.5;
 }
+
+
+/*.dead.opac {
+    opacity: 0.5;
+}*/
 
 .axis--y path {
     display: none;
@@ -212,6 +217,7 @@ text {
 
 h1 {
     color: #444;
+    padding: 0.6em 0 0.2em;
 }
 
 .lead {
@@ -288,4 +294,8 @@ footer a:active,
 footer a:visited {
     color: #d3d3d3;
     text-decoration: underline;
+}
+
+.footnote {
+    font-size: 0.85em;
 }

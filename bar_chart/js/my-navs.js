@@ -37,4 +37,7 @@ function make_nav_items(h, n) {
         .attr("r", 4);
 }
 
-make_nav_items(viewport_h, nav_items);
+if ($(window)
+    .width() >= 767) {
+    make_nav_items(viewport_h, nav_items);
+}
