@@ -30,5 +30,5 @@ if ($(window)
     $("#empty").height(added_h + my_navbar.offsetHeight);
 } else {
     alert("На жаль, на цьому пристрої Ви не побачите наш інтерактивний контент :(\nБудь ласка, спробуйте переглянути сторінку на комп'ютері!");
-    $(".container:eq(1)").remove();
+    $("#main_content").remove();
 }
