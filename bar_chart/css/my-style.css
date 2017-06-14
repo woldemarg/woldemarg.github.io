@@ -115,7 +115,7 @@
 
 h1 {
     color: #444;
-    padding: .6em 0 .2em;
+    padding: 1.2em 0 .2em;
 }
 
 .lead {
@@ -125,15 +125,14 @@ h1 {
 .info {
     color: #444;
     font-size: .85em;
-    padding: 0;
+    padding: 0em 0 3em ;
 }
 
-hr {
-    color: #40A0D7;
-    /* Цвет линии для остальных браузеров */
-    background-color: #40A0D7;
-    /* Цвет линии для браузера Firefox и Opera */
-}
+
+/*hr {
+    color: #40A0D7;    
+    background-color: #40A0D7;    
+}*/
 
 
 /*main*/
@@ -280,6 +279,90 @@ text {
 
 .footnote {
     font-size: .85em;
+}
+
+
+/*read more*/
+
+.parent {
+    width: 301px;
+    margin: 1.5em 0 3em;
+    height: 166px;
+    border: 1px solid #40A0D7;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.child {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+.pic {
+    background-image: url(../pics/tax-debt-cover.jpg);
+}
+
+.parent a {
+    display: none;
+    font-size: 1.4em;
+    color: #fff !important;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 30%;
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-style: solid;
+}
+
+.parent:hover .child,
+.parent:focus .child {
+    -ms-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.parent:hover .child:before,
+.parent:focus .child:before {
+    display: block;
+}
+
+.parent:hover a,
+.parent:focus a {
+    display: block;
+}
+
+.child:before {
+    content: "";
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(64, 160, 215, 0.85);
+}
+
+.centered {
+    text-align: center;
+}
+
+h3 {
+    padding-top: 3em;
 }
 
 
