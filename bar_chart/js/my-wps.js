@@ -167,7 +167,6 @@ if ($(window)
                 setTimeout(function () {
                     update_yAxis("prc");
                     add_bars("prc");
-                    //add_bars("dead");
                     add_lines();
                 }, time);
             }

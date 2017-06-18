@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 
-<html lang="uk-UA">
+<html lang="uk-UA" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" itemscope itemtype="http://schema.org/Map">
 
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+    <meta content="Податковий борг" name="description">
+    <meta content="Володимир Голомб" name="author">
+
+    <!-- OpenGraph Meta Tags -->
+    <meta content="Ціна держави" property="og:site_name">
+    <meta content="website" property="og:type">
+    <meta content="Податковий борг: погасити не можна списати" property="og:title">
+    <meta property="og:image" content="http://cost.ua/special/taxdebt/pics/chart.png" />
+    <meta content="«Ціна держави» підрахувала, що на 1 квітня 2017 року в Україні 7.4% діючих підприємств мають податковий борг у розмірі більш як 1 тис. гривень" property="og:description">
+    <meta property="og:url" content="http://cost.ua/special/taxdebt/" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta content="@case_ukraine" name="twitter:site">
+    <meta content="2461544214" property="twitter:account_id">
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="http://cost.ua/special/taxdebt/" name="twitter:url">
+    <meta content="Перевір податковий борг" name="twitter:title">
+    <meta content="«Ціна держави» підрахувала, що на 1 квітня 2017 року в Україні 7.4% діючих підприємств мають податковий борг у розмірі більш як 1 тис. гривень" name="twitter:description">
+    <meta name="twitter:image:src" content="http://cost.ua/special/taxdebt/pics/chart.png" />
+    <meta content="450" name="twitter:image:width">
+    <meta content="237" name="twitter:image:height">
+
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" rel="stylesheet">
     <link href="css/my-style.css" rel="stylesheet">
     <script charset="utf-8" src="https://use.fontawesome.com/9c4f1e45b4.js" type="text/javascript">
-
-
     </script>
     <script charset="utf-8" crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript">
-
-
     </script>
     <script crossorigin="anonymous" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js">
-
-
     </script>
     <script charset="utf-8" crossorigin="anonymous" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" type="text/javascript">
-
-
     </script>
     <script charset="utf-8" src="https://d3js.org/d3.v4.min.js" type="text/javascript">
-
-
     </script>
 
     <script>
@@ -45,7 +58,6 @@
 
         ga('create', 'UA-53564511-1', 'auto');
         ga('send', 'pageview');
-
     </script>
 
     <title>Податковий борг: погасити не можна списати</title>
@@ -63,7 +75,8 @@
 
             <div class="col-3 pull-1">
                 <div class="social-icons float-right">
-                    <a href="test" target="_blank"><i class="fa fa-twitter"></i></a> <a href="test" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="https://twitter.com/home?status=%D0%9F%D0%BE%D0%B4%D0%B0%D1%82%D0%BA%D0%BE%D0%B2%D0%B8%D0%B9%20%D0%B1%D0%BE%D1%80%D0%B3%3A%20%D0%BF%D0%BE%D0%B3%D0%B0%D1%81%D0%B8%D1%82%D0%B8%20%D0%BD%D0%B5%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%B0%20%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D0%B8%20-%20http%3A//cost.ua/special/taxdebt/index.html" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/sharer.php?s=100&p%5Burl%5D=http%3A%2F%2Fcost.ua%2Fspecial%2Ftaxdebt%2Findex.html&p%5Bimages%5D%5B0%5D=http%3A%2F%2Fcost.ua%2Fspecial%2Ftaxdebt%2Fpics%2Fchart.png&p%5Btitle%5D=%D0%9F%D0%BE%D0%B4%D0%B0%D1%82%D0%BA%D0%BE%D0%B2%D0%B8%D0%B9%20%D0%B1%D0%BE%D1%80%D0%B3%3A%20%D0%BF%D0%BE%D0%B3%D0%B0%D1%81%D0%B8%D1%82%D0%B8%20%D0%BD%D0%B5%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%B0%20%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D0%B8&p%5Bsummary%5D=%C2%AB%D0%A6%D1%96%D0%BD%D0%B0%20%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%B2%D0%B8%C2%BB%20%D0%BF%D1%96%D0%B4%D1%80%D0%B0%D1%85%D1%83%D0%B2%D0%B0%D0%BB%D0%B0%2C%20%D1%89%D0%BE%20%D0%BD%D0%B0%201%20%D0%BA%D0%B2%D1%96%D1%82%D0%BD%D1%8F%202017%20%D1%80%D0%BE%D0%BA%D1%83%20%D0%B2%20%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%96%207.4%25%20%D0%B4%D1%96%D1%8E%D1%87%D0%B8%D1%85%20%D0%BF%D1%96%D0%B4%D0%BF%D1%80%D0%B8%D1%94%D0%BC%D1%81%D1%82%D0%B2%20%D0%BC%D0%B0%D1%8E%D1%82%D1%8C%20%D0%BF%D0%BE%D0%B4%D0%B0%D1%82%D0%BA%D0%BE%D0%B2%D0%B8%D0%B9%20%D0%B1%D0%BE%D1%80%D0%B3%20%D1%83%20%D1%80%D0%BE%D0%B7%D0%BC%D1%96%D1%80%D1%96%20%D0%B1%D1%96%D0%BB%D1%8C%D1%88%20%D1%8F%D0%BA%201%20%D1%82%D0%B8%D1%81.%20%D0%B3%D1%80%D0%B8%D0%B2%D0%B5%D0%BD%D1%8C" target="_blank"><i class="fa fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -77,12 +90,12 @@
                     <h1 class="display-5">Податковий борг: погасити не можна списати</h1>
 
 
-                    <p class="lead">«Ціна держави» підрахувала, що 7.4% діючих підприємств в Україні мають податковий борг у розмірі більш як 1 тис. гривень</p>
+                    <p class="lead">«Ціна держави» підрахувала, що на 1 квітня 2017 року в Україні 7.4% діючих підприємств мають податковий борг у розмірі більш як 1 тис. гривень</p>
 
                     <hr class="my-2">
 
 
-                    <p class="info">Текст і графіка: <strong>Володимир Голомб</strong> | Дата публікації: <strong>ХХ.06.2017</strong> <i aria-hidden="true" class="fa fa-calendar"></i></p>
+                    <p class="info">Текст і графіка: <strong>Володимир Голомб</strong> | Дата публікації: <strong>16.06.2017</strong> <i aria-hidden="true" class="fa fa-calendar"></i></p>
                 </div>
             </div>
         </div>
@@ -266,35 +279,20 @@
             "use strict";
             window.scrollTo(0, 0);
         };
-
     </script>
     <script charset="utf-8" src="libs/scroll.control.js" type="text/javascript">
-
-
     </script>
     <script charset="utf-8" src="libs/stickyfill.min.js" type="text/javascript">
-
-
     </script>
     <script charset="utf-8" src="js/my-grid.js" type="text/javascript">
-
-
     </script>
     <script charset="utf-8" src="js/my-navs.js" type="text/javascript">
-
-
     </script>
     <script charset="utf-8" src="js/my-chart.js" type="text/javascript">
-
-
     </script>
     <script charset="utf-8" src="libs/jquery.waypoints.min.js" type="text/javascript">
-
-
     </script>
     <script charset="utf-8" src="js/my-wps.js" type="text/javascript">
-
-
     </script>
 </body>
 
