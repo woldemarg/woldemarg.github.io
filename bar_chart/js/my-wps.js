@@ -43,7 +43,7 @@ if ($(window)
         handler: function (dir) {
             "use strict";
             switch_colors(dir, "slide_0", null);
-            make_active(dir, "item_0", null);
+            make_active(dir, "item_0", "item_0");
             $("#t_0").addClass("show");
             $("#t_01").addClass("show");
         },
