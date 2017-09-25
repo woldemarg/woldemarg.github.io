@@ -1,0 +1,318 @@
+/*media queries*/
+
+@media only screen and (max-width: 1920px) {
+    html {
+        font-size: 18px;
+    }
+    .chart_header {
+        font-size: 22px;
+    }
+    .chart_comment {
+        font-size: 18px;
+    }
+    h1 {
+        font-size: 63px;
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    html {
+        font-size: 18px;
+    }
+    .chart_header {
+        font-size: 22px;
+    }
+    .chart_comment {
+        font-size: 18px;
+    }
+    h1 {
+        font-size: 63px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    html {
+        font-size: 16px;
+    }
+    .chart_header {
+        font-size: 14px;
+    }
+    .chart_comment {
+        font-size: 13px;
+    }
+    h1 {
+        font-size: 56px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    html {
+        font-size: 16px;
+    }
+    .chart_header {
+        font-size: 14px;
+    }
+    .chart_comment {
+        font-size: 13px;
+    }
+    h1 {
+        font-size: 56px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+    .chart_header {
+        font-size: 13px;
+    }
+    .chart_comment {
+        font-size: 12px;
+    }
+     h1 {
+        font-size: 49px;
+    }
+}
+
+body {
+    font-family: "PT Sans", sans-serif;
+    color: #000/*#3A3F4A;*/
+}
+
+.cover {
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+}
+
+.main_title {
+    background: #25491C;
+    color: #fff;
+    padding: 3rem;
+}
+
+
+.lead {
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin: 0;
+}
+
+.info {
+    font-size: 0.8em;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 2rem;
+    margin:0
+}
+
+.row.no-gutter {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.row.no-gutter [class*="col-"]:not(:first-child),
+.row.no-gutter [class*="col-"]:not(:last-child) {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.stretch {
+    width: 100%;
+    text-align: justify;
+}
+
+.stretch:after {
+    content: "";
+    width: 100%;
+    display: inline-block;
+}
+
+.subtitle {
+    background: #CEF6C3;
+    /*#E3E6EA;*/
+    height: 5rem;
+    font-weight: 600;
+    font-size: 1.15rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    /*margin-bottom: 3.5rem;*/
+    margin-top: 1.5rem;
+}
+
+.start.subtitle {
+    text-align: justify;
+    padding-left: 0.7rem;
+    margin-bottom: 3.5rem;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 92%, 0 60%);
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 0 60%);
+    
+}
+
+.mid.subtitle {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%);
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%);
+}
+
+.end.subtitle {
+    text-align: justify;
+    padding-right: 0.7rem;
+    margin-bottom: 3.5rem;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 0 92%);
+    clip-path: polygon(0 0, 100% 0, 100% 60%, 0 92%);
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 1rem;
+}
+
+.sticky:before,
+.sticky:after {
+    content: "";
+    display: table;
+}
+
+.panel {
+    /*font-size: 0.75rem;
+    line-height: 1.13rem;*/
+    text-align: center;
+    /*padding: 5%;*/
+    display: none;
+    color: #25491C;
+}
+
+/*.panel span {
+    display: block;
+}*/
+
+.panel span:hover {
+    cursor: pointer;
+    font-weight: 600;
+    /*width:auto;*/
+    /*display: inline-block;*/
+    }
+
+.my_text {
+    padding: 0.5rem;
+}
+
+.chart_info {
+    /*background: #CEF6C3;*/
+    /*#E3E6EA;*/
+    padding: 0.5rem;
+    margin-bottom: 5%;
+    text-align: center
+}
+
+.chart_header {
+    font-weight: 600;
+    /*font-size: 0.9rem;*/
+    padding: 0.5rem 0.5rem 0.1rem 0.5rem;
+}
+
+.chart_comment {
+    /*font-size: 0.85rem;*/
+    padding: 0.1rem 0.2rem 0.5rem 0.5rem;
+}
+
+.last {
+    padding-top: 1.5rem;
+}
+
+.footer {
+    background-color: #383e47;
+    color: #fff;
+    padding: 2.5% 5% 2.5% 5%;
+}
+
+.links {
+    list-style-type: none;
+    font-size: 0.7rem;
+}
+
+.copy {
+    font-size: 0.6rem;
+    text-align: center;
+}
+
+#panel {
+    display: none;
+    text-align: center;
+}
+
+.equal.row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+h5 {
+    font-weight: 600;
+}
+
+.comment {
+    font-size: 0.9em
+}
+
+
+/* basic positioning */
+
+.legend {
+    list-style-type: none;
+    /*float: left;*/
+    padding: 0;
+    display: inline;
+}
+
+
+/*ul.legend li {
+     display: inline;
+}*/
+
+
+/* your colors */
+
+.leg_grad {
+    background: red;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(right, rgba(83, 90, 106, 0.05), #282C34);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, rgba(83, 90, 106, 0.05), #282C34);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, rgba(83, 90, 106, 0.05), #282C34);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, rgba(83, 90, 106, 0.05), #282C34);
+    /* Standard syntax */
+    float: left;
+    width: 2.5em;
+    height: 0.12em;
+    /* padding: 1 1 1 1;*/
+    margin: 0.8em 0.5em 0.2em 0.2em;
+}
+
+.leg_text {
+    font-size: 0.8em;
+}
+
+.leg_square_cntr {
+    background-color: #3A3F4A;
+    float: left;
+    width: 0.7em;
+    height: 0.7em;
+    /* padding: 1 1 1 1;*/
+    margin: 0.5em 0.5em 0.2em 0.2em;
+}
+
+.leg_square_avg {
+    background-color: #FAA61A;
+    float: left;
+    width: 0.7em;
+    height: 0.7em;
+    /* padding: 1 1 1 1;*/
+    margin: 0.5em 0.5em 0.2em 0.2em;
+}
