@@ -33,19 +33,19 @@ var menu = $(".subtitle.mid"),
 
     panel_max_height = $(".chart_info").outerHeight() + $("#my_scatterplot").width(),
 
-    line_max_height = panel_max_height / d3.select(".panel").selectAll("span").size(),
+    line_max_height = panel_max_height / d3.select(".panel").selectAll("li").size(),
 
     base_font = parseInt($("html").css("font-size"), 0),
 
     panel_line = line_max_height / base_font,
 
     panel_font = panel_line * 0.65;
-    
-    
 
-$(".panel").css({
+
+
+$(".panel li").css({
     "font-size": to_rem(panel_font),
-    "line-height": to_rem(panel_line)
+    "heigh": to_rem(panel_line)
 });
 
 

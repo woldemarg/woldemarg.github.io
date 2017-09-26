@@ -70,7 +70,7 @@
     .chart_comment {
         font-size: 12px;
     }
-     h1 {
+    h1 {
         font-size: 49px;
     }
 }
@@ -103,7 +103,7 @@ body {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     padding-top: 2rem;
-    margin:0
+    margin: 0
 }
 
 .row.no-gutter {
@@ -146,7 +146,7 @@ body {
     margin-bottom: 3.5rem;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 92%, 0 60%);
     clip-path: polygon(0 0, 100% 0, 100% 92%, 0 60%);
-    
+
 }
 
 .mid.subtitle {
@@ -189,12 +189,33 @@ body {
     display: block;
 }*/
 
-.panel span:hover {
+.panel li:hover {
     cursor: pointer;
     font-weight: 600;
+    background: #DDF9D5;
+
     /*width:auto;*/
     /*display: inline-block;*/
-    }
+}
+
+.panel ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /*display: block;*/
+    /*height: 0.8rem;*/
+    /* margin:0*/
+}
+
+.panel li span {
+    display: block;
+    text-align: center;
+    padding: 0;
+    /*font-size: 0.6rem;
+    line-height: 0.8rem;*/
+    /*height: auto;*/
+}
 
 .my_text {
     padding: 0.5rem;
@@ -218,6 +239,8 @@ body {
     /*font-size: 0.85rem;*/
     padding: 0.1rem 0.2rem 0.5rem 0.5rem;
 }
+
+
 
 .last {
     padding-top: 1.5rem;
@@ -251,9 +274,6 @@ body {
     display: flex;
 }
 
-h5 {
-    font-weight: 600;
-}
 
 .comment {
     font-size: 0.9em
@@ -262,18 +282,9 @@ h5 {
 
 /* basic positioning */
 
-.legend {
-    list-style-type: none;
-    /*float: left;*/
-    padding: 0;
-    display: inline;
-}
-
-
 /*ul.legend li {
      display: inline;
 }*/
-
 
 /* your colors */
 

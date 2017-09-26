@@ -16,7 +16,7 @@ function bigger(thing) {
     //Ensuite son plus proche pre'de'cesseur <span>
     var siblingElement = thing.previousSibling;
     while (siblingElement) {
-        if (siblingElement.tagName === "SPAN") {
+        if (siblingElement.tagName === "LI") {
             siblingElement.style.fontSize = make_big(panel_font);
             break;
         }
@@ -26,7 +26,7 @@ function bigger(thing) {
     //Ensuite son plus proche successeur <span>
     siblingElement = thing.nextSibling;
     while (siblingElement) {
-        if (siblingElement.tagName === "SPAN") {
+        if (siblingElement.tagName === "LI") {
             siblingElement.style.fontSize = make_big(panel_font);
             break;
         }
@@ -40,7 +40,7 @@ function normal(thing) { //me^me jeu
 
     var siblingElement = thing.previousSibling;
     while (siblingElement) {
-        if (siblingElement.tagName === "SPAN") {
+        if (siblingElement.tagName === "LI") {
             siblingElement.style.fontSize = to_rem(panel_font);
             break;
         }
@@ -49,7 +49,7 @@ function normal(thing) { //me^me jeu
 
     siblingElement = thing.nextSibling;
     while (siblingElement) {
-        if (siblingElement.tagName === "SPAN") {
+        if (siblingElement.tagName === "LI") {
             siblingElement.style.fontSize = to_rem(panel_font);
             break;
         }
