@@ -1,7 +1,5 @@
 $("#intro_text").css("margin-top", $("#my_title").outerHeight() - $("#intro_text").outerHeight())
 
-console.log($("#my_title").outerHeight())
-
 $("#my_scatterplot").waypoint({
     handler: function (dir) {
         "use strict";
@@ -31,7 +29,7 @@ function to_rem(d) {
 
 var menu = $(".subtitle.mid"),
 
-    panel_max_height = $(".chart_info").outerHeight() + $("#my_scatterplot").width(),
+    panel_max_height = $("#my_scatterplot").width() + $(".chart_info").height(),
 
     line_max_height = panel_max_height / d3.select(".panel").selectAll("li").size(),
 
