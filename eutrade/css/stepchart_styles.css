@@ -26,6 +26,11 @@
     stroke: none;
 }
 
+.legend_stepchart {
+    fill: #5A5C60;
+    font-size: .7em;
+}
+
 
 
 /*nodes*/
@@ -42,8 +47,4 @@
 
 .dim_bar {
     opacity: 0.1;
-}
-
-.legend_stepchart {
-    font-size: .7em;
 }
