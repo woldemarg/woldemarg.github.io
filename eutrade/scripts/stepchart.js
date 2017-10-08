@@ -25,51 +25,57 @@ function Stepchart(data) {
         },
 
         colors = {
-            country_EU: "#25491C", //"#5D646F",
-            average_EU: "#FAA61A" //"#F04E23"
+            country_EU: "#71A3A6",
+            average_EU: "#91211E"
         },
 
         x_scale = d3.scaleBand()
-        .rangeRound([0, width])
-        .padding(0),
+            .rangeRound([0, width])
+            .padding(0),
 
         y_scale = d3.scaleLinear()
-        .rangeRound([height, 0]),
+            .rangeRound([height, 0]),
 
         // axes and text labels        
         y_axis = d3.axisRight(y_scale)
-        .tickFormat(function (d) {
-            var s = add_plus_sign(format_number(d));
-            return this.parentNode.nextSibling ?
-                s :
-                s + "%";
-        })
-        .ticks(5)
-        .tickSize(width),
+                .tickFormat(function (d) {
+                var s = add_plus_sign(format_number(d));
+                return this.parentNode.nextSibling ?
+                        s :
+                        s + "%";
+            })
+                .ticks(5)
+                .tickSize(width),
 
-        x_axis = d3.axisBottom(x_scale),
+        x_axis = d3.axisBottom(x_scale)
+            .tickFormat(function (d) {
+                return Math.max(document.documentElement.clientWidth, window.innerWidth || 0) >= 992 ? d : d.split(" ")[0];
+            }),
 
         svg = d3.select("#my_stepchart")
-        .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     this.draw = function () {
 
         var eu = data.filter(function (d) {
                 return d.partner === "EU28";
             })
-            .sort(function (a, b) {
-                return d3.descending(a.growth, b.growth);
-            }),
+                .sort(function (a, b) {
+                    return d3.descending(a.growth, b.growth);
+                }),
 
             types = d3.nest()
-            .key(function (d) {
-                return d.type;
-            })
-            .entries(data);
+                .key(function (d) {
+                    return d.type;
+                })
+                .entries(data);
+
+        types[0].ukr = "країни ЄС";
+        types[1].ukr = "середня ЄС28";
 
 
         x_scale.domain(eu.map(function (d) {
@@ -77,8 +83,8 @@ function Stepchart(data) {
         }));
 
         y_scale.domain(d3.extent(data, function (d) {
-                return d.growth;
-            }))
+            return d.growth;
+        }))
             .nice();
 
         // https://bl.ocks.org/mbostock/7555321
@@ -86,8 +92,8 @@ function Stepchart(data) {
             text.each(function () {
                 var text = d3.select(this),
                     words = text.text()
-                    .split(/\s+/)
-                    .reverse(),
+                        .split(/\s+/)
+                        .reverse(),
                     word,
                     line = [],
                     lineNumber = 0,
@@ -95,15 +101,15 @@ function Stepchart(data) {
                     y = text.attr("y"),
                     dy = parseFloat(text.attr("dy")),
                     tspan = text.text(null)
-                    .append("tspan")
-                    .attr("x", 0)
-                    .attr("y", y)
-                    .attr("dy", dy + "em");
+                        .append("tspan")
+                        .attr("x", 0)
+                        .attr("y", y)
+                        .attr("dy", dy + "em");
                 while (word = words.pop()) {
                     line.push(word);
                     tspan.text(line.join(" "));
                     if (tspan.node()
-                        .getComputedTextLength() > width) {
+                            .getComputedTextLength() > width) {
                         line.pop();
                         tspan.text(line.join(" "));
                         line = [word];
@@ -163,7 +169,7 @@ function Stepchart(data) {
             .attr("y1", function (d) {
                 return y_scale(d.growth);
             })
-            .attr("x2", function (d, i) {
+            .attr("x2", function (d) {
                 return x_scale(d.group) + x_scale.bandwidth();
             })
             .attr("y2", function (d) {
@@ -206,7 +212,7 @@ function Stepchart(data) {
             .attr("dy", ".35em")
             .style("text-anchor", "end")
             .text(function (d) {
-                return d.key;
+                return d.ukr;
             });
     };
 
