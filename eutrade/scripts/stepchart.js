@@ -74,8 +74,8 @@ function Stepchart(data) {
                 })
                 .entries(data);
 
-        types[0].ukr = "країни ЄС";
-        types[1].ukr = "середня ЄС28";
+        types[0].ukr = "країна";
+        types[1].ukr = "ЄС-28";
 
 
         x_scale.domain(eu.map(function (d) {

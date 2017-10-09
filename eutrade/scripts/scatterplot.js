@@ -6,9 +6,9 @@ function Scatterplot(data) {
     // margins 
     var margin = {
             top: 15,
-            right: 30,
+            right: 35,
             bottom: 15,
-            left: 30
+            left: 35
         },
 
         div_width = document.getElementById("my_scatterplot")
@@ -64,7 +64,8 @@ function Scatterplot(data) {
                 return format_number2(d);
             })
             .tickSize(-width)
-            .tickSizeOuter(0),
+            .tickSizeOuter(0)
+            .tickPadding(5),
 
         x_axis = d3.axisBottom(x_scale)
             .tickValues(axis_ticks)
@@ -246,8 +247,8 @@ function Scatterplot(data) {
             })
             .entries(countries);
 
-        country_status[0].ukr = "чистий імпорт";
-        country_status[1].ukr = "чистий експорт";
+        country_status[0].ukr = "негативне сальдо";
+        country_status[1].ukr = "позитивне сальдо";
 
         x_scale.domain([d3.min(limits), d3.max(limits)])
             .nice();

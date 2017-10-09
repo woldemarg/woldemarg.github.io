@@ -5,16 +5,13 @@
         font-size: 20px;
     }
     h1 {
-        font-size: 63px;
+        font-size: 45px;
     }
     .chart_header {
         font-size: 22px;
     }
     .chart_comment {
         font-size: 18px;
-    }
-    h1 {
-        font-size: 48px;
     }
     .axis--x text {
         font-size: 13px;
@@ -26,7 +23,7 @@
         font-size: 18px;
     }
     h1 {
-        font-size: 40px;
+        font-size: 35px;
     }
     .subtitle {
         font-size: 18px;
@@ -47,7 +44,7 @@
         font-size: 16px;
     }
     h1 {
-        font-size: 30px;
+        font-size: 35px;
     }
     .subtitle {
         font-size: 14px;
@@ -68,7 +65,7 @@
         font-size: 16px;
     }
     h1 {
-        font-size: 30px;
+        font-size: 45px;
     }
     .subtitle {
         font-size: 14px;
@@ -92,7 +89,7 @@
         font-size: 15px;
     }
     h1 {
-        font-size: 30px;
+        font-size: 33px;
     }
     .subtitle {
         font-size: 14px;
@@ -102,7 +99,7 @@
     }
     .chart_comment {
         font-size: 13px;
-    }    
+    }
     .axis--x text {
         font-size: 7px;
     }
@@ -115,10 +112,16 @@
 
 /*main page*/
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
     background: #EFF2F4;
     color: #3A3F4A;
     font-family: "PT Sans", sans-serif;
+    width: 100%;
 }
 
 .row.no-gutter {
@@ -139,14 +142,25 @@ body {
 .my_text_prim {
     font-size: 0.8rem;
     margin: 0;
-    padding: 0 .5rem;    
+    padding: 0 .5rem;
 }
 
 .last {
     padding-top: 4rem;
 }
 
+.read-more {
+    text-align: center;
+}
 
+.read-more img {
+    max-width: 200px;
+}
+
+#more {
+    padding: 1.5rem 0 1rem 0;
+    text-align: center;
+}
 
 /*navbar*/
 
@@ -158,6 +172,7 @@ body {
 }
 
 #logo_pic {
+    background-color: rgba(255, 255, 255, 0.9);
     bottom: 0;
     margin: auto;
     max-width: 100%;
@@ -178,34 +193,45 @@ body {
 
 .cover {
     margin-bottom: 1.5rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
+
 
 .title {
     background: #135457;
     color: #fff;
-    padding: 1.5rem;
+    padding: 2rem;
+    margin: 0;
+    height: 100%;
+}
+
+.title h1 {
+    text-align: center;
 }
 
 .title p {
-    font-size: 1.05rem;
-    padding: 1.5rem 0 0;
+    font-size: 1rem;
+    padding: 3rem 0 0;
 }
 
 .lead {
     font-size: 1rem;
     margin: 0;
-    padding: 3.5rem .5rem 1.5rem;
+    padding: 2.5rem .5rem 1.5rem;
 }
 
-.info {
+#info {
     font-size: .8em;
     margin: 0;
     padding-left: .5rem;
     padding-right: .5rem;
-    padding-top: 2rem;
+    padding-top: .5rem;
 }
 
+.no-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
 
 
 /*panel*/
@@ -341,7 +367,9 @@ footer h4 {
 }
 
 .links {
+    line-height: 1;
     list-style-type: none;
+    margin: 0;
 }
 
 .links li a {

@@ -8,11 +8,12 @@ $(window).scroll(function () {
 });
 
 
-// make text blocks of equal height
+// make text and cover blocks of equal height
 $(window).on("load resize", function () {
     "use strict";
     var height_add = $(".block_left").outerHeight(true) - $(".block_right").outerHeight(true);
-    $("#last_paragraph").css("padding-bottom", height_add);
+    $("#last_paragraph").css("padding-bottom", height_add);    
+    $(".cover_img").css("height", $(".title").outerHeight());  
 });
 
 
@@ -59,3 +60,15 @@ $(".panel li").css({
     "font-size": to_rem(panel_font),
     "heigh": to_rem(panel_line)
 });
+
+/*$("#intro_text").css("padding-top", $("#cover").height())
+console.log($("#cover").height())*/
+
+if ($(window)
+        .width() < 768) {
+    
+    $(".subtitle").remove();
+    $(".panel").remove();
+    $("#my_scatterplot").css("padding-bottom", "4rem");
+    
+}
