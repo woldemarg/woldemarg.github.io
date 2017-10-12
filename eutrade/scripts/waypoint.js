@@ -13,7 +13,7 @@ $(window).on("load resize", function () {
     "use strict";
     var height_add = $(".block_left").outerHeight(true) - $(".block_right").outerHeight(true);
     $("#last_paragraph").css("padding-bottom", height_add);    
-    $(".cover_img").css("height", $(".title").outerHeight());  
+    // $(".cover_img").css("height", $(".title").outerHeight());
 });
 
 
